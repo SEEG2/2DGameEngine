@@ -25,8 +25,10 @@ public class Window {
     public static void changeScene(int newScene) {
         if (newScene == 0) {
             currentScene = new LevelEditorScene();
+            currentScene.init();
         } else if (newScene == 1) {
             currentScene = new LevelScene();
+            currentScene.init();
         } else {
             assert false : "Unknown scene (" + newScene + ")";
         }
@@ -47,6 +49,7 @@ public class Window {
 
         glfwTerminate();
         glfwSetErrorCallback(null).free();
+
     }
     public void init() {
         GLFWErrorCallback. createPrint(System.err).set();
@@ -69,10 +72,9 @@ public class Window {
 
         glfwShowWindow(glfwWindow);
 
-        changeScene(0);
-
         GL.createCapabilities();
 
+        changeScene(0);
 
         glfwSetCursorPosCallback(glfwWindow, MouseListener::mousePosCallback);
         glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);

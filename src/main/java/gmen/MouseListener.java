@@ -4,9 +4,11 @@ import static org.lwjgl.glfw.GLFW.GLFW_PRESS;
 import static org.lwjgl.glfw.GLFW.GLFW_RELEASE;
 
 public class MouseListener {
+    //singleton instance
     private static MouseListener instance;
     private double scrollX, scrollY;
     private double xPos, yPos, lastY, lastX;
+    //button states for a mouse with three buttons
     private boolean mouseButtonPressed[] = new boolean[3];
     private boolean isDragging;
 
@@ -19,6 +21,7 @@ public class MouseListener {
         this.lastY = 0.0;
     }
 
+    //returns an instance of this singleton / creates a new one it doesn't exist yet
     public static MouseListener get() {
         if (MouseListener.instance == null) {
             MouseListener.instance = new MouseListener();
@@ -26,6 +29,7 @@ public class MouseListener {
         return MouseListener.instance;
     }
 
+    //updates values
     public static void mousePosCallback(long window, double xpos, double ypos) {
         get().lastX = get().xPos;
         get().lastY = get().yPos;
@@ -34,6 +38,7 @@ public class MouseListener {
         get().isDragging = get().mouseButtonPressed[0] || get().mouseButtonPressed[1] || get().mouseButtonPressed[2];
     }
 
+    //updates values
     public static void mouseButtonCallback(long window, int button, int action, int mods) {
         if (action == GLFW_PRESS) {
             if (button < get().mouseButtonPressed.length) {
@@ -47,6 +52,7 @@ public class MouseListener {
         }
     }
 
+    //updates values
     public static void mouseScrollCallback(long window, double xOffset, double yOffset) {
         get().scrollX = xOffset;
         get().scrollY = yOffset;
@@ -66,6 +72,8 @@ public class MouseListener {
         get().lastX = get().xPos;
         get().lastY = get().yPos;
     }
+
+    //getters for each value stored and updated
 
     public static float getX() {
         return (float)get().xPos;
