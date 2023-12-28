@@ -69,6 +69,8 @@ public class Window {
 
         glfwShowWindow(glfwWindow);
 
+        changeScene(0);
+
         GL.createCapabilities();
 
 
@@ -87,7 +89,7 @@ public class Window {
             glClear(GL_COLOR_BUFFER_BIT);
 
             if (dt >= 0) {
-                currentScene.upadte(dt);
+                currentScene.update(dt);
             }
 
             glfwSwapBuffers(glfwWindow);

@@ -10,6 +10,6 @@ public class LevelEditorScene extends Scene {
     }
 
     @Override
-    public void upadte(float dt) {
+    public void update(float dt) {
     }
 }
