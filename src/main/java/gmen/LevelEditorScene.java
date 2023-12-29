@@ -1,6 +1,7 @@
 package gmen;
 
 import org.lwjgl.BufferUtils;
+import renderer.Shader;
 
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
@@ -10,29 +11,6 @@ import static org.lwjgl.opengl.GL30.*;
 
 public class LevelEditorScene extends Scene {
 
-    //shader source code (assets/shaders/)
-    private String vertexShaderSrc = "#version 330 core\n" +
-            "\n" +
-            "layout (location=0) in vec3 aPos;\n" +
-            "layout (location=1) in vec4 aColor;\n" +
-            "\n" +
-            "out vec4 fColor;\n" +
-            "\n" +
-            "void main() {\n" +
-            "    fColor = aColor;\n" +
-            "    gl_Position = vec4(aPos,1.0);\n" +
-            "}";
-
-    //fragment shader source code (assets/shaders/)
-    private String fragmentShaderSrc = "#version 330 core\n" +
-            "\n" +
-            "in vec4 fColor;\n" +
-            "\n" +
-            "out vec4 color;\n" +
-            "\n" +
-            "void main() {\n" +
-            "    color = fColor;\n" +
-            "}";
 
     private int vertexID, fragmentID, shaderProgram;
     private float[] vertexArray = {
@@ -50,49 +28,15 @@ public class LevelEditorScene extends Scene {
     };
 
     private int vaoID, vboID, eboID;
+    private Shader defaultShader;
     public LevelEditorScene() {
     }
 
     @Override
     public void init() {
-        //loading + compiling vertex shader
-        vertexID = glCreateShader(GL_VERTEX_SHADER);
-        //pass shader source code "to the gpu"
-        glShaderSource(vertexID, vertexShaderSrc);
-        glCompileShader(vertexID);
-        //check for errors
-        int success = glGetShaderi(vertexID, GL_COMPILE_STATUS);
-        if (success == GL_FALSE) {
-            int len = glGetShaderi(vertexID, GL_INFO_LOG_LENGTH);
-            System.out.println("Couldn't compile vertex shader.");
-            assert false : "";
-        }
+        defaultShader = new Shader("assets/shaders/default.glsl");
+        defaultShader.compile();
 
-        //loading + compiling fragment shader
-        fragmentID = glCreateShader(GL_FRAGMENT_SHADER);
-        //pass shader source code "to the gpu"
-        glShaderSource(fragmentID, fragmentShaderSrc);
-        glCompileShader(fragmentID);
-        //check for errors
-        success = glGetShaderi(fragmentID, GL_COMPILE_STATUS);
-        if (success == GL_FALSE) {
-            int len = glGetShaderi(fragmentID, GL_INFO_LOG_LENGTH);
-            System.out.println("Couldn't compile fragment shader.");
-            assert false : "";
-        }
-        //linking shader
-        shaderProgram = glCreateProgram();
-        glAttachShader(shaderProgram, vertexID);
-        glAttachShader(shaderProgram, fragmentID);
-        glLinkProgram(shaderProgram);
-
-        //check for linking errors
-        success = glGetProgrami(shaderProgram, GL_LINK_STATUS);
-        if (success == GL_FALSE) {
-            int len = glGetProgrami(shaderProgram, GL_INFO_LOG_LENGTH);
-            System.out.println("Couldn't link shaders.");
-            assert false : "";
-        }
         //creating vao object
         vaoID = glGenVertexArrays();
         glBindVertexArray(vaoID);
@@ -113,6 +57,7 @@ public class LevelEditorScene extends Scene {
         eboID = glGenBuffers();
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, eboID);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, elementBuffer, GL_STATIC_DRAW);
+
         int positionSize = 3;
         int colorSize = 4;
         int floatSizeBytes = 4;
@@ -127,8 +72,7 @@ public class LevelEditorScene extends Scene {
 
     @Override
     public void update(float dt) {
-        //binding shader program
-        glUseProgram(shaderProgram);
+        defaultShader.use();
         //binding the vao that we are using
         glBindVertexArray(vaoID);
         //enabling vertex attribute pointers
@@ -143,6 +87,6 @@ public class LevelEditorScene extends Scene {
 
         glBindVertexArray(0);
 
-        glUseProgram(0);
+        defaultShader.detach();
     }
 }
