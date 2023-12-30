@@ -22,6 +22,7 @@ public class Window {
         this.height = 1080;
         this.title = "test";
     }
+
     public static void changeScene(int newScene) {
         if (newScene == 0) {
             currentScene = new LevelEditorScene();
