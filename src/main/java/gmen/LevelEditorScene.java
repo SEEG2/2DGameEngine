@@ -3,7 +3,7 @@ package gmen;
 import org.joml.Vector2f;
 import org.lwjgl.BufferUtils;
 import renderer.Shader;
-import util.Time;
+import renderer.Texture;
 
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
@@ -16,11 +16,11 @@ public class LevelEditorScene extends Scene {
 
     private int vertexID, fragmentID, shaderProgram;
     private float[] vertexArray = {
-            //position            color
-            100.5f, 0.5f, 0.0f,    1.0f, 0.0f, 0.0f, 1.0f, //bottom right
-            0.5f, 100.5f, 0.0f,    0.0f, 1.0f, 0.0f, 1.0f, //top left
-            100.5f, 100.5f, 0.0f,     0.0f, 0.0f, 1.0f, 1.0f, //top right
-            0.5f, 0.5f, 0.0f,   1.0f, 1.0f, 0.0f, 1.0f, //bottom left
+            //position         color                  UV Coordinates
+            100f, 0f, 0.0f,    1.0f, 0.0f, 0.0f, 1.0f,   1,1, //bottom right
+            0f, 100f, 0.0f,    0.0f, 1.0f, 0.0f, 1.0f,   0,0,//top left
+            100f, 100f, 0.0f,  1.0f, 0.0f, 1.0f, 1.0f,   1,0, //top right
+            0f, 0f, 0.0f,      1.0f, 1.0f, 0.0f, 1.0f,   0,1 //bottom left
     };
 
     //counter-clockwise order
@@ -31,14 +31,16 @@ public class LevelEditorScene extends Scene {
 
     private int vaoID, vboID, eboID;
     private Shader defaultShader;
+    private Texture testTexture;
     public LevelEditorScene() {
     }
 
     @Override
     public void init() {
-        this.camera = new Camera(new Vector2f());
+        this.camera = new Camera(new Vector2f(-200, -300));
         defaultShader = new Shader("assets/shaders/default.glsl");
         defaultShader.compile();
+        this.testTexture = new Texture("assets/images/default.png");
 
         //creating vao object
         vaoID = glGenVertexArrays();
@@ -63,19 +65,26 @@ public class LevelEditorScene extends Scene {
 
         int positionSize = 3;
         int colorSize = 4;
-        int floatSizeBytes = 4;
-        int vertexSizeBytes = (positionSize + colorSize) * floatSizeBytes;
+        int uvSize = 2;
+        int vertexSizeBytes = (positionSize + colorSize + uvSize) * Float.BYTES;
 
         glVertexAttribPointer(0, positionSize, GL_FLOAT, false, vertexSizeBytes, 0);
         glEnableVertexAttribArray(0);
 
-        glVertexAttribPointer(1, colorSize, GL_FLOAT, false, vertexSizeBytes, positionSize * floatSizeBytes);
+        glVertexAttribPointer(1, colorSize, GL_FLOAT, false, vertexSizeBytes, positionSize * Float.BYTES);
         glEnableVertexAttribArray(1);
+
+        glVertexAttribPointer(2, uvSize, GL_FLOAT, false, vertexSizeBytes, (positionSize + colorSize) * Float.BYTES);
+        glEnableVertexAttribArray(2);
     }
 
     @Override
     public void update(float dt) {
         defaultShader.use();
+        defaultShader.uploadTexture("TEX_SAMPLER", 0);
+        glActiveTexture(GL_TEXTURE0);
+        testTexture.bind();
+
         defaultShader.uploadMat4f("uProjection", camera.getProjectionMatrix());
         defaultShader.uploadMat4f("uView", camera.getViewMatrix());
         //binding the vao that we are using
