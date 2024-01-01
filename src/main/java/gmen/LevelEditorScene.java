@@ -40,7 +40,8 @@ public class LevelEditorScene extends Scene {
         this.camera = new Camera(new Vector2f(-200, -300));
         defaultShader = new Shader("assets/shaders/default.glsl");
         defaultShader.compile();
-        this.testTexture = new Texture("assets/images/default.png");
+        //loads the default image replace with a valid file path to load a specific one
+        this.testTexture = new Texture("");
 
         //creating vao object
         vaoID = glGenVertexArrays();
