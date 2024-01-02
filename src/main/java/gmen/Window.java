@@ -27,9 +27,11 @@ public class Window {
         if (newScene == 0) {
             currentScene = new LevelEditorScene();
             currentScene.init();
+            currentScene.start();
         } else if (newScene == 1) {
             currentScene = new LevelScene();
             currentScene.init();
+            currentScene.start();
         } else {
             assert false : "Unknown scene (" + newScene + ")";
         }

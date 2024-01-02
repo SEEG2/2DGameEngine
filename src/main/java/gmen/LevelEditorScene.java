@@ -1,5 +1,6 @@
 package gmen;
 
+import components.SpriteRenderer;
 import org.joml.Vector2f;
 import org.lwjgl.BufferUtils;
 import renderer.Shader;
@@ -32,11 +33,15 @@ public class LevelEditorScene extends Scene {
     private int vaoID, vboID, eboID;
     private Shader defaultShader;
     private Texture testTexture;
+    private GameObject testObj;
     public LevelEditorScene() {
     }
 
     @Override
     public void init() {
+        this.testObj = new GameObject("test");
+        this.testObj.addComponent(new SpriteRenderer());
+        this.addGameObjectToScene(this.testObj);
         this.camera = new Camera(new Vector2f(-200, -300));
         defaultShader = new Shader("assets/shaders/default.glsl");
         defaultShader.compile();
@@ -103,5 +108,9 @@ public class LevelEditorScene extends Scene {
         glBindVertexArray(0);
 
         defaultShader.detach();
+
+        for (GameObject go : this.gameObjects) {
+            go.update(dt);
+        }
     }
 }
