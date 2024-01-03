@@ -13,8 +13,6 @@ public class Window {
     private String title;
     private static Window window = null;
     private long glfwWindow;
-
-    private static int currentSceneIndex = -1;
     private static Scene currentScene;
 
     private Window() {
@@ -42,6 +40,11 @@ public class Window {
         }
         return Window.window;
     }
+
+    public static Scene getScene() {
+        return get().currentScene;
+    }
+
     public void run() {
         System.out.println("Running!");
         init();
