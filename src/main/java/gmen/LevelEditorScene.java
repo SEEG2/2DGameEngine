@@ -14,6 +14,11 @@ public class LevelEditorScene extends Scene {
     public void init() {
         this.camera = new Camera(new Vector2f());
 
+        GameObject obj1 = new GameObject("Object 1", new Transform(new Vector2f(100,100), new Vector2f(256,256)));
+        obj1.addComponent(new SpriteRenderer(AssetPool.getTexture("assets/images/default.png")));
+        this.addGameObjectToScene(obj1);
+
+
         loadResources();
     }
 
