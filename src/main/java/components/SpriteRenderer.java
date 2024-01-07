@@ -24,11 +24,11 @@ public class SpriteRenderer extends Component {
     public SpriteRenderer(Sprite sprite) {
         this.sprite = sprite;
         this.color = new Vector4f(1,1,1,1);
-        this.lastTransform = gameObject.transform;
     }
 
     @Override
     public void start() {
+        this.lastTransform = gameObject.transform;
         this.lastTransform = gameObject.transform.copy();
     }
 
@@ -62,5 +62,13 @@ public class SpriteRenderer extends Component {
             this.isDirty = true;
             this.color.set(color);
         }
+    }
+
+    public boolean isDirty() {
+        return this.isDirty;
+    }
+
+    public void setClean() {
+        this.isDirty = false;
     }
 }
