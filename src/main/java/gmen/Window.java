@@ -74,6 +74,15 @@ public class Window {
             throw  new IllegalStateException("Couldn't create GLFW window.");
         }
 
+        glfwSetCursorPosCallback(glfwWindow, MouseListener::mousePosCallback);
+        glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);
+        glfwSetScrollCallback(glfwWindow, MouseListener::mouseScrollCallback);
+        glfwSetKeyCallback(glfwWindow, KeyListener::keyCallback);
+        glfwSetWindowSizeCallback(glfwWindow, (w, newWidth, newHeight) -> {
+            Window.setWidth(newWidth);
+            Window.setHeight(newHeight);
+        });
+
         glfwMakeContextCurrent(glfwWindow);
         glfwSwapInterval(1);
 
@@ -88,11 +97,6 @@ public class Window {
         this.imGUILayer.initImGui();
 
         changeScene(0);
-
-        glfwSetCursorPosCallback(glfwWindow, MouseListener::mousePosCallback);
-        glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);
-        glfwSetScrollCallback(glfwWindow, MouseListener::mouseScrollCallback);
-        glfwSetKeyCallback(glfwWindow, KeyListener::keyCallback);
     }
     public void loop() {
         float beginTime = (float) glfwGetTime();
@@ -122,5 +126,13 @@ public class Window {
 
     public static int getHeight() {
         return get().height;
+    }
+
+    public static void setWidth(int width) {
+        get().width = width;
+    }
+
+    public static void setHeight(int height) {
+        get().height = height;
     }
 }
