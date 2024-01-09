@@ -14,6 +14,7 @@ public class Window {
     private static Window window = null;
     private long glfwWindow;
     private static Scene currentScene;
+    private ImGUILayer imGUILayer;
 
     private Window() {
         this.width = 1920;
@@ -83,6 +84,9 @@ public class Window {
         glEnable(GL_BLEND);
         glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 
+        this.imGUILayer = new ImGUILayer(glfwWindow);
+        this.imGUILayer.initGlfw();
+
         changeScene(0);
 
         glfwSetCursorPosCallback(glfwWindow, MouseListener::mousePosCallback);
@@ -102,12 +106,21 @@ public class Window {
             if (dt >= 0) {
                 currentScene.update(dt);
             }
-
+            this.imGUILayer.update(dt);
             glfwSwapBuffers(glfwWindow);
 
             endTime = (float) glfwGetTime();
             dt = endTime - beginTime;
             beginTime = endTime;
         }
+    }
+
+    public static int getWidth() {
+        return get().width;
+    }
+
+
+    public static int getHeight() {
+        return get().height;
     }
 }
