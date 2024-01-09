@@ -85,7 +85,7 @@ public class Window {
         glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 
         this.imGUILayer = new ImGUILayer(glfwWindow);
-        this.imGUILayer.initGlfw();
+        this.imGUILayer.initImGui();
 
         changeScene(0);
 

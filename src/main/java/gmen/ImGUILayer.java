@@ -40,73 +40,9 @@ public class ImGUILayer {
         this.windowPtr = glfwWindow;
     }
 
-    public void initGlfw() {
-        // Setup an error callback. The default implementation
-        // will print the error message in System.err.
-        GLFWErrorCallback.createPrint(System.err).set();
-
-        // Initialize GLFW. Most GLFW functions will not work before doing this.
-        if (!glfwInit()) {
-            throw new IllegalStateException("Unable to initialize GLFW");
-        }
-
-        // Configure GLFW
-        glfwDefaultWindowHints(); // optional, the current window hints are already the default
-        glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE); // the window will stay hidden after creation
-
-        decideGlGlslVersions();
-
-        windowPtr = glfwCreateWindow(1280, 768, "Dear ImGui + GLFW + LWJGL Example", NULL, NULL);
-
-        if (windowPtr == NULL) {
-            throw new RuntimeException("Failed to create the GLFW window");
-        }
-
-        // Get the thread stack and push a new frame
-        try (MemoryStack stack = stackPush()) {
-            final IntBuffer pWidth = stack.mallocInt(1); // int*
-            final IntBuffer pHeight = stack.mallocInt(1); // int*
-
-            // Get the window size passed to glfwCreateWindow
-            glfwGetWindowSize(windowPtr, pWidth, pHeight);
-
-            // Get the resolution of the primary monitor
-            final GLFWVidMode vidmode = Objects.requireNonNull(glfwGetVideoMode(glfwGetPrimaryMonitor()));
-
-            // Center the window
-            glfwSetWindowPos(windowPtr, (vidmode.width() - pWidth.get(0)) / 2, (vidmode.height() - pHeight.get(0)) / 2);
-        } // the stack frame is popped automatically
-
-        glfwMakeContextCurrent(windowPtr); // Make the OpenGL context current
-        glfwSwapInterval(GLFW_TRUE); // Enable v-sync
-        glfwShowWindow(windowPtr); // Make the window visible
-
-        // IMPORTANT!!
-        // This line is critical for LWJGL's interoperation with GLFW's
-        // OpenGL context, or any context that is managed externally.
-        // LWJGL detects the context that is current in the current thread,
-        // creates the GLCapabilities instance and makes the OpenGL
-        // bindings available for use.
-        GL.createCapabilities();
-    }
-
-    private void decideGlGlslVersions() {
-        final boolean isMac = System.getProperty("os.name").toLowerCase().contains("mac");
-        if (isMac) {
-            glslVersion = "#version 150";
-            glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-            glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
-            glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);  // 3.2+ only
-            glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);            // Required on Mac
-        } else {
-            glslVersion = "#version 130";
-            glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-            glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
-        }
-    }
 
     // Initialize Dear ImGui.
-    private void initImGui() {
+    public void initImGui() {
         // IMPORTANT!!
         // This line is critical for Dear ImGui to work.
         ImGui.createContext();
@@ -266,19 +202,6 @@ public class ImGUILayer {
         imGuiGl3.init("#version 330 core");
     }
 
-    private void loop() {
-        double time = 0; // to track our frame delta value
-
-        // Run the rendering loop until the user has attempted to close the window
-        while (!glfwWindowShouldClose(windowPtr)) {
-            // Count frame delta value
-            final double currentTime = glfwGetTime();
-            final double deltaTime = (time > 0) ? (currentTime - time) : 1f / 60f;
-            time = currentTime;
-
-            update((float) deltaTime);
-        }
-    }
 
 
     private void startFrame(final float deltaTime) {
@@ -312,10 +235,7 @@ public class ImGUILayer {
     }
 
     // If you want to clean a room after yourself - do it by yourself
-    private void destroyImGui() {
-        imGuiGl3.dispose();
-        ImGui.destroyContext();
-    }
+
 
     public void update(float dt) {
         startFrame( dt);
@@ -324,5 +244,10 @@ public class ImGUILayer {
         ImGui.render();
 
         endFrame();
+    }
+
+    private void destroyImGui() {
+        imGuiGl3.dispose();
+        ImGui.destroyContext();
     }
 }
