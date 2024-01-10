@@ -4,6 +4,7 @@ package gmen;
 import components.Sprite;
 import components.SpriteRenderer;
 import components.Spritesheet;
+import imgui.ImGui;
 import org.joml.Vector2f;
 import renderer.Texture;
 import util.AssetPool;
@@ -54,5 +55,12 @@ public class LevelEditorScene extends Scene {
             go.update(dt);
         }
         this.renderer.render();
+    }
+
+    @Override
+    public void imGUI() {
+        ImGui.begin("Test");
+        ImGui.text("Text");
+        ImGui.end();
     }
 }

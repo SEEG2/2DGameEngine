@@ -65,6 +65,12 @@ public class GameObject {
         c.gameObject = this;
     }
 
+    public void imGUI() {
+        for (Component c : components) {
+            c.imGUI();
+        }
+    }
+
     public void update(float dt) {
         for (int i = 0; i < components.size(); i++) {
             components.get(i).update(dt);
