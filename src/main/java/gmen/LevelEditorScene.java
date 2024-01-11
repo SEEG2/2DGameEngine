@@ -43,6 +43,7 @@ public class LevelEditorScene extends Scene {
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .create();
+        System.out.println(gson.toJson(obj2));
     }
 
     public void loadResources() {
