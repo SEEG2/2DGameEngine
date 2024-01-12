@@ -15,6 +15,7 @@ import util.AssetPool;
 public class LevelEditorScene extends Scene {
 
     private GameObject obj1;
+    private Spritesheet sprites;
     public LevelEditorScene() {}
     //Spritesheet sprites;
     @Override
@@ -22,7 +23,12 @@ public class LevelEditorScene extends Scene {
         loadResources();
 
         this.camera = new Camera(new Vector2f());
-        //sprites = AssetPool.getSpritesheet("assets/images/spritesheet.png");
+
+        if (levelIsLoaded) {
+            return;
+        }
+
+        sprites = AssetPool.getSpritesheet("assets/images/spritesheet.png");
         obj1 = new GameObject("Object 1", new Transform(new Vector2f(100,100), new Vector2f(256,256)), 1);
         SpriteRenderer obj1SpriteRenderer = new SpriteRenderer();
         obj1SpriteRenderer.setColor(new Vector4f(1,0,0,1f));
@@ -40,16 +46,6 @@ public class LevelEditorScene extends Scene {
 
         this.activeGameObject = obj1;
 
-        Gson gson = new GsonBuilder()
-                .setPrettyPrinting()
-                .registerTypeAdapter(Component.class, new ComponentDeserializer())
-                .create();
-
-        String ser = gson.toJson(obj2);
-        gson.fromJson(ser, SpriteRenderer.class);
-        System.out.println(ser);
-        GameObject obj = gson.fromJson(ser, GameObject.class);
-        System.out.println(obj);
     }
 
     public void loadResources() {

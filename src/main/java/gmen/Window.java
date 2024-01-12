@@ -102,6 +102,8 @@ public class Window {
         float beginTime = (float) glfwGetTime();
         float endTime;
         float dt = -1.0f;
+        currentScene.load();
+
         while (!glfwWindowShouldClose(glfwWindow)) {
             glfwPollEvents();
             glClearColor(0.0f,0.5f,0.5f,1.0f);
@@ -117,6 +119,8 @@ public class Window {
             dt = endTime - beginTime;
             beginTime = endTime;
         }
+
+        currentScene.saveExit();
     }
 
     public static int getWidth() {
