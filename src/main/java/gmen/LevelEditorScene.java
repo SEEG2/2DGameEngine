@@ -48,6 +48,8 @@ public class LevelEditorScene extends Scene {
         String ser = gson.toJson(obj2);
         gson.fromJson(ser, SpriteRenderer.class);
         System.out.println(ser);
+        GameObject obj = gson.fromJson(ser, GameObject.class);
+        System.out.println(obj);
     }
 
     public void loadResources() {
