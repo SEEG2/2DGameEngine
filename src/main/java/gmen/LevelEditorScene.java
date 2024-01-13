@@ -61,18 +61,18 @@ public class LevelEditorScene extends Scene {
     private int pass = 0;
     @Override
     public void update(float dt) {
-//
-//        if (pass < 100) {
-//            obj1.transform.position.x += 2;
-//            obj1.transform.position.y += 2;
-//        } else if (pass == 200) {
-//            pass = 0;
-//        } else if (pass > 100) {
-//            obj1.transform.position.x -= 2;
-//            obj1.transform.position.y -= 2;
-//        }
-//        obj1.transform.scale.x = pass;
-//        pass++;
+
+        if (pass < 100) {
+            obj1.transform.position.x += 2;
+            obj1.transform.position.y += 2;
+        } else if (pass == 200) {
+            pass = 0;
+        } else if (pass > 100) {
+            obj1.transform.position.x -= 2;
+            obj1.transform.position.y -= 2;
+        }
+        obj1.transform.scale.x = pass;
+        pass++;
 
         for (GameObject go : this.gameObjects) {
             go.update(dt);
