@@ -6,9 +6,9 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
-            "x": 0.21602857,
-            "y": 0.46478873,
-            "z": 0.41223374,
+            "x": 0.63062084,
+            "y": 0.64489746,
+            "z": 0.6837121,
             "w": 1.0
           },
           "sprite": {
@@ -32,215 +32,27 @@
             ]
           }
         }
-      }
-    ],
-    "transform": {
-      "position": {
-        "x": 214.0,
-        "y": 214.0
       },
-      "scale": {
-        "x": 143.0,
-        "y": 256.0
-      }
-    },
-    "zIndex": 1
-  },
-  {
-    "name": "Object 1",
-    "components": [
       {
-        "type": "components.SpriteRenderer",
+        "type": "components.Rigidbody",
         "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "texture": {
-              "filepath": "assets/images/default.png",
-              "texID": 2,
-              "width": 120,
-              "height": 120
-            },
-            "texCoords": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "transform": {
-      "position": {
-        "x": 120.0,
-        "y": 110.0
-      },
-      "scale": {
-        "x": 256.0,
-        "y": 256.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "name": "Object 1",
-    "components": [
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 0.0,
-            "z": 0.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "texCoords": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "transform": {
-      "position": {
-        "x": 138.0,
-        "y": 138.0
-      },
-      "scale": {
-        "x": 181.0,
-        "y": 256.0
-      }
-    },
-    "zIndex": 1
-  },
-  {
-    "name": "Object 1",
-    "components": [
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "texture": {
-              "filepath": "assets/images/default.png",
-              "texID": 2,
-              "width": 120,
-              "height": 120
-            },
-            "texCoords": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "transform": {
-      "position": {
-        "x": 120.0,
-        "y": 110.0
-      },
-      "scale": {
-        "x": 256.0,
-        "y": 256.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "name": "Object 1",
-    "components": [
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
+          "colliderType": 0,
+          "friction": 0.0,
+          "velocity": {
             "x": 0.0,
-            "y": 0.7887325,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "texCoords": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
+            "y": 0.0,
+            "z": 0.0
           }
         }
       }
     ],
     "transform": {
       "position": {
-        "x": 194.0,
-        "y": 194.0
+        "x": 204.0,
+        "y": 204.0
       },
       "scale": {
-        "x": 153.0,
+        "x": 148.0,
         "y": 256.0
       }
     },

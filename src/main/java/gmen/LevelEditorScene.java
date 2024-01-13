@@ -3,6 +3,7 @@ package gmen;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import components.Rigidbody;
 import components.Sprite;
 import components.SpriteRenderer;
 import components.Spritesheet;
@@ -25,6 +26,7 @@ public class LevelEditorScene extends Scene {
         this.camera = new Camera(new Vector2f());
 
         if (levelIsLoaded) {
+            this.activeGameObject = gameObjects.get(0);
             return;
         }
 
@@ -33,6 +35,7 @@ public class LevelEditorScene extends Scene {
         SpriteRenderer obj1SpriteRenderer = new SpriteRenderer();
         obj1SpriteRenderer.setColor(new Vector4f(1,0,0,1f));
         obj1.addComponent(obj1SpriteRenderer);
+        obj1.addComponent(new Rigidbody());
         this.addGameObjectToScene(obj1);
 
         GameObject obj2 = new GameObject("Object 1", new Transform(new Vector2f(120,110), new Vector2f(256,256)));
@@ -57,17 +60,18 @@ public class LevelEditorScene extends Scene {
     private int pass = 0;
     @Override
     public void update(float dt) {
-        if (pass < 100) {
-            obj1.transform.position.x += 2;
-            obj1.transform.position.y += 2;
-        } else if (pass == 200) {
-            pass = 0;
-        } else if (pass > 100) {
-            obj1.transform.position.x -= 2;
-            obj1.transform.position.y -= 2;
-        }
-        obj1.transform.scale.x = pass;
-        pass++;
+//
+//        if (pass < 100) {
+//            obj1.transform.position.x += 2;
+//            obj1.transform.position.y += 2;
+//        } else if (pass == 200) {
+//            pass = 0;
+//        } else if (pass > 100) {
+//            obj1.transform.position.x -= 2;
+//            obj1.transform.position.y -= 2;
+//        }
+//        obj1.transform.scale.x = pass;
+//        pass++;
 
         for (GameObject go : this.gameObjects) {
             go.update(dt);
@@ -77,8 +81,5 @@ public class LevelEditorScene extends Scene {
 
     @Override
     public void imGUI() {
-        ImGui.begin("Test");
-        ImGui.text("Text");
-        ImGui.end();
     }
 }
