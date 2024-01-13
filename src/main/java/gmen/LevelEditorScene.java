@@ -31,6 +31,7 @@ public class LevelEditorScene extends Scene {
         }
 
         sprites = AssetPool.getSpritesheet("assets/images/spritesheet.png");
+
         obj1 = new GameObject("Object 1", new Transform(new Vector2f(100,100), new Vector2f(256,256)), 1);
         SpriteRenderer obj1SpriteRenderer = new SpriteRenderer();
         obj1SpriteRenderer.setColor(new Vector4f(1,0,0,1f));
@@ -53,8 +54,7 @@ public class LevelEditorScene extends Scene {
 
     public void loadResources() {
         AssetPool.getShader("assets/shaders/default.glsl");
-
-       AssetPool.addSpritesheet("assets/images/spritesheet.png", new Spritesheet(AssetPool.getTexture("assets/images/spritesheet.png"), 16, 16, 26, 0));
+        //AssetPool.addSpritesheet("assets/images/spritesheet.png", new Spritesheet(AssetPool.getTexture("assets/images/spritesheet.png"), 16, 16, 26, 0));
     }
 
     private int pass = 0;

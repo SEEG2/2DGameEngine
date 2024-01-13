@@ -6,65 +6,6 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
-            "x": 0.63062084,
-            "y": 0.64489746,
-            "z": 0.6837121,
-            "w": 1.0
-          },
-          "sprite": {
-            "texCoords": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          }
-        }
-      },
-      {
-        "type": "components.Rigidbody",
-        "properties": {
-          "colliderType": 0,
-          "friction": 0.0,
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        }
-      }
-    ],
-    "transform": {
-      "position": {
-        "x": 204.0,
-        "y": 204.0
-      },
-      "scale": {
-        "x": 148.0,
-        "y": 256.0
-      }
-    },
-    "zIndex": 1
-  },
-  {
-    "name": "Object 1",
-    "components": [
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
