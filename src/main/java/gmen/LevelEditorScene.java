@@ -54,7 +54,7 @@ public class LevelEditorScene extends Scene {
     public void loadResources() {
         AssetPool.getShader("assets/shaders/default.glsl");
 
-       //AssetPool.addSpritesheet("assets/images/spritesheet.png", new Spritesheet(AssetPool.getTexture("assets/images/spritesheet.png"), 16, 16, 26, 0));
+       AssetPool.addSpritesheet("assets/images/spritesheet.png", new Spritesheet(AssetPool.getTexture("assets/images/spritesheet.png"), 16, 16, 26, 0));
     }
 
     private int pass = 0;
