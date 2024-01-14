@@ -18,8 +18,8 @@ public class Spritesheet {
         int currentY = texture.getHeight() - spriteHeight;
         for (int i = 0; i < numSprites; i++) {
             float topY = (currentY + spriteHeight) /  (float) texture.getHeight();
-            float rightX =(currentX + spriteWidth) /  (float) texture.getWidth();
-            float leftX = currentX / (float) texture.getWidth();
+            float rightX = currentX / (float) texture.getWidth();
+            float leftX = (currentX + spriteWidth) /  (float) texture.getWidth();
             float bottomY = currentY / (float) texture.getHeight();
 
             Vector2f[] texCoords = {
