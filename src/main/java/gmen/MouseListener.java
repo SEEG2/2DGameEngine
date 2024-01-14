@@ -1,5 +1,8 @@
 package gmen;
 
+import org.joml.Vector2f;
+import org.joml.Vector4f;
+
 import static org.lwjgl.glfw.GLFW.GLFW_PRESS;
 import static org.lwjgl.glfw.GLFW.GLFW_RELEASE;
 
@@ -95,5 +98,22 @@ public class MouseListener {
     }
     public static boolean isDragging() {
         return get().isDragging;
+    }
+    public static float getOrthoX() {
+        float currentX = getX();
+        currentX = (currentX / (float) Window.getWidth()) * 2 -1;
+        Vector4f tmp = new Vector4f(currentX, 0, 0, 1);
+        tmp.mul(Window.getScene().camera().getInverseProjection().mul(Window.getScene().camera().getInverseView()));
+        currentX = tmp.x;
+        return currentX;
+    }
+
+    public static float getOrthoY() {
+        float currentY = getX();
+        currentY = (currentY / (float) Window.getWidth()) * 2 -1;
+        Vector4f tmp = new Vector4f(0, currentY, 0, 1);
+        tmp.mul(Window.getScene().camera().getInverseProjection().mul(Window.getScene().camera().getInverseView()));
+        currentY = tmp.y;
+        return currentY;
     }
 }

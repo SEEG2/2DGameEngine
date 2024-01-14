@@ -102,9 +102,13 @@ public class LevelEditorScene extends Scene {
             int id = sprite.getTexId();
             Vector2f[] texCoords = sprite.getTexCoords();
 
+            ImGui.pushID(i);
+
             if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[0].x, texCoords[0].y, texCoords[2].x, texCoords[2].y)) {
-                System.out.println("clicked");
+                System.out.println("clicked" + i);
             }
+
+            ImGui.popID();
 
             ImVec2 lastButtonPos = new ImVec2();
             ImGui.getItemRectMax(lastButtonPos);
