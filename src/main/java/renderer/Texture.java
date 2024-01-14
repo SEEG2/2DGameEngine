@@ -48,7 +48,7 @@ public class Texture {
                 assert false: "Unknown number of channels (" + filepath + ").";
             }
         } else {
-            image = stbi_load("assets/images/default.png", width, height, channels, 0);
+            image = stbi_load("assets/images/default/images/default.png", width, height, channels, 0);
             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA , width.get(0), height.get(0), 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
             //assert false: "Couldn't load texture (" + filepath + ").";
         }
@@ -70,4 +70,6 @@ public class Texture {
     public int getHeight() {
         return this.height;
     }
+
+    public int getTexID() {return this.texID;}
 }
