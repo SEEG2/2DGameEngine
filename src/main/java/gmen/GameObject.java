@@ -1,5 +1,7 @@
 package gmen;
 
+import components.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +10,8 @@ public class GameObject {
     private List<Component> components;
     public  Transform transform;
     private int zIndex;
+    private static int ID_COUNTER = 0;
+    private int uID = -1;
 
     public GameObject(String name) {
         this.name = name;
@@ -21,12 +25,17 @@ public class GameObject {
         this.components = new ArrayList<>();
         this.transform = new Transform();
         this.zIndex = zIndex;
+
+        this.uID = ID_COUNTER++;
     }
 
     public GameObject(String name, Transform transform) {
         this.name = name;
         this.components = new ArrayList<>();
         this.transform = transform;
+
+        this.uID = ID_COUNTER++;
+
     }
 
     public GameObject(String name, Transform transform, int zIndex) {
@@ -34,6 +43,9 @@ public class GameObject {
         this.components = new ArrayList<>();
         this.transform = transform;
         this.zIndex = zIndex;
+
+        this.uID = ID_COUNTER++;
+
     }
 
     public <T extends Component> T getComponent(Class<T> componentClass) {
@@ -61,6 +73,7 @@ public class GameObject {
     }
 
     public void addComponent(Component c) {
+        c.generateID();
         this.components.add(c);
         c.gameObject = this;
     }
@@ -85,5 +98,17 @@ public class GameObject {
 
     public int getzIndex() {
         return this.zIndex;
+    }
+
+    public int getuID() {
+        return this.uID;
+    }
+
+    public static void init(int maxID) {
+        ID_COUNTER = maxID;
+    }
+
+    public List<Component> getAllComponents() {
+        return this.components;
     }
 }

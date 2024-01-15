@@ -1,8 +1,12 @@
-package gmen;
+package scenes;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import components.SpriteRenderer;
+import components.Component;
+import components.ComponentDeserializer;
+import gmen.Camera;
+import gmen.GameObject;
+import gmen.GameObjectDeserializer;
 import imgui.ImGui;
 import renderer.Renderer;
 
@@ -97,11 +101,31 @@ public abstract class Scene {
         }
 
         if (!inFile.isEmpty()) {
+            int maxGoID = -1;
+            int maxCompID = -1;
+
             GameObject[] objects = gson.fromJson(inFile, GameObject[].class);
 
             for (int i = 0; i < objects.length; i++) {
                 addGameObjectToScene(objects[i]);
+
+                for (Component c : objects[i].getAllComponents()) {
+                    if (c.getuID() > maxCompID) {
+                        maxCompID = c.getuID();
+                    }
+
+                    if (objects[i].getuID() > maxGoID) {
+                        maxGoID = objects[i].getuID();
+                    }
+                }
             }
+
+            maxGoID++;
+            maxCompID++;
+
+
+            GameObject.init(maxGoID);
+            Component.init(maxCompID);
 
             this.levelIsLoaded = true;
         }

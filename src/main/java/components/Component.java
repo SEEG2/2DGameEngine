@@ -1,5 +1,6 @@
-package gmen;
+package components;
 
+import gmen.GameObject;
 import imgui.ImGui;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
@@ -9,6 +10,8 @@ import java.lang.reflect.Modifier;
 
 public abstract class Component {
     public transient GameObject gameObject = null;
+    private static int ID_COUNTER = 0;
+    private int uID =-1;
     public void start() {}
     public void update(float dt) {
 
@@ -76,5 +79,19 @@ public abstract class Component {
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
+    }
+
+    public void generateID() {
+        if (this.uID == -1) {
+            this.uID = ID_COUNTER++;
+        }
+    }
+
+    public int getuID() {
+        return this.uID;
+    }
+
+    public static void init(int maxID) {
+        ID_COUNTER = maxID;
     }
 }

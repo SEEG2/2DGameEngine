@@ -6,9 +6,9 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
-            "x": 0.28169012,
-            "y": 0.18647091,
-            "z": 0.18647091,
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0,
             "w": 1.0
           },
           "sprite": {
@@ -32,19 +32,21 @@
                 "y": 1.0
               }
             ]
-          }
+          },
+          "uID": 0
         }
       },
       {
         "type": "components.Rigidbody",
         "properties": {
           "colliderType": 0,
-          "friction": -15.2,
+          "friction": 0.8,
           "velocity": {
             "x": 0.0,
             "y": 0.5,
             "z": 0.0
-          }
+          },
+          "uID": 1
         }
       }
     ],
@@ -58,7 +60,8 @@
         "y": 256.0
       }
     },
-    "zIndex": 1
+    "zIndex": 1,
+    "uID": 0
   },
   {
     "name": "Object 1",
@@ -76,7 +79,7 @@
             "width": 0.0,
             "height": 0.0,
             "texture": {
-              "filepath": "assets/images/default.png",
+              "filepath": "assets/images/default/images/default.png",
               "texID": 3,
               "width": 120,
               "height": 120
@@ -99,7 +102,8 @@
                 "y": 1.0
               }
             ]
-          }
+          },
+          "uID": 2
         }
       }
     ],
@@ -113,6 +117,7 @@
         "y": 256.0
       }
     },
-    "zIndex": 0
+    "zIndex": 0,
+    "uID": 1
   }
 ]

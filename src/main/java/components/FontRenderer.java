@@ -1,7 +1,5 @@
 package components;
 
-import gmen.Component;
-
 public class FontRenderer extends Component {
 
     @Override

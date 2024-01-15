@@ -1,13 +1,10 @@
 package components;
 
-import gmen.Component;
 import gmen.Transform;
 import imgui.ImGui;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
 import renderer.Texture;
-
-import java.awt.*;
 
 
 public class SpriteRenderer extends Component {

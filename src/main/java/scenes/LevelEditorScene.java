@@ -1,24 +1,28 @@
-package gmen;
+package scenes;
 
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import components.Rigidbody;
-import components.Sprite;
-import components.SpriteRenderer;
-import components.Spritesheet;
+import components.*;
+import gmen.Camera;
+import gmen.GameObject;
+import gmen.Prefabs;
+import gmen.Transform;
 import imgui.ImGui;
 import imgui.ImVec2;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
-import renderer.Texture;
 import util.AssetPool;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class LevelEditorScene extends Scene {
 
     private GameObject obj1;
     private Spritesheet sprites;
     public LevelEditorScene() {}
+    MouseControl mouseControl = new MouseControl();
+
     //Spritesheet sprites;
     @Override
     public void init() {
@@ -61,6 +65,7 @@ public class LevelEditorScene extends Scene {
     private int pass = 0;
     @Override
     public void update(float dt) {
+        mouseControl.update(dt);
 
 //        if (pass < 100) {
 //            obj1.transform.position.x += 2;
@@ -100,12 +105,16 @@ public class LevelEditorScene extends Scene {
             float spriteWidth = sprite.getWidth();
             float spriteHeight = sprite.getHeight();
             int id = sprite.getTexId();
+
+
             Vector2f[] texCoords = sprite.getTexCoords();
+
 
             ImGui.pushID(i);
 
             if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[0].x, texCoords[0].y, texCoords[2].x, texCoords[2].y)) {
-                System.out.println("clicked" + i);
+                GameObject gameObject = Prefabs.generateSpriteObject(sprite, spriteWidth, spriteHeight);
+                mouseControl.pickupObject(gameObject);
             }
 
             ImGui.popID();
@@ -114,7 +123,7 @@ public class LevelEditorScene extends Scene {
             ImGui.getItemRectMax(lastButtonPos);
 
             float lastButtonX2 = lastButtonPos.x;
-            float nextButtonX2 = lastButtonX2 + itemSpacing.x +spriteWidth;
+            float nextButtonX2 = lastButtonX2 + itemSpacing.x + spriteWidth;
 
             if (i + 1 < sprites.size() && nextButtonX2 < windowX2) {
                 ImGui.sameLine();

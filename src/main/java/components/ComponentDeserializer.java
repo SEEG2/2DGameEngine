@@ -1,7 +1,7 @@
-package gmen;
+package components;
 
 import com.google.gson.*;
-import org.lwjgl.system.CallbackI;
+import components.Component;
 
 import java.lang.reflect.Type;
 
