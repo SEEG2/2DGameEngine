@@ -32,7 +32,7 @@ public class LevelEditorScene extends Scene {
 
         this.camera = new Camera(new Vector2f());
         sprites = AssetPool.getSpritesheet("assets/images/default/spritesheets/spritesheet.png");
-        DebugDraw.addLine2D(new Vector2f(0,0), new Vector2f(800, 800), new Vector3f(1, 0, 0), 120);
+        DebugDraw.addLine2D(new Vector2f(0,0), new Vector2f(800, 800), new Vector3f(1, 0, 0), 60);
 
         if (levelIsLoaded) {
             this.activeGameObject = gameObjects.get(0);

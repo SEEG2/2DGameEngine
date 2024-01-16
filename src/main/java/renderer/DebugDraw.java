@@ -4,12 +4,9 @@ import gmen.Window;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 import util.AssetPool;
-
-import javax.sound.sampled.Line;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 import static org.lwjgl.opengl.GL15.*;
 import static org.lwjgl.opengl.GL20.*;
 import static org.lwjgl.opengl.GL30.glBindVertexArray;
@@ -38,13 +35,13 @@ public class DebugDraw {
         glBufferData(GL_ARRAY_BUFFER, vertexArray.length * Float.BYTES, GL_DYNAMIC_DRAW);
 
         // enabling vertex array attributes
-        glVertexAttribPointer(0, 3, GL_FLAT, false, 6 * Float.BYTES, 0);
+        glVertexAttribPointer(0, 3, GL_FLOAT, false, 6 * Float.BYTES, 0);
         glEnableVertexAttribArray(0);
 
-        glVertexAttribPointer(1, 3, GL_FLAT, false, 6 * Float.BYTES, 3 * Float.BYTES);
+        glVertexAttribPointer(1, 3, GL_FLOAT, false, 6 * Float.BYTES, 3 * Float.BYTES);
         glEnableVertexAttribArray(1);
 
-        glLineWidth(4.0f);
+        glLineWidth(2.0f);
     }
 
     public static void beginFrame(float dt) {
@@ -54,6 +51,7 @@ public class DebugDraw {
         }
 
         // removing dead lines
+
         for (int i = 0; i < lines.size(); i++) {
             if (lines.get(i).beginFrame(dt) < 0) {
                 lines.remove(i);
