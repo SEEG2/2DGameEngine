@@ -9,7 +9,9 @@ import gmen.Transform;
 import imgui.ImGui;
 import imgui.ImVec2;
 import org.joml.Vector2f;
+import org.joml.Vector3f;
 import org.joml.Vector4f;
+import renderer.DebugDraw;
 import util.AssetPool;
 
 import java.util.Arrays;
@@ -30,6 +32,7 @@ public class LevelEditorScene extends Scene {
 
         this.camera = new Camera(new Vector2f());
         sprites = AssetPool.getSpritesheet("assets/images/default/spritesheets/spritesheet.png");
+        DebugDraw.addLine2D(new Vector2f(0,0), new Vector2f(800, 800), new Vector3f(1, 0, 0), 120);
 
         if (levelIsLoaded) {
             this.activeGameObject = gameObjects.get(0);
@@ -58,6 +61,7 @@ public class LevelEditorScene extends Scene {
 
     public void loadResources() {
         AssetPool.getShader("assets/shaders/default.glsl");
+        AssetPool.getShader("assets/shaders/line2D.glsl");
         AssetPool.addSpritesheet("assets/images/default/spritesheets/spritesheet.png", new Spritesheet(AssetPool.getTexture("assets/images/default/spritesheets/spritesheet.png"), 120, 120, 4, 0));
         AssetPool.getTexture("assets/images/default/images/default.png");
     }
