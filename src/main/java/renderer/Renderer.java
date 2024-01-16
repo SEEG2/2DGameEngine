@@ -2,10 +2,13 @@ package renderer;
 
 import components.SpriteRenderer;
 import gmen.GameObject;
+import org.joml.Vector3f;
+import org.joml.Vector4f;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Vector;
 
 public class Renderer {
     private  final int MAX_BATCH_SIZE = 1000;
@@ -21,6 +24,8 @@ public class Renderer {
             add(spr);
         }
     }
+
+
 
     private void add(SpriteRenderer sprite) {
         boolean added = false;
