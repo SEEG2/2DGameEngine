@@ -19,6 +19,4 @@ public class Color {
     public static final Vector3f PURPLE = new Vector3f(0.6f,0.2f,1);
     public static final Vector3f CYAN = new Vector3f(0,0.75f,0.9f);
     public static final Vector3f BROWN = new Vector3f(0.6f,0.3f,0);
-
-
 }

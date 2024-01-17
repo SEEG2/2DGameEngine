@@ -2,21 +2,13 @@ package scenes;
 
 
 import components.*;
-import gmen.Camera;
-import gmen.GameObject;
-import gmen.Prefabs;
-import gmen.Transform;
+import gmen.*;
 import imgui.ImGui;
 import imgui.ImVec2;
 import org.joml.Vector2f;
-import org.joml.Vector3f;
 import org.joml.Vector4f;
 import renderer.DebugDraw;
 import util.AssetPool;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 import static Constants.Color.ORANGE;
 
@@ -25,11 +17,15 @@ public class LevelEditorScene extends Scene {
     private GameObject obj1;
     private Spritesheet sprites;
     public LevelEditorScene() {}
-    MouseControl mouseControl = new MouseControl();
+    GameObject levelEditorComponents = new GameObject("Level Editor", new Transform(new Vector2f()), 0);
 
     //Spritesheet sprites;
     @Override
     public void init() {
+        levelEditorComponents.addComponent(new MouseControl());
+        levelEditorComponents.addComponent(new GridLines());
+
+
         loadResources();
 
         this.camera = new Camera(new Vector2f());
@@ -68,22 +64,9 @@ public class LevelEditorScene extends Scene {
         AssetPool.getTexture("assets/images/default/images/default.png");
     }
 
-    private int pass = 0;
     @Override
     public void update(float dt) {
-        mouseControl.update(dt);
-
-//        if (pass < 100) {
-//            obj1.transform.position.x += 2;
-//            obj1.transform.position.y += 2;
-//        } else if (pass == 200) {
-//            pass = 0;
-//        } else if (pass > 100) {
-//            obj1.transform.position.x -= 2;
-//            obj1.transform.position.y -= 2;
-//        }
-//        obj1.transform.scale.x = pass;
-//        pass++;
+        levelEditorComponents.update(dt);
 
         for (GameObject go : this.gameObjects) {
             go.update(dt);
@@ -108,19 +91,18 @@ public class LevelEditorScene extends Scene {
 
         for (int i = 0; i < sprites.size(); i++) {
             Sprite sprite = sprites.getSprite(i);
-            float spriteWidth = sprite.getWidth();
-            float spriteHeight = sprite.getHeight();
+            float spriteWidth = sprite.getWidth() / 4;
+            float spriteHeight = sprite.getHeight() / 4;
             int id = sprite.getTexId();
-
 
             Vector2f[] texCoords = sprite.getTexCoords();
 
 
             ImGui.pushID(i);
 
-            if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[0].x, texCoords[0].y, texCoords[2].x, texCoords[2].y)) {
+            if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
                 GameObject gameObject = Prefabs.generateSpriteObject(sprite, spriteWidth, spriteHeight);
-                mouseControl.pickupObject(gameObject);
+                levelEditorComponents.getComponent(MouseControl.class).pickupObject(gameObject);
             }
 
             ImGui.popID();
