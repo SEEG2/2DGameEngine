@@ -8,6 +8,7 @@ public class Line2D {
     private Vector2f from;
     private Vector2f to;
     private Vector3f color;
+    private boolean useRealTime;
     private float lifetime;
 
     public Line2D(Vector2f from, Vector2f to, Vector3f color, float lifetime) {
@@ -15,10 +16,23 @@ public class Line2D {
         this.to = to;
         this.color = color;
         this.lifetime = lifetime;
+        this.useRealTime = false;
+    }
+
+    public Line2D(Vector2f from, Vector2f to, Vector3f color, float lifetime, boolean useRealTime) {
+        this.from = from;
+        this.to = to;
+        this.color = color;
+        this.lifetime = lifetime;
+        this.useRealTime = useRealTime;
     }
 
     public float beginFrame(float dt) {
-        this.lifetime -= dt;
+        if (this.useRealTime) {
+            lifetime -= dt;
+        } else {
+            lifetime--;
+        }
         return this.lifetime;
     }
 

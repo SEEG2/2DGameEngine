@@ -42,12 +42,11 @@ public class LevelEditorScene extends Scene {
         AssetPool.addSpritesheet("assets/images/default/spritesheets/spritesheet.png", new Spritesheet(AssetPool.getTexture("assets/images/default/spritesheets/spritesheet.png"), 120, 120, 4, 0));
         AssetPool.getTexture("assets/images/default/images/default.png");
     }
-
+    boolean first = true;
     @Override
     public void update(float dt) {
         levelEditorComponents.update(dt);
-        DebugDraw.addCircle2D(new Vector2f(200,400), 64, 20,CYAN, 100);
-        DebugDraw.addLine2D(new Vector2f(0, 0), new Vector2f(500, 600), GREEN, 1);
+        DebugDraw.addLine2D(new Vector2f(0, 0), new Vector2f(500, 600), GREEN, 1000, false);
         for (GameObject go : this.gameObjects) {
             go.update(dt);
         }

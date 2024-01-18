@@ -1,87 +1,23 @@
 [
   {
-    "name": "Object 1",
+    "name": "GENERATED_SPRITE_OBJECT",
     "components": [
       {
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
-            "x": 1.0,
+            "x": 0.0,
             "y": 0.0,
             "z": 0.0,
             "w": 1.0
           },
           "sprite": {
-            "width": 0.0,
-            "height": 0.0,
-            "texCoords": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "uID": 0
-        }
-      },
-      {
-        "type": "components.Rigidbody",
-        "properties": {
-          "colliderType": 0,
-          "friction": 0.8,
-          "velocity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "uID": 1
-        }
-      }
-    ],
-    "transform": {
-      "position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "scale": {
-        "x": 256.0,
-        "y": 256.0
-      }
-    },
-    "zIndex": 1,
-    "uID": 0
-  },
-  {
-    "name": "Object 1",
-    "components": [
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 0.0,
-            "height": 0.0,
+            "width": 120.0,
+            "height": 120.0,
             "texture": {
-              "filepath": "assets/images/default/images/default.png",
-              "texID": 3,
-              "width": 120,
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "texID": 2,
+              "width": 480,
               "height": 120
             },
             "texCoords": [
@@ -94,11 +30,11 @@
                 "y": 0.0
               },
               {
-                "x": 0.0,
+                "x": 0.75,
                 "y": 0.0
               },
               {
-                "x": 0.0,
+                "x": 0.75,
                 "y": 1.0
               }
             ]
@@ -109,15 +45,813 @@
     ],
     "transform": {
       "position": {
-        "x": 120.0,
-        "y": 110.0
+        "x": 540.0,
+        "y": 450.0
       },
       "scale": {
-        "x": 256.0,
-        "y": 256.0
+        "x": 30.0,
+        "y": 30.0
       }
     },
     "zIndex": 0,
     "uID": 1
+  },
+  {
+    "name": "GENERATED_SPRITE_OBJECT",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "texID": 2,
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.75,
+                "y": 1.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 3
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 570.0,
+        "y": 450.0
+      },
+      "scale": {
+        "x": 30.0,
+        "y": 30.0
+      }
+    },
+    "zIndex": 0,
+    "uID": 2
+  },
+  {
+    "name": "GENERATED_SPRITE_OBJECT",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "texID": 2,
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 1.0,
+                "y": 1.0
+              },
+              {
+                "x": 1.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.75,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 4
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 600.0,
+        "y": 450.0
+      },
+      "scale": {
+        "x": 30.0,
+        "y": 30.0
+      }
+    },
+    "zIndex": 0,
+    "uID": 3
+  },
+  {
+    "name": "GENERATED_SPRITE_OBJECT",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "texID": 2,
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.75,
+                "y": 1.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 5
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 510.0,
+        "y": 450.0
+      },
+      "scale": {
+        "x": 30.0,
+        "y": 30.0
+      }
+    },
+    "zIndex": 0,
+    "uID": 4
+  },
+  {
+    "name": "GENERATED_SPRITE_OBJECT",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "texID": 2,
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 1.0,
+                "y": 1.0
+              },
+              {
+                "x": 1.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.75,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 6
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 540.0,
+        "y": 480.0
+      },
+      "scale": {
+        "x": 30.0,
+        "y": 30.0
+      }
+    },
+    "zIndex": 0,
+    "uID": 5
+  },
+  {
+    "name": "GENERATED_SPRITE_OBJECT",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "texID": 2,
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 1.0,
+                "y": 1.0
+              },
+              {
+                "x": 1.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.75,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 7
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 570.0,
+        "y": 480.0
+      },
+      "scale": {
+        "x": 30.0,
+        "y": 30.0
+      }
+    },
+    "zIndex": 0,
+    "uID": 6
+  },
+  {
+    "name": "GENERATED_SPRITE_OBJECT",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "texID": 2,
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.25,
+                "y": 1.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 8
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 510.0,
+        "y": 330.0
+      },
+      "scale": {
+        "x": 30.0,
+        "y": 30.0
+      }
+    },
+    "zIndex": 0,
+    "uID": 7
+  },
+  {
+    "name": "GENERATED_SPRITE_OBJECT",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "texID": 2,
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.75,
+                "y": 1.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 11
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 420.0,
+        "y": 390.0
+      },
+      "scale": {
+        "x": 30.0,
+        "y": 30.0
+      }
+    },
+    "zIndex": 0,
+    "uID": 8
+  },
+  {
+    "name": "GENERATED_SPRITE_OBJECT",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "texID": 2,
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 1.0,
+                "y": 1.0
+              },
+              {
+                "x": 1.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.75,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 14
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 600.0,
+        "y": 480.0
+      },
+      "scale": {
+        "x": 30.0,
+        "y": 30.0
+      }
+    },
+    "zIndex": 0,
+    "uID": 9
+  },
+  {
+    "name": "GENERATED_SPRITE_OBJECT",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "texID": 2,
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.75,
+                "y": 1.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 15
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 420.0,
+        "y": 420.0
+      },
+      "scale": {
+        "x": 30.0,
+        "y": 30.0
+      }
+    },
+    "zIndex": 0,
+    "uID": 10
+  },
+  {
+    "name": "GENERATED_SPRITE_OBJECT",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "texID": 2,
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.5,
+                "y": 1.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 16
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 30.0,
+        "y": 570.0
+      },
+      "scale": {
+        "x": 30.0,
+        "y": 30.0
+      }
+    },
+    "zIndex": 0,
+    "uID": 11
+  },
+  {
+    "name": "GENERATED_SPRITE_OBJECT",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "texID": 2,
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.25,
+                "y": 1.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 17
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 450.0,
+        "y": 390.0
+      },
+      "scale": {
+        "x": 30.0,
+        "y": 30.0
+      }
+    },
+    "zIndex": 0,
+    "uID": 12
+  },
+  {
+    "name": "GENERATED_SPRITE_OBJECT",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "texID": 2,
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.25,
+                "y": 1.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 20
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 660.0,
+        "y": 360.0
+      },
+      "scale": {
+        "x": 30.0,
+        "y": 30.0
+      }
+    },
+    "zIndex": 0,
+    "uID": 13
+  },
+  {
+    "name": "GENERATED_SPRITE_OBJECT",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "texID": 2,
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.5,
+                "y": 1.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 23
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 300.0,
+        "y": 450.0
+      },
+      "scale": {
+        "x": 30.0,
+        "y": 30.0
+      }
+    },
+    "zIndex": 0,
+    "uID": 14
+  },
+  {
+    "name": "GENERATED_SPRITE_OBJECT",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "texID": 2,
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.75,
+                "y": 1.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 24
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 330.0,
+        "y": 480.0
+      },
+      "scale": {
+        "x": 30.0,
+        "y": 30.0
+      }
+    },
+    "zIndex": 0,
+    "uID": 15
   }
 ]

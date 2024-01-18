@@ -56,7 +56,7 @@ public class DebugDraw {
         // removing dead lines
 
         for (int i = 0; i < lines.size(); i++) {
-            if (lines.get(i).beginFrame(dt) < 0) {
+            if (lines.get(i).beginFrame(dt) <= 0) {
                 lines.remove(i);
                 i--;
             }
@@ -64,7 +64,7 @@ public class DebugDraw {
     }
 
     public static void draw() {
-        if (lines.size() <= 0) return;
+        if (lines.isEmpty()) return;
 
         int index = 0;
 
@@ -105,12 +105,12 @@ public class DebugDraw {
         shader.detach();
     }
 
-    public static void addLine2D(Vector2f from, Vector2f to, Vector3f color, int lifetime) {
+    public static void addLine2D(Vector2f from, Vector2f to, Vector3f color, int lifetime, boolean useRealTime) {
         if (lines.size() >= MAX_LINES) return;
-        DebugDraw.lines.add(new Line2D(from, to, color, lifetime));
+        DebugDraw.lines.add(new Line2D(from, to, color, lifetime, useRealTime));
     }
 
-    public static void addBox2D(Vector2f center, Vector2f dimensions,float rotation, Vector3f color, int lifetime) {
+    public static void addBox2D(Vector2f center, Vector2f dimensions,float rotation, Vector3f color, int lifetime, boolean useRealTime) {
         Vector2f min = new Vector2f(center).sub(new Vector2f(dimensions).mul(0.0f));
         Vector2f max = new Vector2f(center).add(new Vector2f(dimensions).mul(0.5f));
 
@@ -124,16 +124,16 @@ public class DebugDraw {
             }
         }
 
-        addLine2D(vertices[0], vertices[1], color, lifetime);
-        addLine2D(vertices[0], vertices[3], color, lifetime);
-        addLine2D(vertices[1], vertices[2], color, lifetime);
-        addLine2D(vertices[2], vertices[3], color, lifetime);
+        addLine2D(vertices[0], vertices[1], color, lifetime, useRealTime);
+        addLine2D(vertices[0], vertices[3], color, lifetime, useRealTime);
+        addLine2D(vertices[1], vertices[2], color, lifetime, useRealTime);
+        addLine2D(vertices[2], vertices[3], color, lifetime, useRealTime);
 
 
     }
 
-    public static void addCircle2D(Vector2f center, float radius,int vertices , Vector3f color, int lifetime) {
-        Vector2f[] points = new Vector2f[vertices];
+    public static void addCircle2D(Vector2f center, float radius,int verticies , Vector3f color, int lifetime, boolean useRealTime) {
+        Vector2f[] points = new Vector2f[verticies];
         int increment = 360 / points.length;
         int currentAngle = 0;
 
@@ -143,12 +143,12 @@ public class DebugDraw {
             points[i] = new Vector2f(tmp).add(center);
 
             if (i > 0) {
-                addLine2D(points[i - 1], points[i], color, lifetime);
+                addLine2D(points[i - 1], points[i], color, lifetime, useRealTime);
             }
 
             currentAngle += increment;
         }
 
-        addLine2D(points[points.length - 1], points[0], color, lifetime);
+        addLine2D(points[points.length - 1], points[0], color, lifetime, useRealTime);
     }
 }
