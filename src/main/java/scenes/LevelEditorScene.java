@@ -10,7 +10,7 @@ import org.joml.Vector4f;
 import renderer.DebugDraw;
 import util.AssetPool;
 
-import static Constants.Color.ORANGE;
+import static Constants.Color.*;
 
 public class LevelEditorScene extends Scene {
 
@@ -46,6 +46,7 @@ public class LevelEditorScene extends Scene {
     @Override
     public void update(float dt) {
         levelEditorComponents.update(dt);
+        DebugDraw.addCircle2D(new Vector2f(200,400), 64, CYAN, 1);
 
         for (GameObject go : this.gameObjects) {
             go.update(dt);
