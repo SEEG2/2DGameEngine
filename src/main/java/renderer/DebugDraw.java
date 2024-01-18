@@ -132,8 +132,8 @@ public class DebugDraw {
 
     }
 
-    public static void addCircle2D(Vector2f center, float radius, Vector3f color, int lifetime) {
-        Vector2f[] points = new Vector2f[100];
+    public static void addCircle2D(Vector2f center, float radius,int verticies , Vector3f color, int lifetime) {
+        Vector2f[] points = new Vector2f[verticies];
         int increment = 360 / points.length;
         int currentAngle = 0;
 

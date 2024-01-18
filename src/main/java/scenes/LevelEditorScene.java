@@ -46,8 +46,7 @@ public class LevelEditorScene extends Scene {
     @Override
     public void update(float dt) {
         levelEditorComponents.update(dt);
-        DebugDraw.addCircle2D(new Vector2f(200,400), 64, CYAN, 1);
-
+        DebugDraw.addCircle2D(new Vector2f(200,400), 64, 20,CYAN, 100);
         for (GameObject go : this.gameObjects) {
             go.update(dt);
         }
