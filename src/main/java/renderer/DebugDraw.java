@@ -56,7 +56,7 @@ public class DebugDraw {
         // removing dead lines
 
         for (int i = 0; i < lines.size(); i++) {
-            if (lines.get(i).beginFrame(dt) <= 0) {
+            if (lines.get(i).beginFrame(dt) < 0) {
                 lines.remove(i);
                 i--;
             }

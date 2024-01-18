@@ -47,5 +47,4 @@ public class Line2D {
     public Vector3f getColor() {
         return color;
     }
-
 }
