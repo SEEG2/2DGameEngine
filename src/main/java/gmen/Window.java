@@ -3,6 +3,7 @@ package gmen;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
 import renderer.DebugDraw;
+import renderer.FrameBuffer;
 import scenes.LevelEditorScene;
 import scenes.LevelScene;
 import scenes.Scene;
@@ -19,6 +20,7 @@ public class Window {
     private long glfwWindow;
     private static Scene currentScene;
     private ImGUILayer imGUILayer;
+    private FrameBuffer frameBuffer;
 
     private Window() {
         this.width = 1920;
@@ -98,6 +100,8 @@ public class Window {
         this.imGUILayer = new ImGUILayer(glfwWindow);
         this.imGUILayer.initImGui();
 
+        this.frameBuffer = new FrameBuffer(this.width,this.height);
+
         changeScene(0);
     }
     public void loop() {
@@ -113,10 +117,13 @@ public class Window {
             glClearColor(0.0f,0.5f,0.5f,1.0f);
             glClear(GL_COLOR_BUFFER_BIT);
 
+            this.frameBuffer.bind();
             if (dt >= 0) {
                 DebugDraw.draw();
                 currentScene.update(dt);
             }
+            this.frameBuffer.unbind();
+
             this.imGUILayer.update(dt,currentScene);
             glfwSwapBuffers(glfwWindow);
 

@@ -31,4 +31,12 @@ public class FrameBuffer {
     public int getTextureId() {
         return texture.getTexID();
     }
+
+    public void bind() {
+        glBindFramebuffer(GL_FRAMEBUFFER, fboID);
+    }
+
+    public void unbind() {
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    }
 }
