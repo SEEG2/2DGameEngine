@@ -14,7 +14,18 @@ public class Texture {
     private int texID;
     private int width, height;
 
+    public Texture(int width, int height) {
+        this.filepath = "Generated Texture";
+        texID = glGenTextures();
+        glBindTexture(GL_TEXTURE_2D, texID);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, 0);
+    }
 
+    public Texture() {
+        texID = -1;
+        width = -1;
+        height = -1;
+    }
     public void init(String filepath) {
         this.filepath = filepath;
 
