@@ -16,7 +16,6 @@
             "height": 120.0,
             "texture": {
               "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "texID": 2,
               "width": 480,
               "height": 120
             },
@@ -73,7 +72,6 @@
             "height": 120.0,
             "texture": {
               "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "texID": 2,
               "width": 480,
               "height": 120
             },
@@ -130,7 +128,6 @@
             "height": 120.0,
             "texture": {
               "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "texID": 2,
               "width": 480,
               "height": 120
             },
@@ -187,7 +184,6 @@
             "height": 120.0,
             "texture": {
               "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "texID": 2,
               "width": 480,
               "height": 120
             },
@@ -244,7 +240,6 @@
             "height": 120.0,
             "texture": {
               "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "texID": 2,
               "width": 480,
               "height": 120
             },
@@ -301,7 +296,6 @@
             "height": 120.0,
             "texture": {
               "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "texID": 2,
               "width": 480,
               "height": 120
             },
@@ -358,7 +352,6 @@
             "height": 120.0,
             "texture": {
               "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "texID": 2,
               "width": 480,
               "height": 120
             },
@@ -415,7 +408,6 @@
             "height": 120.0,
             "texture": {
               "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "texID": 2,
               "width": 480,
               "height": 120
             },
@@ -472,7 +464,6 @@
             "height": 120.0,
             "texture": {
               "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "texID": 2,
               "width": 480,
               "height": 120
             },
@@ -529,7 +520,6 @@
             "height": 120.0,
             "texture": {
               "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "texID": 2,
               "width": 480,
               "height": 120
             },
@@ -586,7 +576,6 @@
             "height": 120.0,
             "texture": {
               "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "texID": 2,
               "width": 480,
               "height": 120
             },
@@ -643,7 +632,6 @@
             "height": 120.0,
             "texture": {
               "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "texID": 2,
               "width": 480,
               "height": 120
             },
@@ -700,7 +688,6 @@
             "height": 120.0,
             "texture": {
               "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "texID": 2,
               "width": 480,
               "height": 120
             },
@@ -757,7 +744,6 @@
             "height": 120.0,
             "texture": {
               "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "texID": 2,
               "width": 480,
               "height": 120
             },
@@ -814,7 +800,6 @@
             "height": 120.0,
             "texture": {
               "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "texID": 2,
               "width": 480,
               "height": 120
             },
