@@ -31,8 +31,9 @@ public class LevelEditorScene extends Scene {
         sprites = AssetPool.getSpritesheet("assets/images/default/spritesheets/spritesheet.png");
 
         if (levelIsLoaded) {
-            this.activeGameObject = gameObjects.get(0);
-            return;
+            if  (!gameObjects.isEmpty()) {
+                this.activeGameObject = gameObjects.get(0);
+            }
         }
     }
 
@@ -41,6 +42,16 @@ public class LevelEditorScene extends Scene {
         AssetPool.getShader("assets/shaders/line2D.glsl");
         AssetPool.addSpritesheet("assets/images/default/spritesheets/spritesheet.png", new Spritesheet(AssetPool.getTexture("assets/images/default/spritesheets/spritesheet.png"), 120, 120, 4, 0));
         AssetPool.getTexture("assets/images/default/images/default.png");
+
+        for (GameObject gameObject : this.gameObjects) {
+            if (gameObject.getComponent(SpriteRenderer.class) != null) {
+                SpriteRenderer spriteRenderer = gameObject.getComponent(SpriteRenderer.class);
+
+                if (spriteRenderer.getTexture() != null) {
+                    spriteRenderer.setTexture(AssetPool.getTexture(spriteRenderer.getTexture().getFilepath()));
+                }
+            }
+        }
     }
     boolean first = true;
     @Override

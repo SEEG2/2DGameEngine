@@ -1,6 +1,5 @@
 package gmen;
 
-import components.MouseControl;
 import imgui.ImFontAtlas;
 import imgui.ImFontConfig;
 import imgui.ImGui;
@@ -9,6 +8,7 @@ import imgui.callback.ImStrConsumer;
 import imgui.callback.ImStrSupplier;
 import imgui.flag.*;
 import imgui.gl3.ImGuiImplGl3;
+import imgui.type.ImBoolean;
 import scenes.Scene;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -41,6 +41,7 @@ public class ImGUILayer {
 
         io.setIniFilename(null); // We don't want to save .ini file
         io.setConfigFlags(ImGuiConfigFlags.NavEnableKeyboard); // Navigation with keyboard
+        io.setBackendFlags(ImGuiConfigFlags.DockingEnable);
         io.setBackendFlags(ImGuiBackendFlags.HasMouseCursors); // Mouse cursors to display while resizing windows etc.
         io.setBackendPlatformName("imgui_java_impl_glfw");
 
@@ -221,10 +222,26 @@ public class ImGUILayer {
     public void update(float dt, Scene currentScene) {
         startFrame(dt);
         ImGui.newFrame();
+        setupDockspace();
         currentScene.sceneImGUI();
+        ImGui.end();
         ImGui.render();
 
         endFrame();
+    }
+
+    private void setupDockspace() {
+        int windowFlags = ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoDocking;
+        ImGui.setNextWindowPos(0.0f, 0.0f, ImGuiCond.Always);
+        ImGui.setNextWindowSize(Window.getWidth(), Window.getHeight());
+        ImGui.pushStyleVar(ImGuiStyleVar.WindowRounding, 0.0f);
+        ImGui.pushStyleVar(ImGuiStyleVar.WindowBorderSize, 0.0f);
+        windowFlags |= ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove;
+        windowFlags |= ImGuiWindowFlags.NoBringToFrontOnFocus | ImGuiWindowFlags.NoNavFocus;
+        ImGui.begin("DockSpace Demo", new ImBoolean(true), windowFlags);
+        ImGui.popStyleVar(2);
+
+        ImGui.dockSpace(ImGui.getID("DockSpace"));
     }
 
     private void destroyImGui() {

@@ -117,7 +117,7 @@ public class Window {
             glClearColor(0.0f,0.5f,0.5f,1.0f);
             glClear(GL_COLOR_BUFFER_BIT);
 
-            this.frameBuffer.bind();
+            //this.frameBuffer.bind();
             if (dt >= 0) {
                 DebugDraw.draw();
                 currentScene.update(dt);
