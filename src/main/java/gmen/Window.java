@@ -1,5 +1,6 @@
 package gmen;
 
+import imgui.ImGui;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
 import renderer.DebugDraw;
