@@ -28,7 +28,7 @@ public class FrameBuffer {
         return fboID;
     }
 
-    public int getTextureId() {
+    public int getTextureID() {
         return texture.getTexID();
     }
 

@@ -1,5 +1,6 @@
 package gmen;
 
+import editor.GameViewWindow;
 import imgui.ImFontAtlas;
 import imgui.ImFontConfig;
 import imgui.ImGui;
@@ -224,6 +225,7 @@ public class ImGUILayer {
         ImGui.newFrame();
         setupDockspace();
         currentScene.sceneImGUI();
+        GameViewWindow.ImGUI();
         ImGui.end();
         ImGui.render();
 

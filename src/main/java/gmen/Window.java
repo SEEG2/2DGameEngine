@@ -117,7 +117,8 @@ public class Window {
             glClearColor(0.0f,0.5f,0.5f,1.0f);
             glClear(GL_COLOR_BUFFER_BIT);
 
-            //this.frameBuffer.bind();
+            this.frameBuffer.bind();
+
             if (dt >= 0) {
                 DebugDraw.draw();
                 currentScene.update(dt);
@@ -133,6 +134,14 @@ public class Window {
         }
 
         currentScene.saveExit();
+    }
+
+    public static FrameBuffer  getFrameBuffer() {
+        return get().frameBuffer;
+    }
+
+    public static float getTargetAspectRatio() {
+        return 16.0f / 9.0f;
     }
 
     public static int getWidth() {
