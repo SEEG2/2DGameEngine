@@ -46,7 +46,7 @@ public class GameViewWindow {
         float viewportX = (windowSize.x / 2) - (aspectSize.x / 2);
         float viewportY = (windowSize.y / 2) - (aspectSize.y / 2);
 
-        return new ImVec2(viewportX, viewportY);
+        return new ImVec2(viewportX + ImGui.getCursorPosX(), viewportY + ImGui.getCursorPosY());
     }
 
 }

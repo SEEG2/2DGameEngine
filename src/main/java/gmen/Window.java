@@ -25,7 +25,7 @@ public class Window {
     private Window() {
         this.width = 1920;
         this.height = 1080;
-        this.title = "test";
+        this.title = "Game Engine";
     }
 
     public static void changeScene(int newScene) {
@@ -101,6 +101,7 @@ public class Window {
         this.imGUILayer.initImGui();
 
         this.frameBuffer = new FrameBuffer(this.width,this.height);
+        glViewport(0, 0, this.width, this.height);
 
         changeScene(0);
     }
@@ -114,10 +115,11 @@ public class Window {
 
             DebugDraw.beginFrame(dt);
 
+            this.frameBuffer.bind();
+
             glClearColor(0.0f,0.5f,0.5f,1.0f);
             glClear(GL_COLOR_BUFFER_BIT);
 
-            this.frameBuffer.bind();
 
             if (dt >= 0) {
                 DebugDraw.draw();
