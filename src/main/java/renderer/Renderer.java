@@ -11,8 +11,9 @@ import java.util.List;
 import java.util.Vector;
 
 public class Renderer {
-    private  final int MAX_BATCH_SIZE = 1000;
+    private final int MAX_BATCH_SIZE = 1000;
     private List<RenderBatch> batches;
+    private static Shader currentShader;
 
     public Renderer() {
         this.batches = new ArrayList<>();
@@ -53,5 +54,13 @@ public class Renderer {
         for (RenderBatch batch : batches) {
             batch.render();
         }
+    }
+
+    public static void bindShader(Shader shader) {
+        currentShader = shader;
+    }
+
+    public static Shader getCurrentShader() {
+        return currentShader;
     }
 }

@@ -3,8 +3,7 @@ package gmen;
 import imgui.ImGui;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
-import renderer.DebugDraw;
-import renderer.FrameBuffer;
+import renderer.*;
 import scenes.LevelEditorScene;
 import scenes.LevelScene;
 import scenes.Scene;
@@ -22,6 +21,7 @@ public class Window {
     private static Scene currentScene;
     private ImGUILayer imGUILayer;
     private FrameBuffer frameBuffer;
+    private PickingTexture pickingTexture;
 
     private Window() {
         this.width = 1920;
@@ -102,6 +102,7 @@ public class Window {
         this.imGUILayer.initImGui();
 
         this.frameBuffer = new FrameBuffer(this.width,this.height);
+        this.pickingTexture = new PickingTexture(this.width,this.height);
         glViewport(0, 0, this.width, this.height);
 
         changeScene(0);
@@ -111,9 +112,33 @@ public class Window {
         float endTime;
         float dt = -1.0f;
 
+        Shader defaultShader = new Shader("assets/shaders/default.glsl");
+        Shader pickingShader = new Shader("assets/shaders/pickingShader.glsl");
+
         while (!glfwWindowShouldClose(glfwWindow)) {
             glfwPollEvents();
 
+            // rendering pick logic
+            glDisable(GL_BLEND);
+            pickingTexture.enableWriting();
+            glViewport(0,0,this.width,this.height);
+            glClearColor(0,0,0,0);
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+            Renderer.bindShader(pickingShader);
+            currentScene.render();
+
+            if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)) {
+                int x =  (int) MouseListener.getScreenX();
+                int y = (int) MouseListener.getScreenY();
+
+                System.out.println(pickingTexture.readPixel(x,y));
+            }
+
+            pickingTexture.disableWriting();
+            glEnable(GL_BLEND);
+
+            // rendering the visible output
             DebugDraw.beginFrame(dt);
 
             this.frameBuffer.bind();
@@ -124,7 +149,9 @@ public class Window {
 
             if (dt >= 0) {
                 DebugDraw.draw();
+                Renderer.bindShader(defaultShader);
                 currentScene.update(dt);
+                currentScene.render();
             }
             this.frameBuffer.unbind();
 

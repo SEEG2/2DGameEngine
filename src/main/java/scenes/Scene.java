@@ -36,6 +36,8 @@ public abstract class Scene {
 
     //called once per frame (after the first two frames past)
     public abstract void update(float dt);
+    public abstract void render();
+
     public void start() {
         for (GameObject go : gameObjects) {
             go.start();

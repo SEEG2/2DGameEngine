@@ -49,4 +49,22 @@ public class PickingTexture {
 
         return true;
     }
+
+    public void enableWriting() {
+        glBindFramebuffer(GL_DRAW_FRAMEBUFFER, fboID);
+    }
+
+    public void disableWriting() {
+        glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
+    }
+
+    public int readPixel(int x, int y) {
+        glBindFramebuffer(GL_READ_FRAMEBUFFER, fboID);
+        glReadBuffer(GL_COLOR_ATTACHMENT0);
+
+        float pixels[] = new float[3];
+        glReadPixels(x, y, 1, 1, GL_RGB, GL_FLOAT, pixels);
+
+        return ((int) pixels[0]) - 1;
+    }
 }
