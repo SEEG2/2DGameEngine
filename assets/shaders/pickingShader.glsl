@@ -7,7 +7,6 @@ layout (location=2) in vec2 aTexCoords;
 layout (location=3) in float aTexId;
 layout (location=4) in float aEntityID;
 
-
 uniform mat4 uProjection;
 uniform mat4 uView;
 
@@ -21,7 +20,7 @@ void main() {
     fColor = aColor;
     fTexCoords = aTexCoords;
     fTexId = aTexId;
-    aEntityID = aEntityID;
+    fEntityID = aEntityID;
 
     gl_Position = uProjection * uView * vec4(aPos, 1.0);
 }
@@ -43,7 +42,7 @@ void main() {
     vec4 texColor = vec4(1,1,1,1);
     if (fTexId > 0) {
         int id = int(fTexId);
-        color = fColor * texture(uTextures[id], fTexCoords);
+        texColor = fColor * texture(uTextures[id], fTexCoords);
     }
 
     if(texColor.a < 0.5) discard;
