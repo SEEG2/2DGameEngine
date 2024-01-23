@@ -36,8 +36,8 @@ public class Renderer {
                 if (tex == null || (batch.hasTexture(tex) || batch.hasTextureRoom())) {
                     batch.addSprite(sprite);
                      added = true;
-                    break;
-            }
+                     break;
+                }
             }
         }
 

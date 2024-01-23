@@ -53,14 +53,13 @@ public class LevelEditorScene extends Scene {
             }
         }
     }
-    boolean first = true;
+
     @Override
     public void update(float dt) {
         levelEditorComponents.update(dt);
         for (GameObject go : this.gameObjects) {
             go.update(dt);
         }
-        this.renderer.render();
     }
 
     @Override

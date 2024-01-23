@@ -4,7 +4,7 @@ import static org.lwjgl.opengl.GL30.*;
 
 public class FrameBuffer {
     private int fboID = 0;
-    private Texture texture;
+    private Texture texture = null;
     public FrameBuffer(int width, int height) {
         // generate framebuffer
         fboID = glGenFramebuffers();

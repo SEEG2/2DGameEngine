@@ -240,8 +240,10 @@ public class RenderBatch implements Comparable<RenderBatch> {
             vertices[offset + 6] = texCoords[i].x;
             vertices[offset + 7] = texCoords[i].y;
 
-            // Load texture id
+            // Loading texture id
             vertices[offset + 8] = texID;
+
+            // Loading entity id
             vertices[offset + 9] = sprite.gameObject.getuID() + 1;
 
             offset += VERTEX_SIZE;

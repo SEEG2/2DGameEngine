@@ -7,6 +7,7 @@ import renderer.*;
 import scenes.LevelEditorScene;
 import scenes.LevelScene;
 import scenes.Scene;
+import util.AssetPool;
 
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
@@ -105,15 +106,15 @@ public class Window {
         this.pickingTexture = new PickingTexture(this.width,this.height);
         glViewport(0, 0, this.width, this.height);
 
-        changeScene(0);
+        Window.changeScene(0);
     }
     public void loop() {
         float beginTime = (float) glfwGetTime();
         float endTime;
         float dt = -1.0f;
 
-        Shader defaultShader = new Shader("assets/shaders/default.glsl");
-        Shader pickingShader = new Shader("assets/shaders/pickingShader.glsl");
+        Shader defaultShader = AssetPool.getShader("assets/shaders/default.glsl");
+        Shader pickingShader = AssetPool.getShader("assets/shaders/pickingShader.glsl");
 
         while (!glfwWindowShouldClose(glfwWindow)) {
             glfwPollEvents();
@@ -121,8 +122,9 @@ public class Window {
             // rendering pick logic
             glDisable(GL_BLEND);
             pickingTexture.enableWriting();
+
             glViewport(0,0,this.width,this.height);
-            glClearColor(0,0,0,0);
+            glClearColor(0.0f,0.0f,0.0f,0.0f);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
             Renderer.bindShader(pickingShader);
@@ -166,7 +168,7 @@ public class Window {
         currentScene.saveExit();
     }
 
-    public static FrameBuffer  getFrameBuffer() {
+    public static FrameBuffer getFrameBuffer() {
         return get().frameBuffer;
     }
 
