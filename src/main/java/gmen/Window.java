@@ -102,9 +102,9 @@ public class Window {
         this.imGUILayer = new ImGUILayer(glfwWindow);
         this.imGUILayer.initImGui();
 
-        this.frameBuffer = new FrameBuffer(this.width,this.height);
-        this.pickingTexture = new PickingTexture(this.width,this.height);
-        glViewport(0, 0, this.width, this.height);
+        this.frameBuffer = new FrameBuffer(1920,1080);
+        this.pickingTexture = new PickingTexture(1920,1080);
+        glViewport(0, 0, 1920, 1080);
 
         Window.changeScene(0);
     }
@@ -123,7 +123,7 @@ public class Window {
             glDisable(GL_BLEND);
             pickingTexture.enableWriting();
 
-            glViewport(0,0,this.width,this.height);
+            glViewport(0,0,1920,1080);
             glClearColor(0.0f,0.0f,0.0f,0.0f);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
