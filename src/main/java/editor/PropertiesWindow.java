@@ -15,8 +15,10 @@ public class PropertiesWindow {
     public PropertiesWindow(PickingTexture pickingTexture) {
         this.pickingTexture = pickingTexture;
     }
+
+    //only check if mouse is inside the framebuffer
     public void update(float dt, Scene currentScene) {
-        if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)) {
+        if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && MouseListener.isMouseInsideFrameBuffer()) {
             int x =  (int) MouseListener.getScreenX();
             int y = (int) MouseListener.getScreenY();
 
@@ -27,7 +29,7 @@ public class PropertiesWindow {
 
     public void imGUI() {
         if (activeGameObject != null) {
-            ImGui.begin("Inspector");
+            ImGui.begin("Properties");
             activeGameObject.imGUI();
             ImGui.end();
         }

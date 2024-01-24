@@ -151,4 +151,8 @@ public class MouseListener {
     public static void setGameViewportSize(Vector2f gameViewportSize) {
         get().gameViewportSize.set(gameViewportSize);
     }
+
+    public static boolean isMouseInsideFrameBuffer() {
+        return getX() > get().gameViewportPos.x && getX() < get().gameViewportPos.x + get().gameViewportSize.x && getY() > get().gameViewportPos.y && getY() < get().gameViewportPos.y + get().gameViewportSize.y;
+    }
 }
