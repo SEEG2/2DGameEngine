@@ -4,16 +4,14 @@ import gmen.MouseListener;
 import gmen.Window;
 import imgui.ImGui;
 import imgui.ImVec2;
-import imgui.flag.ImGuiConfigFlags;
 import imgui.flag.ImGuiWindowFlags;
 import org.joml.Vector2f;
-import renderer.FrameBuffer;
 
 public class GameViewWindow {
 
-    private static float leftX, rightX, topY, bottomY;
+    private float leftX, rightX, topY, bottomY;
 
-    public static void ImGUI() {
+    public void imGUI() {
         ImGui.begin("Game View", ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse);
         ImVec2 windowSize = getViewportMaxSize();
         ImVec2 windowPos = getViewportCenter(windowSize);
@@ -39,7 +37,7 @@ public class GameViewWindow {
         ImGui.end();
     }
 
-    private static ImVec2 getViewportMaxSize() {
+    private ImVec2 getViewportMaxSize() {
         ImVec2 maxSize = new ImVec2();
         ImGui.getContentRegionAvail(maxSize);
         maxSize.x -= ImGui.getScrollX();
@@ -56,7 +54,7 @@ public class GameViewWindow {
         return new ImVec2(aspectWidth, aspectHeight);
     }
 
-    private static ImVec2 getViewportCenter(ImVec2 aspectSize) {
+    private ImVec2 getViewportCenter(ImVec2 aspectSize) {
         ImVec2 windowSize = new ImVec2();
         ImGui.getContentRegionAvail(windowSize);
 
@@ -69,7 +67,7 @@ public class GameViewWindow {
         return new ImVec2(viewportX + ImGui.getCursorPosX(), viewportY + ImGui.getCursorPosY());
     }
 
-    public static boolean getWantCaptureMouse() {
+    public boolean getWantCaptureMouse() {
         return MouseListener.getX() > leftX && MouseListener.getX() < rightX && MouseListener.getY() > topY && MouseListener.getY() < bottomY;
     }
 

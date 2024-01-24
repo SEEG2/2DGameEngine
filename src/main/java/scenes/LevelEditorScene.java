@@ -29,12 +29,6 @@ public class LevelEditorScene extends Scene {
 
         this.camera = new Camera(new Vector2f());
         sprites = AssetPool.getSpritesheet("assets/images/default/spritesheets/spritesheet.png");
-
-        if (levelIsLoaded) {
-            if  (!gameObjects.isEmpty()) {
-                this.activeGameObject = gameObjects.get(0);
-            }
-        }
     }
 
     public void loadResources() {
