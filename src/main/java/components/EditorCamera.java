@@ -33,5 +33,11 @@ public class EditorCamera extends Component {
         if (dragDebounce <= 0 && !MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_MIDDLE)) {
             dragDebounce = 0.032f;
         }
+
+        if (MouseListener.getScrollY() != 0.0f) {
+            float addValue = (float) Math.pow(Math.abs(MouseListener.getScrollY()), 1 / levelEditorCamera.getZoom());
+            addValue *= -Math.signum(MouseListener.getScrollY());
+            levelEditorCamera.addZoom(addValue);
+        }
     }
 }
