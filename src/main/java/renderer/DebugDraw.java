@@ -16,7 +16,7 @@ import static org.lwjgl.opengl.GL30.glGenVertexArrays;
 
 
 public class DebugDraw {
-    private final static int MAX_LINES = 500;
+    private final static int MAX_LINES = 5000;
 
     private static List<Line2D> lines = new ArrayList<>();
 
