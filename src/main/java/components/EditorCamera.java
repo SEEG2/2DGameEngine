@@ -18,10 +18,10 @@ public class EditorCamera extends Component {
 
     @Override
     public void update(float dt) {
-        if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_MIDDLE) && dragDebounce < 0) {
+        if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_MIDDLE) && dragDebounce < 0 && MouseListener.isMouseInsideFrameBuffer()) {
             this.clickOrigin = new Vector2f(MouseListener.getOrthoX(), MouseListener.getOrthoY());
             dragDebounce -= dt;
-        } else if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_MIDDLE)) {
+        } else if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_MIDDLE)  && MouseListener.isMouseInsideFrameBuffer()) {
             Vector2f mousePos = new Vector2f(MouseListener.getOrthoX(), MouseListener.getOrthoY());
             Vector2f delta = new Vector2f(MouseListener.getOrthoX(), MouseListener.getOrthoY()).sub(this.clickOrigin);
 

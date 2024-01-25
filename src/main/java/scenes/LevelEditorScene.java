@@ -21,13 +21,14 @@ public class LevelEditorScene extends Scene {
     //Spritesheet sprites;
     @Override
     public void init() {
+        this.camera = new Camera(new Vector2f());
+
         levelEditorComponents.addComponent(new MouseControl());
         levelEditorComponents.addComponent(new GridLines());
+        levelEditorComponents.addComponent(new EditorCamera(this.camera));
 
 
         loadResources();
-
-        this.camera = new Camera(new Vector2f());
         sprites = AssetPool.getSpritesheet("assets/images/default/spritesheets/spritesheet.png");
     }
 
