@@ -31,7 +31,7 @@ public class LevelEditorScene extends Scene {
         levelEditorComponents.addComponent(new GridLines());
         levelEditorComponents.addComponent(new EditorCamera(this.camera));
 
-
+        levelEditorComponents.start();
     }
 
     public void loadResources() {

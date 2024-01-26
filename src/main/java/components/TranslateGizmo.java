@@ -34,8 +34,8 @@ public class TranslateGizmo extends Component {
     @Override
     public void update(float dt) {
         if (this.activeGameObject != null) {
-            this.xAxisObject.transform.position.set(this.activeGameObject.transform.position);
-            this.yAxisObject.transform.position.set(this.activeGameObject.transform.position);
+            this.xAxisObject.transform.position.set(this.activeGameObject.transform.position.x, this.activeGameObject.transform.position.y - 35);
+            this.yAxisObject.transform.position.set(this.activeGameObject.transform.position.x - 5, this.activeGameObject.transform.position.y);
         }
 
         this.activeGameObject = this.propertiesWindow.getActiveGameObject();
@@ -49,7 +49,7 @@ public class TranslateGizmo extends Component {
 
     @Override
     public void start() {
-
+        this.xAxisObject.transform.rotation = 90;
     }
 
     private void setActive() {
