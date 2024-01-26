@@ -27,7 +27,9 @@ public class PropertiesWindow {
             int y = (int) MouseListener.getScreenY();
 
             int gameObjectId = pickingTexture.readPixel(x, y);
-            activeGameObject = currentScene.getGameObject(gameObjectId);
+            if (!currentScene.getGameObject(gameObjectId).getName().startsWith("%")) {
+                activeGameObject = currentScene.getGameObject(gameObjectId);
+            }
             this.debounce = 0.2f;
         }
     }

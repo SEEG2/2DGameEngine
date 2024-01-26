@@ -21,8 +21,8 @@ public class TranslateGizmo extends Component {
     private GameObject activeGameObject = null;
 
     public TranslateGizmo(Texture texture, PropertiesWindow propertiesWindow) {
-        this.xAxisObject = Prefabs.generateTextureObject(texture, 81, 81);
-        this.yAxisObject = Prefabs.generateTextureObject(texture, 81, 81);
+        this.xAxisObject = Prefabs.generateTextureObject(texture, 81, 81, true);
+        this.yAxisObject = Prefabs.generateTextureObject(texture, 81, 81, true);
         this.xAxisSpriteRenderer = this.xAxisObject.getComponent(SpriteRenderer.class);
         this.yAxisSpriteRenderer = this.yAxisObject.getComponent(SpriteRenderer.class);
         this.propertiesWindow = propertiesWindow;

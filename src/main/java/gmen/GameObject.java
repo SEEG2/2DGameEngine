@@ -129,4 +129,8 @@ public class GameObject {
     public boolean isSerializable() {
         return this.isSerializable;
     }
+
+    public String getName() {
+        return this.name;
+    }
 }
