@@ -10,10 +10,10 @@ import static org.lwjgl.glfw.GLFW.*;
 public class EditorCamera extends Component {
     private Camera levelEditorCamera;
     private Vector2f clickOrigin;
-    private float dragDebounce = 0.032f;
+    private transient float dragDebounce = 0.032f;
     private float dragSensitive = 30f;
     private float scrollSensitivity = 0.1f;
-    private float lerpTime = 0.0f;
+    private transient float lerpTime = 0.0f;
     private transient boolean reset = false;
 
     public EditorCamera(Camera levelEditorCamera) {
