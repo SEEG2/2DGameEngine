@@ -7,6 +7,7 @@ import renderer.PickingTexture;
 import scenes.Scene;
 
 import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_LEFT;
+import static org.lwjgl.glfw.GLFW.glfwGetFramebufferSize;
 
 public class PropertiesWindow {
     private GameObject activeGameObject = null;
@@ -27,9 +28,15 @@ public class PropertiesWindow {
             int y = (int) MouseListener.getScreenY();
 
             int gameObjectId = pickingTexture.readPixel(x, y);
-            if (!currentScene.getGameObject(gameObjectId).getName().startsWith("%")) {
-                activeGameObject = currentScene.getGameObject(gameObjectId);
+
+            if (!(currentScene.getGameObject(gameObjectId) == null)) {
+                if (!currentScene.getGameObject(gameObjectId).getName().startsWith("%")) {
+                    activeGameObject = currentScene.getGameObject(gameObjectId);
+                }
+            } else {
+                activeGameObject = null;
             }
+
             this.debounce = 0.2f;
         }
     }
