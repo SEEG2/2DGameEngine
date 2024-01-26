@@ -25,6 +25,7 @@ public abstract class Scene {
     private boolean isRunning = false;
     protected List<GameObject> gameObjects = new ArrayList<>();
     protected boolean levelIsLoaded = false;
+
     public Scene() {
 
     }
