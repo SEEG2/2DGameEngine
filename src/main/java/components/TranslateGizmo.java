@@ -27,6 +27,12 @@ public class TranslateGizmo extends Component {
         this.yAxisSpriteRenderer = this.yAxisObject.getComponent(SpriteRenderer.class);
         this.propertiesWindow = propertiesWindow;
 
+        xAxisObject.disableSerialization();
+        yAxisObject.disableSerialization();
+
+        xAxisObject.setzIndex(255);
+        yAxisObject.setzIndex(255);
+
         Window.getScene().addGameObjectToScene(this.xAxisObject);
         Window.getScene().addGameObjectToScene(this.yAxisObject);
     }

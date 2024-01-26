@@ -9,9 +9,11 @@ public class GameObject {
     private String name;
     private List<Component> components;
     public Transform transform;
+    //do not set this to values > 255 (otherwise it will interfere with the editor
     private int zIndex;
     private static int ID_COUNTER = 0;
     private int uID = -1;
+    private boolean isSerializable = true;
 
     public GameObject(String name) {
         this.name = name;
@@ -100,6 +102,10 @@ public class GameObject {
         return this.zIndex;
     }
 
+    public void setzIndex(int zIndex) {
+        this.zIndex = zIndex;
+    }
+
     public int getuID() {
         return this.uID;
     }
@@ -110,5 +116,17 @@ public class GameObject {
 
     public List<Component> getAllComponents() {
         return this.components;
+    }
+
+    public void disableSerialization() {
+        this.isSerializable = false;
+    }
+
+    public void enableSerialization() {
+        this.isSerializable = true;
+    }
+
+    public boolean isSerializable() {
+        return this.isSerializable;
     }
 }
