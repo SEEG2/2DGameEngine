@@ -14,7 +14,7 @@ public class EditorCamera extends Component {
     private float dragSensitive = 30f;
     private float scrollSensitivity = 0.1f;
     private float lerpTime = 0.0f;
-    private boolean reset = false;
+    private transient boolean reset = false;
 
     public EditorCamera(Camera levelEditorCamera) {
         this.levelEditorCamera = levelEditorCamera;

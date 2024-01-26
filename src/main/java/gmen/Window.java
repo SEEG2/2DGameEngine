@@ -173,9 +173,12 @@ public class Window {
         return get().width;
     }
 
-
     public static int getHeight() {
         return get().height;
+    }
+
+    public static ImGUILayer getImGUILayer() {
+        return get().imGUILayer;
     }
 
     public static void setWidth(int width) {

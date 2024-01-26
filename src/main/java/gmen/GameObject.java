@@ -8,7 +8,7 @@ import java.util.List;
 public class GameObject {
     private String name;
     private List<Component> components;
-    public  Transform transform;
+    public Transform transform;
     private int zIndex;
     private static int ID_COUNTER = 0;
     private int uID = -1;

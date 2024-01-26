@@ -259,4 +259,8 @@ public class ImGUILayer {
         imGuiGl3.dispose();
         ImGui.destroyContext();
     }
+
+    public PropertiesWindow getPropertiesWindow() {
+        return this.propertiesWindow;
+    }
 }

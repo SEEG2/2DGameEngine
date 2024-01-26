@@ -1,9 +1,11 @@
 package components;
 
+import editor.PropertiesWindow;
 import gmen.GameObject;
 import gmen.Prefabs;
 import gmen.Window;
 import org.joml.Vector4f;
+import renderer.Texture;
 import util.AssetPool;
 
 public class TranslateGizmo extends Component {
@@ -11,17 +13,19 @@ public class TranslateGizmo extends Component {
     private Vector4f xAxisHoverColor = new Vector4f();
     private Vector4f yAxisColor = new Vector4f(0,1,0,1);
     private Vector4f yAxisHoverColor = new Vector4f();
-    private GameObject xAxisObject;
+    private transient GameObject xAxisObject;
     private GameObject yAxisObject;
     private SpriteRenderer xAxisSpriteRenderer;
     private SpriteRenderer yAxisSpriteRenderer;
+    private PropertiesWindow propertiesWindow;
     private GameObject activeGameObject = null;
 
-    public TranslateGizmo(Sprite arrowSprite) {
-        this.xAxisObject = Prefabs.generateSpriteObject(arrowSprite, 81, 81);
-        this.yAxisObject = Prefabs.generateSpriteObject(arrowSprite, 81, 81);
+    public TranslateGizmo(Texture texture, PropertiesWindow propertiesWindow) {
+        this.xAxisObject = Prefabs.generateTextureObject(texture, 81, 81);
+        this.yAxisObject = Prefabs.generateTextureObject(texture, 81, 81);
         this.xAxisSpriteRenderer = this.xAxisObject.getComponent(SpriteRenderer.class);
         this.yAxisSpriteRenderer = this.yAxisObject.getComponent(SpriteRenderer.class);
+        this.propertiesWindow = propertiesWindow;
 
         Window.getScene().addGameObjectToScene(this.xAxisObject);
         Window.getScene().addGameObjectToScene(this.yAxisObject);
@@ -33,10 +37,22 @@ public class TranslateGizmo extends Component {
             this.xAxisObject.transform.position.set(this.activeGameObject.transform.position);
             this.yAxisObject.transform.position.set(this.activeGameObject.transform.position);
         }
+
+        this.activeGameObject = this.propertiesWindow.getActiveGameObject();
+
+        if (this.activeGameObject != null) {
+            this.setActive();
+        } else {
+            this.setInactive();
+        }
     }
 
-    private void setActive(GameObject gameObject) {
-        this.activeGameObject = gameObject;
+    @Override
+    public void start() {
+
+    }
+
+    private void setActive() {
         this.xAxisSpriteRenderer.setColor(xAxisColor);
         this.yAxisSpriteRenderer.setColor(yAxisColor);
     }
