@@ -90,6 +90,8 @@ public class MouseListener {
         get().scrollY = 0;
         get().lastX = get().xPos;
         get().lastY = get().yPos;
+        get().lastWorldX = get().worldX;
+        get().lastWorldY = get().worldY;
     }
 
     //getters for each value stored and updated
@@ -180,7 +182,7 @@ public class MouseListener {
         return (float)(get().lastWorldX - get().worldX);
     }
 
-    public static float getWorldY() {
+    public static float getWorldDy() {
         return (float)(get().lastWorldY - get().worldY);
     }
 }
