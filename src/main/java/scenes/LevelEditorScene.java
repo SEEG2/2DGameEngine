@@ -18,6 +18,7 @@ public class LevelEditorScene extends Scene {
     public LevelEditorScene() {}
     GameObject levelEditorComponents = new GameObject("Level Editor", new Transform(new Vector2f()), 0);
 
+
     //Spritesheet sprites;
     @Override
     public void init() {
@@ -26,11 +27,14 @@ public class LevelEditorScene extends Scene {
 
         this.camera = new Camera(new Vector2f());
 
-        levelEditorComponents.addComponent(new TranslateGizmo(AssetPool.getTexture("assets/images/default/images/gizmo.png"), Window.getImGUILayer().getPropertiesWindow()));
-        levelEditorComponents.addComponent(new ScaleGizmo(AssetPool.getTexture("assets/images/default/images/gizmo.png"), Window.getImGUILayer().getPropertiesWindow()));
         levelEditorComponents.addComponent(new MouseControl());
         levelEditorComponents.addComponent(new GridLines());
         levelEditorComponents.addComponent(new EditorCamera(this.camera));
+        levelEditorComponents.addComponent(new TranslateGizmo(AssetPool.getTexture("assets/images/default/images/gizmo.png"), Window.getImGUILayer().getPropertiesWindow()));
+        levelEditorComponents.addComponent(new ScaleGizmo(AssetPool.getTexture("assets/images/default/images/gizmo.png"), Window.getImGUILayer().getPropertiesWindow()));
+
+
+
 
         levelEditorComponents.start();
     }

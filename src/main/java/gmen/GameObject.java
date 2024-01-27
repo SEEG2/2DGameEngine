@@ -74,10 +74,12 @@ public class GameObject {
         }
     }
 
-    public void addComponent(Component c) {
+    public Component addComponent(Component c) {
         c.generateID();
         this.components.add(c);
         c.gameObject = this;
+
+        return c;
     }
 
     public void imGUI() {

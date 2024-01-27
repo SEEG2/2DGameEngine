@@ -9,6 +9,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 public abstract class Component {
+
     public transient GameObject gameObject = null;
     private static int ID_COUNTER = 0;
     private int uID =-1;
