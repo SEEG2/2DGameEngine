@@ -27,6 +27,7 @@ public class LevelEditorScene extends Scene {
         this.camera = new Camera(new Vector2f());
 
         levelEditorComponents.addComponent(new TranslateGizmo(AssetPool.getTexture("assets/images/default/images/gizmo.png"), Window.getImGUILayer().getPropertiesWindow()));
+        levelEditorComponents.addComponent(new ScaleGizmo(AssetPool.getTexture("assets/images/default/images/gizmo.png"), Window.getImGUILayer().getPropertiesWindow()));
         levelEditorComponents.addComponent(new MouseControl());
         levelEditorComponents.addComponent(new GridLines());
         levelEditorComponents.addComponent(new EditorCamera(this.camera));
