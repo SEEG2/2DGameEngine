@@ -20,8 +20,8 @@ public class Gizmo extends Component {
     private SpriteRenderer xAxisSpriteRenderer;
     private SpriteRenderer yAxisSpriteRenderer;
     private PropertiesWindow propertiesWindow;
-    private transient int gizmoWidth = 19;
-    private transient int gizmoHeight = 81;
+    private transient int gizmoWidth = 15;
+    private transient int gizmoHeight = 60;
     protected transient boolean xAxisActive = false, yAxisActive = false;
     protected GameObject activeGameObject = null;
 
