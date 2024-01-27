@@ -11,7 +11,7 @@ public class MouseListener {
     //singleton instance
     private static MouseListener instance;
     private double scrollX, scrollY;
-    private double xPos, yPos, lastY, lastX, worldX, worldY, lastWordX, lastWordY;
+    private double xPos, yPos, lastY, lastX, worldX, worldY, lastWorldX, lastWorldY;
     //button states for a mouse with three buttons
     private boolean mouseButtonPressed[] = new boolean[9];
     private int mouseButtonsDown = 0;
@@ -45,11 +45,10 @@ public class MouseListener {
 
         get().lastX = get().xPos;
         get().lastY = get().yPos;
-        get().lastWordX = get().worldX;
-        get().lastWordY = get().worldY;
+        get().lastWorldX = get().worldX;
+        get().lastWorldY = get().worldY;
         get().xPos = xpos;
         get().yPos = ypos;
-
         calcOrthoX();
         calcOrthoY();
     }
@@ -178,10 +177,10 @@ public class MouseListener {
     }
 
     public static float getWorldDx() {
-        return (float)(get().lastWordX - get().worldX);
+        return (float)(get().lastWorldX - get().worldX);
     }
 
     public static float getWorldY() {
-        return (float)(get().lastWordY - get().worldY);
+        return (float)(get().lastWorldY - get().worldY);
     }
 }
