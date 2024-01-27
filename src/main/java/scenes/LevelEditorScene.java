@@ -31,7 +31,7 @@ public class LevelEditorScene extends Scene {
         levelEditorComponents.addComponent(new GridLines());
         levelEditorComponents.addComponent(new EditorCamera(this.camera));
         levelEditorComponents.addComponent(new TranslateGizmo(AssetPool.getTexture("assets/images/default/images/gizmo.png"), Window.getImGUILayer().getPropertiesWindow()));
-        levelEditorComponents.addComponent(new ScaleGizmo(AssetPool.getTexture("assets/images/default/images/gizmo.png"), Window.getImGUILayer().getPropertiesWindow()));
+        levelEditorComponents.addComponent(new ScaleGizmo(AssetPool.getTexture("assets/images/default/images/gizmo_scale.png"), Window.getImGUILayer().getPropertiesWindow()));
 
 
 
@@ -45,6 +45,7 @@ public class LevelEditorScene extends Scene {
         AssetPool.addSpritesheet("assets/images/default/spritesheets/spritesheet.png", new Spritesheet(AssetPool.getTexture("assets/images/default/spritesheets/spritesheet.png"), 120, 120, 4, 0));
         AssetPool.getTexture("assets/images/default/images/default.png");
         AssetPool.getTexture("assets/images/default/images/gizmo.png");
+        AssetPool.getTexture("assets/images/default/images/gizmo_scale.png");
 
         for (GameObject gameObject : this.gameObjects) {
             if (gameObject.getComponent(SpriteRenderer.class) != null) {
