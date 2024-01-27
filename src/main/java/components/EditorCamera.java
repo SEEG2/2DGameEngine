@@ -6,6 +6,7 @@ import gmen.MouseListener;
 import org.joml.Vector2f;
 
 import static org.lwjgl.glfw.GLFW.*;
+import static util.Settings.RESET_CAMERA_KEY;
 
 public class EditorCamera extends Component {
     private Camera levelEditorCamera;
@@ -44,7 +45,7 @@ public class EditorCamera extends Component {
             levelEditorCamera.addZoom(addValue);
         }
 
-        if (KeyListener.isKeyPressed(GLFW_KEY_R) && MouseListener.isMouseInsideFrameBuffer()) {
+        if (KeyListener.isKeyPressed(RESET_CAMERA_KEY) && MouseListener.isMouseInsideFrameBuffer()) {
             reset = true;
         }
 

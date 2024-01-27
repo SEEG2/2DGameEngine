@@ -8,6 +8,7 @@ import renderer.Texture;
 import util.AssetPool;
 
 import static org.lwjgl.glfw.GLFW.*;
+import static util.Settings.SWITCH_GIZMO_KEY;
 
 public class TranslateGizmo extends Gizmo {
 
@@ -17,7 +18,7 @@ public class TranslateGizmo extends Gizmo {
 
     @Override
     public void update(float dt) {
-        if (KeyListener.isKeyPressed(GLFW_KEY_LEFT_SHIFT)) {
+        if (KeyListener.isKeyPressed(SWITCH_GIZMO_KEY)) {
             super.dontUse();
             return;
         }

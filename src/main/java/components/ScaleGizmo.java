@@ -7,6 +7,7 @@ import org.joml.Vector4f;
 import renderer.Texture;
 
 import static org.lwjgl.glfw.GLFW.*;
+import static util.Settings.SWITCH_GIZMO_KEY;
 
 public class ScaleGizmo extends Gizmo {
 
@@ -16,7 +17,7 @@ public class ScaleGizmo extends Gizmo {
 
     @Override
     public void update(float dt) {
-        if (!KeyListener.isKeyPressed(GLFW_KEY_LEFT_SHIFT)) {
+        if (!KeyListener.isKeyPressed(SWITCH_GIZMO_KEY)) {
             super.dontUse();
             return;
         }
