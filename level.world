@@ -50,10 +50,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 1
+    "uID": 1,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -106,10 +108,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 2
+    "uID": 2,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -162,10 +166,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 3
+    "uID": 3,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -218,10 +224,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 4
+    "uID": 4,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -274,10 +282,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 5
+    "uID": 5,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -330,10 +340,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 6
+    "uID": 6,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -386,10 +398,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 7
+    "uID": 7,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -442,10 +456,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 8
+    "uID": 8,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -498,10 +514,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 9
+    "uID": 9,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -554,10 +572,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 10
+    "uID": 10,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -610,10 +630,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 11
+    "uID": 11,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -666,10 +688,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 12
+    "uID": 12,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -722,10 +746,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 13
+    "uID": 13,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -778,10 +804,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 14
+    "uID": 14,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -834,10 +862,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 15
+    "uID": 15,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -890,10 +920,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 16
+    "uID": 16,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -946,10 +978,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 17
+    "uID": 17,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -1002,10 +1036,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 18
+    "uID": 18,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -1058,10 +1094,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 19
+    "uID": 19,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -1114,10 +1152,12 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 20
+    "uID": 20,
+    "isSerializable": true
   },
   {
     "name": "GENERATED_SPRITE_OBJECT",
@@ -1170,9 +1210,69 @@
       "scale": {
         "x": 30.0,
         "y": 30.0
-      }
+      },
+      "rotation": 0.0
     },
     "zIndex": 0,
-    "uID": 21
+    "uID": 21,
+    "isSerializable": true
+  },
+  {
+    "name": "GENERATED_SPRITE_OBJECT",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.5,
+                "y": 1.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 41
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 90.0,
+        "y": 510.0
+      },
+      "scale": {
+        "x": 30.0,
+        "y": 30.0
+      },
+      "rotation": 0.0
+    },
+    "zIndex": 0,
+    "uID": 22,
+    "isSerializable": true
   }
 ]
