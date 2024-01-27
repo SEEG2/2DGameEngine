@@ -21,6 +21,7 @@ public class Gizmo extends Component {
     private transient int gizmoHeight = 60;
     protected transient boolean xAxisActive = false, yAxisActive = false;
     protected GameObject activeGameObject = null;
+    private boolean using;
 
 
     public Gizmo(Texture texture, PropertiesWindow propertiesWindow) {
@@ -59,7 +60,7 @@ public class Gizmo extends Component {
 
     @Override
     public void update(float dt) {
-
+        if (!using) {return;}
         this.activeGameObject = this.propertiesWindow.getActiveGameObject();
 
         if (this.activeGameObject != null) {
@@ -131,5 +132,14 @@ public class Gizmo extends Component {
 
         yAxisSpriteRenderer.setColor(yAxisColor);
         return false;
+    }
+
+    protected void use() {
+        this.using = true;
+    }
+
+    protected void dontUse() {
+        this.using = false;
+        this.setInactive();
     }
 }

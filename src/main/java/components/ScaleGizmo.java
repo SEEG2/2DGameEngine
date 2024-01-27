@@ -6,8 +6,7 @@ import org.joml.Vector2f;
 import org.joml.Vector4f;
 import renderer.Texture;
 
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_Q;
-import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_LEFT;
+import static org.lwjgl.glfw.GLFW.*;
 
 public class ScaleGizmo extends Gizmo {
 
@@ -17,10 +16,11 @@ public class ScaleGizmo extends Gizmo {
 
     @Override
     public void update(float dt) {
-        if (!KeyListener.isKeyPressed(GLFW_KEY_Q)) {
-            super.setInactive();
+        if (!KeyListener.isKeyPressed(GLFW_KEY_LEFT_SHIFT)) {
+            super.dontUse();
             return;
         }
+        super.use();
         if (activeGameObject != null) {
             if (xAxisActive && !yAxisActive) {
                 activeGameObject.transform.scale.x -= MouseListener.getWorldDx();

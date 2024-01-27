@@ -7,8 +7,7 @@ import org.joml.Vector4f;
 import renderer.Texture;
 import util.AssetPool;
 
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_Q;
-import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_LEFT;
+import static org.lwjgl.glfw.GLFW.*;
 
 public class TranslateGizmo extends Gizmo {
 
@@ -18,9 +17,11 @@ public class TranslateGizmo extends Gizmo {
 
     @Override
     public void update(float dt) {
-        if (KeyListener.isKeyPressed(GLFW_KEY_Q)) {
+        if (KeyListener.isKeyPressed(GLFW_KEY_LEFT_SHIFT)) {
+            super.dontUse();
             return;
         }
+        super.use();
         if (activeGameObject != null) {
             if (xAxisActive && !yAxisActive) {
                 activeGameObject.transform.position.x -= MouseListener.getWorldDx();
