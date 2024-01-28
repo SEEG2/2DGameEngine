@@ -2,6 +2,7 @@ package gmen;
 
 import components.Component;
 import components.Transform;
+import imgui.ImGui;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +68,8 @@ public class GameObject {
 
     public void imGUI() {
         for (Component c : components) {
-            c.imGUI();
+            if (ImGui.collapsingHeader(c.getClass().getSimpleName()))
+                c.imGUI();
         }
     }
 
