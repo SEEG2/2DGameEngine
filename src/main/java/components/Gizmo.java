@@ -74,10 +74,10 @@ public class Gizmo extends Component {
         boolean xAxisHot = checkXHoverState();
         boolean yAxisHot = checkYHoverState();
 
-        if ((xAxisHot || xAxisActive) && MouseListener.isDragging() && MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)) {
+        if ((xAxisHot || xAxisActive) && MouseListener.isDragging() && MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && !yAxisActive) {
             xAxisActive = true;
             yAxisActive = false;
-        } else if ((yAxisHot || yAxisActive) && MouseListener.isDragging() && MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)) {
+        } else if ((yAxisHot || yAxisActive) && MouseListener.isDragging() && MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && !xAxisActive) {
             yAxisActive = true;
             xAxisActive = false;
         } else {

@@ -30,6 +30,7 @@ public class TranslateGizmo extends Gizmo {
                 activeGameObject.transform.position.y -= MouseListener.getWorldDy();
             }
         }
+
         super.update(dt);
     }
 }
