@@ -88,7 +88,7 @@ public class Gizmo extends Component {
         this.xAxisObject.transform.position.set(this.activeGameObject.transform.position.x, this.activeGameObject.transform.position.y + (float) gizmoWidth/2);
         this.yAxisObject.transform.position.set(this.activeGameObject.transform.position.x, this.activeGameObject.transform.position.y);
 
-        if (activeGameObject.transform.scale.x > 32 || activeGameObject.transform.scale.y > 32) {
+        if (activeGameObject.transform.scale.x > 32*30 || activeGameObject.transform.scale.y > 32*30) {
             this.xAxisObject.transform.scale.set(Math.max(activeGameObject.transform.scale.x, activeGameObject.transform.scale.y));
             this.xAxisObject.transform.scale.x /= gizmoHeight;
             this.xAxisObject.transform.scale.y /= gizmoWidth;
