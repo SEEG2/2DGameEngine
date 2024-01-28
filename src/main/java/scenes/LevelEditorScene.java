@@ -12,7 +12,7 @@ public class LevelEditorScene extends Scene {
 
     private Spritesheet sprites;
     public LevelEditorScene() {}
-    GameObject levelEditorComponents = new GameObject("Level Editor", new Transform(new Vector2f()), 0);
+    GameObject levelEditorComponents = new GameObject("Level Editor");
 
 
     //Spritesheet sprites;
@@ -23,6 +23,7 @@ public class LevelEditorScene extends Scene {
 
         this.camera = new Camera(new Vector2f());
 
+        levelEditorComponents.addComponent(new Transform());
         levelEditorComponents.addComponent(new MouseControl());
         levelEditorComponents.addComponent(new GridLines());
         levelEditorComponents.addComponent(new EditorCamera(this.camera));

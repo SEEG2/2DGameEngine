@@ -2,7 +2,7 @@ package components;
 
 import org.joml.Vector2f;
 
-public class Transform {
+public class Transform extends Component {
 
     public Vector2f position;
     public Vector2f scale;

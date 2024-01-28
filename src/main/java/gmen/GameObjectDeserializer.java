@@ -12,16 +12,15 @@ public class GameObjectDeserializer implements JsonDeserializer<GameObject> {
         JsonObject jsonObject = jsonElement.getAsJsonObject();
         String name = jsonObject.get("name").getAsString();
         JsonArray components = jsonObject.getAsJsonArray("components");
-        Transform transform = jsonDeserializationContext.deserialize(jsonObject.get("transform"), Transform.class);
 
-
-        GameObject gameObject = new GameObject(name, transform);
+        GameObject gameObject = new GameObject(name);
 
         for (JsonElement e : components) {
             Component c = jsonDeserializationContext.deserialize(e, Component.class);
             gameObject.addComponent(c);
         }
 
+        gameObject.transform = gameObject.getComponent(Transform.class);
         return gameObject;
     }
 }

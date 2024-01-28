@@ -9,7 +9,7 @@ import java.util.List;
 public class GameObject {
     private String name;
     private List<Component> components;
-    public Transform transform;
+    public transient Transform transform;
     //do not set this to values > 255 (otherwise it will interfere with the editor
     private static int ID_COUNTER = 0;
     private int uID = -1;
@@ -30,22 +30,6 @@ public class GameObject {
         this.uID = ID_COUNTER++;
     }
 
-    public GameObject(String name, Transform transform, int zIndex) {
-        this.name = name;
-        this.components = new ArrayList<>();
-        this.transform = transform;
-        this.transform.zIndex = zIndex;
-
-        this.uID = ID_COUNTER++;
-    }
-
-    public GameObject(String name, Transform transform) {
-        this.name = name;
-        this.components = new ArrayList<>();
-        this.transform = transform;
-
-        this.uID = ID_COUNTER++;
-    }
 
     public <T extends Component> T getComponent(Class<T> componentClass) {
         for (Component c : components) {
@@ -92,8 +76,8 @@ public class GameObject {
     }
 
     public void start() {
-        for (Component component : components) {
-            component.start();
+        for (int i=0; i < components.size(); i++) {
+            components.get(i).start();
         }
     }
 
