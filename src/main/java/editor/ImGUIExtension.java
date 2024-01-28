@@ -7,7 +7,7 @@ import org.joml.Vector2f;
 
 public class ImGUIExtension {
     private static float defaultColumnWidth = 220;
-    private static float resetValue = 0;
+    private static float defaultResetValue = 0;
 
     public static void drawVec2Control(String label, Vector2f values, float resetValue, float columnWidth) {
         ImGui.pushID(label);
@@ -73,6 +73,40 @@ public class ImGUIExtension {
     }
 
     public static void drawVec2Control(String label, Vector2f values) {
-        drawVec2Control(label, values, resetValue, 220.0f);
+        drawVec2Control(label, values, defaultResetValue, 220.0f);
+    }
+
+    public static float dragFloat(String label, float value) {
+        ImGui.pushID(label);
+
+        ImGui.columns(2);
+        ImGui.setColumnWidth(0, defaultColumnWidth);
+        ImGui.text(label);
+        ImGui.nextColumn();
+
+        float[] valArr = {value};
+        ImGui.dragFloat("##dragFloat" + label, valArr, 0.1f);
+
+        ImGui.columns(1);
+        ImGui.popID();
+
+        return valArr[0];
+    }
+
+    public static int dragInt(String label, int value) {
+        ImGui.pushID(label);
+
+        ImGui.columns(2);
+        ImGui.setColumnWidth(0, defaultColumnWidth);
+        ImGui.text(label);
+        ImGui.nextColumn();
+
+        int[] valArr = {value};
+        ImGui.dragInt("##dragFloat" + label, valArr, 0.1f);
+
+        ImGui.columns(1);
+        ImGui.popID();
+
+        return valArr[0];
     }
 }

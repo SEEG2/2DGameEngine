@@ -1,5 +1,6 @@
 package components;
 
+import editor.ImGUIExtension;
 import gmen.GameObject;
 import imgui.ImGui;
 import org.joml.Vector2f;
@@ -42,16 +43,10 @@ public abstract class Component {
 
                 if (type == int.class) {
                     int val = (int) value;
-                    int[] imInt = {val};
-                    if (ImGui.dragInt(name + ": ", imInt)) {
-                        field.set(this, imInt[0]);
-                    }
+                    field.set(this, ImGUIExtension.dragInt(name, val));
                 } else if (type == float.class) {
                     float val = (float) value;
-                    float[] imFloat = {val};
-                    if (ImGui.dragFloat(name + ": ", imFloat)) {
-                        field.set(this, imFloat[0]);
-                    }
+                    field.set(this, ImGUIExtension.dragFloat(name, val));
                 } else if (type == boolean.class) {
                     boolean val = (boolean) value;
                     if (ImGui.checkbox(name + ": ", val)) {
@@ -73,10 +68,10 @@ public abstract class Component {
                     }
                 } else if (type == Vector2f.class) {
                     Vector2f val = (Vector2f) value;
-                    float[] imVec = {val.x, val.y};
-
-                    if (ImGui.dragFloat2(name + ": ", imVec)) {
-                        val.set(imVec[0], imVec[1]);
+                    if (field.getName().equals("scale")) {
+                        ImGUIExtension.drawVec2Control(name, val,1);
+                    } else {
+                        ImGUIExtension.drawVec2Control(name, val);
                     }
                 }
 
@@ -84,7 +79,6 @@ public abstract class Component {
                     field.setAccessible(false);
                 }
             }
-
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }

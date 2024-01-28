@@ -46,8 +46,4 @@ public class Transform extends Component {
         Transform t = (Transform) o;
         return t.position.equals(this.position) && t.scale.equals(this.scale) && t.rotation == this.rotation;
     }
-
-    @Override public void imGUI() {
-        ImGUIExtension.drawVec2Control("Position", position);
-    }
 }
