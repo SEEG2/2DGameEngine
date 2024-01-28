@@ -1,6 +1,7 @@
 package gmen;
 
 import components.Component;
+import components.Transform;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +11,6 @@ public class GameObject {
     private List<Component> components;
     public Transform transform;
     //do not set this to values > 255 (otherwise it will interfere with the editor
-    private int zIndex;
     private static int ID_COUNTER = 0;
     private int uID = -1;
     private boolean isSerializable = true;
@@ -19,14 +19,22 @@ public class GameObject {
         this.name = name;
         this.components = new ArrayList<>();
         this.transform = new Transform();
-        this.zIndex = 0;
     }
 
     public GameObject(String name, int zIndex) {
         this.name = name;
         this.components = new ArrayList<>();
         this.transform = new Transform();
-        this.zIndex = zIndex;
+        this.transform.zIndex = zIndex;
+
+        this.uID = ID_COUNTER++;
+    }
+
+    public GameObject(String name, Transform transform, int zIndex) {
+        this.name = name;
+        this.components = new ArrayList<>();
+        this.transform = transform;
+        this.transform.zIndex = zIndex;
 
         this.uID = ID_COUNTER++;
     }
@@ -37,17 +45,6 @@ public class GameObject {
         this.transform = transform;
 
         this.uID = ID_COUNTER++;
-
-    }
-
-    public GameObject(String name, Transform transform, int zIndex) {
-        this.name = name;
-        this.components = new ArrayList<>();
-        this.transform = transform;
-        this.zIndex = zIndex;
-
-        this.uID = ID_COUNTER++;
-
     }
 
     public <T extends Component> T getComponent(Class<T> componentClass) {
@@ -101,11 +98,11 @@ public class GameObject {
     }
 
     public int getzIndex() {
-        return this.zIndex;
+        return this.transform.zIndex;
     }
 
     public void setzIndex(int zIndex) {
-        this.zIndex = zIndex;
+        this.transform.zIndex = zIndex;
     }
 
     public int getuID() {

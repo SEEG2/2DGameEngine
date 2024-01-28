@@ -2,6 +2,7 @@ package gmen;
 
 import components.Sprite;
 import components.SpriteRenderer;
+import components.Transform;
 import org.joml.Vector2f;
 import renderer.Texture;
 

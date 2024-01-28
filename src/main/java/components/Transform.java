@@ -1,4 +1,4 @@
-package gmen;
+package components;
 
 import org.joml.Vector2f;
 
@@ -7,6 +7,7 @@ public class Transform {
     public Vector2f position;
     public Vector2f scale;
     public float rotation = 0;
+    public int zIndex = 0;
 
     public Transform() {
         init(new Vector2f(), new Vector2f());
@@ -41,6 +42,6 @@ public class Transform {
         if (!(o instanceof Transform)) return false;
 
         Transform t = (Transform) o;
-        return t.position.equals(this.position) && t.scale.equals(this.scale);
+        return t.position.equals(this.position) && t.scale.equals(this.scale) && t.rotation == this.rotation;
     }
 }

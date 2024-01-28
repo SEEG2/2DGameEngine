@@ -6,11 +6,7 @@ import gmen.*;
 import imgui.ImGui;
 import imgui.ImVec2;
 import org.joml.Vector2f;
-import org.joml.Vector4f;
-import renderer.DebugDraw;
 import util.AssetPool;
-
-import static Constants.Color.*;
 
 public class LevelEditorScene extends Scene {
 
