@@ -85,8 +85,8 @@ public class Gizmo extends Component {
             yAxisActive = false;
         }
 
-        this.xAxisObject.transform.position.set(this.activeGameObject.transform.position.x + 30, this.activeGameObject.transform.position.y - 4);
-        this.yAxisObject.transform.position.set(this.activeGameObject.transform.position.x + 25, this.activeGameObject.transform.position.y - 1);
+        this.xAxisObject.transform.position.set(this.activeGameObject.transform.position.x, this.activeGameObject.transform.position.y + (float) gizmoWidth/2);
+        this.yAxisObject.transform.position.set(this.activeGameObject.transform.position.x, this.activeGameObject.transform.position.y);
 
         if (activeGameObject.transform.scale.x > 32 || activeGameObject.transform.scale.y > 32) {
             this.xAxisObject.transform.scale.set(Math.max(activeGameObject.transform.scale.x, activeGameObject.transform.scale.y));
@@ -107,7 +107,7 @@ public class Gizmo extends Component {
 
     @Override
     public void start() {
-        this.xAxisObject.transform.rotation = 90;
+        this.xAxisObject.transform.rotation = -90;
     }
 
     protected void setActive() {
@@ -124,10 +124,10 @@ public class Gizmo extends Component {
     private boolean checkXHoverState() {
         Vector2f mousePos = new Vector2f(MouseListener.getOrthoX(), MouseListener.getOrthoY());
 
-        if (mousePos.x <= xAxisObject.transform.position.x
-                && mousePos.x >= xAxisObject.transform.position.x - xAxisObject.transform.scale.y
-                && mousePos.y >= xAxisObject.transform.position.y
-                && mousePos.y <= xAxisObject.transform.position.y + xAxisObject.transform.scale.x) {
+        if (mousePos.x <= xAxisObject.transform.position.x + xAxisObject.transform.scale.y
+                && mousePos.x >= xAxisObject.transform.position.x
+                && mousePos.y >= xAxisObject.transform.position.y - xAxisObject.transform.scale.x
+                && mousePos.y <= xAxisObject.transform.position.y) {
             this.xAxisSpriteRenderer.setColor(xAxisHoverColor);
             return true;
         }
