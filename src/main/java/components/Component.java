@@ -69,7 +69,7 @@ public abstract class Component {
                 } else if (type == Vector2f.class) {
                     Vector2f val = (Vector2f) value;
                     if (field.getName().equals("scale")) {
-                        ImGUIExtension.drawVec2Control(name, val,1);
+                        ImGUIExtension.drawVec2Control(name, val,32);
                     } else {
                         ImGUIExtension.drawVec2Control(name, val);
                     }

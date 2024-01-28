@@ -4,6 +4,7 @@ import imgui.ImGui;
 import imgui.flag.ImGuiCol;
 import imgui.flag.ImGuiStyleVar;
 import org.joml.Vector2f;
+import org.joml.Vector4f;
 
 public class ImGUIExtension {
     private static float defaultColumnWidth = 220;
@@ -102,11 +103,31 @@ public class ImGUIExtension {
         ImGui.nextColumn();
 
         int[] valArr = {value};
-        ImGui.dragInt("##dragFloat" + label, valArr, 0.1f);
+        ImGui.dragInt("##dragInt" + label, valArr, 0.1f);
 
         ImGui.columns(1);
         ImGui.popID();
 
         return valArr[0];
+    }
+
+    public static boolean colorPicker(String label, Vector4f color) {
+        boolean res = false;
+        ImGui.pushID(label);
+
+        ImGui.columns(2);
+        ImGui.setColumnWidth(0, defaultColumnWidth);
+        ImGui.text(label);
+        ImGui.nextColumn();
+
+        float[] imColor = {color.x, color.y, color.z, color.w};
+        if (ImGui.colorEdit4("##colorPicker", imColor)) {
+            color.set(imColor[0], imColor[1], imColor[2], imColor[3]);
+            res = true;
+        }
+        ImGui.columns(1);
+        ImGui.popID();
+
+        return res;
     }
 }
