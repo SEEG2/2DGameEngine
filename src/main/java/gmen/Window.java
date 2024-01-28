@@ -1,6 +1,7 @@
 package gmen;
 
 import imgui.ImGui;
+import org.lwjgl.BufferUtils;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
 import renderer.*;
@@ -8,6 +9,8 @@ import scenes.LevelEditorScene;
 import scenes.LevelScene;
 import scenes.Scene;
 import util.AssetPool;
+
+import java.nio.IntBuffer;
 
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
@@ -74,11 +77,18 @@ public class Window {
         glfwDefaultWindowHints();
         glfwWindowHint(GLFW_VISIBLE,GLFW_FALSE);
         glfwWindowHint(GLFW_RESIZABLE,GLFW_TRUE);
+        glfwWindowHint(GLFW_MAXIMIZED,GLFW_TRUE);
 
         glfwWindow = glfwCreateWindow(this.width, this.height, this.title, NULL, NULL);
         if (glfwWindow == NULL) {
             throw  new IllegalStateException("Couldn't create GLFW window.");
         }
+
+        IntBuffer widthBuffer = BufferUtils.createIntBuffer(1);
+        IntBuffer heightBuffer = BufferUtils.createIntBuffer(1);
+        glfwGetWindowSize(glfwWindow, widthBuffer, heightBuffer);
+        this.width = widthBuffer.get(0);
+        this.height = heightBuffer.get(0);
 
         glfwSetCursorPosCallback(glfwWindow, MouseListener::mousePosCallback);
         glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);
