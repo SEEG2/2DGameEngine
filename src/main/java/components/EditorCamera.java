@@ -60,4 +60,8 @@ public class EditorCamera extends Component {
             }
         }
     }
+
+    public Camera getCamera() {
+        return this.levelEditorCamera;
+    }
 }

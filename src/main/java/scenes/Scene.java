@@ -26,6 +26,7 @@ public abstract class Scene {
     private boolean isRunning = false;
     protected List<GameObject> gameObjects = new ArrayList<>();
     protected boolean levelIsLoaded = false;
+    private static Camera currentCamera = null;
 
     public Scene() {
 
@@ -144,5 +145,13 @@ public abstract class Scene {
 
             this.levelIsLoaded = true;
         }
+    }
+
+    public static Camera getCamera() {
+        return currentCamera;
+    }
+
+    public static void setCamera(Camera camera) {
+        currentCamera = camera;
     }
 }

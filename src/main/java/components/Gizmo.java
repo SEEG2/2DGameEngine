@@ -4,6 +4,7 @@ import editor.PropertiesWindow;
 import gmen.*;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
+import org.lwjgl.system.CallbackI;
 import renderer.Texture;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -87,6 +88,21 @@ public class Gizmo extends Component {
         this.xAxisObject.transform.position.set(this.activeGameObject.transform.position.x + 30, this.activeGameObject.transform.position.y - 4);
         this.yAxisObject.transform.position.set(this.activeGameObject.transform.position.x + 25, this.activeGameObject.transform.position.y - 1);
 
+        if (activeGameObject.transform.scale.x > 32 || activeGameObject.transform.scale.y > 32) {
+            this.xAxisObject.transform.scale.set(Math.max(activeGameObject.transform.scale.x, activeGameObject.transform.scale.y));
+            this.xAxisObject.transform.scale.x /= gizmoHeight;
+            this.xAxisObject.transform.scale.y /= gizmoWidth;
+
+
+            this.yAxisObject.transform.scale.set(Math.max(activeGameObject.transform.scale.x, activeGameObject.transform.scale.y));
+            this.yAxisObject.transform.scale.x /= gizmoHeight;
+            this.yAxisObject.transform.scale.y /= gizmoWidth;
+
+        } else {
+            this.xAxisObject.transform.scale.set(new Vector2f(gizmoWidth, gizmoHeight));
+            this.yAxisObject.transform.scale.set(new Vector2f(gizmoWidth, gizmoHeight));
+        }
+
     }
 
     @Override
@@ -109,9 +125,9 @@ public class Gizmo extends Component {
         Vector2f mousePos = new Vector2f(MouseListener.getOrthoX(), MouseListener.getOrthoY());
 
         if (mousePos.x <= xAxisObject.transform.position.x
-                && mousePos.x >= xAxisObject.transform.position.x - gizmoHeight
+                && mousePos.x >= xAxisObject.transform.position.x - xAxisObject.transform.scale.y
                 && mousePos.y >= xAxisObject.transform.position.y
-                && mousePos.y <= xAxisObject.transform.position.y + gizmoWidth) {
+                && mousePos.y <= xAxisObject.transform.position.y + xAxisObject.transform.scale.x) {
             this.xAxisSpriteRenderer.setColor(xAxisHoverColor);
             return true;
         }
@@ -122,9 +138,9 @@ public class Gizmo extends Component {
     private boolean checkYHoverState() {
         Vector2f mousePos = new Vector2f(MouseListener.getOrthoX(), MouseListener.getOrthoY());
 
-        if (mousePos.x <= yAxisObject.transform.position.x + gizmoWidth
+        if (mousePos.x <= yAxisObject.transform.position.x + yAxisObject.transform.scale.x
                 && mousePos.x >= yAxisObject.transform.position.x
-                && mousePos.y <= yAxisObject.transform.position.y + gizmoHeight
+                && mousePos.y <= yAxisObject.transform.position.y + yAxisObject.transform.scale.y
                 && mousePos.y >= yAxisObject.transform.position.y) {
             this.yAxisSpriteRenderer.setColor(yAxisHoverColor);
             return true;

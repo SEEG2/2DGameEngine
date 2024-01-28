@@ -34,6 +34,8 @@ public class LevelEditorScene extends Scene {
 
 
         levelEditorComponents.start();
+
+       Scene.setCamera(levelEditorComponents.getComponent(EditorCamera.class).getCamera());
     }
 
     public void loadResources() {
