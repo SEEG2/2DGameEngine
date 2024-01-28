@@ -19,6 +19,8 @@ public class GameObject {
         this.name = name;
         this.components = new ArrayList<>();
         this.transform = new Transform();
+
+        this.uID = ID_COUNTER++;
     }
 
     public GameObject(String name, int zIndex) {
