@@ -1,5 +1,9 @@
 package editor;
 
+import Constants.components.Box2DCollider;
+import Constants.components.CircleCollider;
+import Constants.components.Rigidbody2D;
+import components.Rigidbody;
 import gmen.GameObject;
 import gmen.MouseListener;
 import imgui.ImGui;
@@ -44,6 +48,29 @@ public class PropertiesWindow {
     public void imGUI() {
         if (activeGameObject != null) {
             ImGui.begin("Properties");
+
+            if (ImGui.beginPopupContextWindow("Component Adder")) {
+                if (ImGui.menuItem("Add Rigidbody")) {
+                    if (activeGameObject.getComponent(Rigidbody2D.class) == null) {
+                        activeGameObject.addComponent(new Rigidbody2D());
+                    }
+                }
+
+                if (ImGui.menuItem("Add Box Collider")) {
+                    if (activeGameObject.getComponent(Box2DCollider.class) == null) {
+                        activeGameObject.addComponent(new Box2DCollider());
+                    }
+                }
+
+                if (ImGui.menuItem("Add Circle Collider")) {
+                    if (activeGameObject.getComponent(CircleCollider.class) == null) {
+                        activeGameObject.addComponent(new CircleCollider());
+                    }
+                }
+
+                ImGui.endPopup();
+            }
+
             activeGameObject.imGUI();
             ImGui.end();
         }
