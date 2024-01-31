@@ -77,8 +77,8 @@
         "type": "Constants.components.Box2DCollider",
         "properties": {
           "halfSize": {
-            "x": 73.1625,
-            "y": 71.0625
+            "x": 10.851937,
+            "y": 9.202625
           },
           "origin": {
             "x": 0.0,
@@ -92,7 +92,7 @@
         }
       }
     ],
-    "uID": 0,
+    "uID": 48,
     "isSerializable": true,
     "isDead": false
   }
