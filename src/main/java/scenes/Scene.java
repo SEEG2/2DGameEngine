@@ -48,6 +48,7 @@ public class Scene {
     //called once per frame (after the first two frames past)
     public void update(float dt) {
         this.camera.adjustProjection();
+        this.physics2D.update(dt);
 
         for (int i = 0; i < gameObjects.size(); i++) {
             GameObject gameObject = gameObjects.get(i);

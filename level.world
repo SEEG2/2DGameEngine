@@ -1,0 +1,99 @@
+[
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 300.0,
+            "y": 540.0
+          },
+          "scale": {
+            "x": 30.0,
+            "y": 30.0
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 15
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 1.0,
+                "y": 1.0
+              },
+              {
+                "x": 1.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.75,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 16
+        }
+      },
+      {
+        "type": "Constants.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 120.1,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 17
+        }
+      },
+      {
+        "type": "Constants.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 73.1625,
+            "y": 71.0625
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 18
+        }
+      }
+    ],
+    "uID": 0,
+    "isSerializable": true,
+    "isDead": false
+  }
+]

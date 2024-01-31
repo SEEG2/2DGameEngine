@@ -1,6 +1,7 @@
 package gmen;
 
 import editor.GameViewWindow;
+import editor.MenuBar;
 import editor.PropertiesWindow;
 import imgui.ImFontAtlas;
 import imgui.ImFontConfig;
@@ -28,11 +29,13 @@ public class ImGUILayer {
     private String glslVersion;
     private GameViewWindow gameViewWindow;
     private PropertiesWindow propertiesWindow;
+    private MenuBar menuBar;
 
     public ImGUILayer(long glfwWindow, PickingTexture pickingTexture) {
         this.windowPtr = glfwWindow;
         this.gameViewWindow = new GameViewWindow();
         this.propertiesWindow = new PropertiesWindow(pickingTexture);
+        this.menuBar = new MenuBar();
     }
 
 
@@ -235,6 +238,7 @@ public class ImGUILayer {
         gameViewWindow.imGUI();
         propertiesWindow.update(dt, currentScene);
         propertiesWindow.imGUI();
+        menuBar.imGUI();
         ImGui.end();
         ImGui.render();
 
