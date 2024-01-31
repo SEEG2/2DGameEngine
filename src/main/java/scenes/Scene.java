@@ -8,9 +8,8 @@ import components.Transform;
 import gmen.Camera;
 import gmen.GameObject;
 import gmen.GameObjectDeserializer;
-import imgui.ImGui;
 import org.joml.Vector2f;
-import org.lwjgl.opengl.ARBGeometryShader4;
+import org.lwjgl.system.CallbackI;
 import physics.Physics2D;
 import renderer.Renderer;
 
@@ -26,15 +25,17 @@ public class Scene {
 
     private Renderer renderer = new Renderer();
     private Camera camera;
-    private boolean isRunning = false;
-    private List<GameObject> gameObjects = new ArrayList<>();
-    private boolean levelIsLoaded = false;
+    private boolean isRunning;
+    private List<GameObject> gameObjects;
     private static Camera currentCamera = null;
     private SceneInitializer sceneInitializer;
     private Physics2D physics2D;
 
     public Scene(SceneInitializer sceneInitializer) {
         this.sceneInitializer = sceneInitializer;
+        this.physics2D = new Physics2D();
+        this.gameObjects = new ArrayList<>();
+        this.isRunning = false;
     }
 
     //called on initialization
@@ -60,6 +61,23 @@ public class Scene {
             }
         }
     }
+
+    public void editorUpdate(float dt) {
+        this.camera.adjustProjection();
+
+        for (int i = 0; i < gameObjects.size(); i++) {
+            GameObject gameObject = gameObjects.get(i);
+            gameObject.editorUpdate(dt);
+
+            if (gameObject.isDead()) {
+                gameObjects.remove(i);
+                this.renderer.destroyGameObject(gameObject);
+                this.physics2D.destroyGameObject(gameObject);
+                i--;
+            }
+        }
+    }
+
     public void render() {
         this.renderer.render();
     }
@@ -69,6 +87,7 @@ public class Scene {
             GameObject go = gameObjects.get(i);
             go.start();
             this.renderer.add(go);
+            this.physics2D.add(go);
         }
         isRunning = true;
     }
@@ -80,6 +99,7 @@ public class Scene {
             gameObjects.add(go);
             go.start();
             this.renderer.add(go);
+            this.physics2D.add(go);
         }
     }
 
@@ -103,7 +123,7 @@ public class Scene {
         this.sceneInitializer.imGUI();
     }
 
-    public void saveExit() {
+    public void save() {
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .registerTypeAdapter(Component.class, new ComponentDeserializer())
@@ -166,8 +186,6 @@ public class Scene {
 
             GameObject.init(maxGoID);
             Component.init(maxCompID);
-
-            this.levelIsLoaded = true;
         }
     }
 

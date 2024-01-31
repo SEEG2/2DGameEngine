@@ -84,6 +84,10 @@ public abstract class Component {
         }
     }
 
+    public void editorUpdate(float dt) {
+
+    }
+
     public void generateID() {
         if (this.uID == -1) {
             this.uID = ID_COUNTER++;
