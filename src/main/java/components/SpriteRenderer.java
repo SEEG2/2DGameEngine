@@ -76,6 +76,10 @@ public class SpriteRenderer extends Component {
         return this.isDirty;
     }
 
+    public void setDirty() {
+        this.isDirty = true;
+    }
+
     public void setClean() {
         this.isDirty = false;
     }

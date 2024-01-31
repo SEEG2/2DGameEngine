@@ -8,37 +8,32 @@ import imgui.ImVec2;
 import org.joml.Vector2f;
 import util.AssetPool;
 
-public class LevelEditorScene extends Scene {
+public class LevelEditorSceneInitializer extends SceneInitializer {
 
     private Spritesheet sprites;
-    public LevelEditorScene() {}
-    GameObject levelEditorComponents = new GameObject("Level Editor");
+    public LevelEditorSceneInitializer() {}
+    private GameObject levelEditorComponents;
 
 
     //Spritesheet sprites;
     @Override
-    public void init() {
-        loadResources();
+    public void init(Scene scene) {
         sprites = AssetPool.getSpritesheet("assets/images/default/spritesheets/spritesheet.png");
 
-        this.camera = new Camera(new Vector2f());
-
+        levelEditorComponents = scene.createGameObject("Editor");
+        levelEditorComponents.disableSerialization();
         levelEditorComponents.addComponent(new Transform());
         levelEditorComponents.addComponent(new MouseControl());
         levelEditorComponents.addComponent(new GridLines());
-        levelEditorComponents.addComponent(new EditorCamera(this.camera));
+        levelEditorComponents.addComponent(new EditorCamera(scene.camera()));
         levelEditorComponents.addComponent(new TranslateGizmo(AssetPool.getTexture("assets/images/default/images/gizmo.png"), Window.getImGUILayer().getPropertiesWindow()));
         levelEditorComponents.addComponent(new ScaleGizmo(AssetPool.getTexture("assets/images/default/images/gizmo_scale.png"), Window.getImGUILayer().getPropertiesWindow()));
 
-
-
-
-        levelEditorComponents.start();
-
-       Scene.setCamera(levelEditorComponents.getComponent(EditorCamera.class).getCamera());
+        scene.addGameObjectToScene(levelEditorComponents);
     }
 
-    public void loadResources() {
+    @Override
+    public void loadResources(Scene scene) {
         AssetPool.getShader("assets/shaders/default.glsl");
         AssetPool.getShader("assets/shaders/line2D.glsl");
         AssetPool.addSpritesheet("assets/images/default/spritesheets/spritesheet.png", new Spritesheet(AssetPool.getTexture("assets/images/default/spritesheets/spritesheet.png"), 120, 120, 4, 0));
@@ -46,7 +41,7 @@ public class LevelEditorScene extends Scene {
         AssetPool.getTexture("assets/images/default/images/gizmo.png");
         AssetPool.getTexture("assets/images/default/images/gizmo_scale.png");
 
-        for (GameObject gameObject : this.gameObjects) {
+        for (GameObject gameObject : scene.getGameObjects()) {
             if (gameObject.getComponent(SpriteRenderer.class) != null) {
                 SpriteRenderer spriteRenderer = gameObject.getComponent(SpriteRenderer.class);
 
@@ -54,16 +49,6 @@ public class LevelEditorScene extends Scene {
                     spriteRenderer.setTexture(AssetPool.getTexture(spriteRenderer.getTexture().getFilepath()));
                 }
             }
-        }
-    }
-
-    @Override
-    public void update(float dt) {
-        levelEditorComponents.update(dt);
-        this.camera.adjustProjection();
-
-        for (GameObject go : this.gameObjects) {
-            go.update(dt);
         }
     }
 
@@ -116,10 +101,5 @@ public class LevelEditorScene extends Scene {
         }
 
         ImGui.end();
-    }
-
-    @Override
-    public void render() {
-        this.renderer.render();
     }
 }

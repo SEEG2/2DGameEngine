@@ -4,14 +4,13 @@ import EventSystem.EventSystem;
 import EventSystem.Observer;
 import EventSystem.events.Event;
 import EventSystem.events.EventType;
-import imgui.ImGui;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
 import renderer.*;
-import scenes.LevelEditorScene;
-import scenes.LevelScene;
+import scenes.LevelEditorSceneInitializer;
 import scenes.Scene;
+import scenes.SceneInitializer;
 import util.AssetPool;
 
 import java.nio.IntBuffer;
@@ -39,15 +38,13 @@ public class Window implements Observer {
         EventSystem.addObserver(this);
     }
 
-    public static void changeScene(int newScene) {
-        if (newScene == 0) {
-            currentScene = new LevelEditorScene();
-        } else if (newScene == 1) {
-            currentScene = new LevelScene();
-        } else {
-            assert false : "Unknown scene (" + newScene + ")";
-            return;
+    public static void changeScene(SceneInitializer sceneInitializer) {
+        if (currentScene != null) {
+
         }
+
+        currentScene = new Scene(sceneInitializer);
+
         currentScene.load();
         currentScene.init();
         currentScene.start();
@@ -122,7 +119,7 @@ public class Window implements Observer {
         this.imGUILayer = new ImGUILayer(glfwWindow, pickingTexture);
         this.imGUILayer.initImGui();
 
-        Window.changeScene(0);
+        Window.changeScene(new LevelEditorSceneInitializer());
     }
     public void loop() {
         float beginTime = (float) glfwGetTime();
@@ -208,9 +205,9 @@ public class Window implements Observer {
     @Override
     public void onNotify(GameObject gameObject, Event event) {
         if (event.eventType == EventType.GameEngineStartPlay) {
-
+            System.out.println("Starting");
         } else if (event.eventType == EventType.GameEngineStopPlay) {
-
+            System.out.println("Stopping");
         }
     }
 }

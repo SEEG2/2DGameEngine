@@ -28,19 +28,20 @@ public class GridLines extends Component {
 
         int maxLines = Math.max(numVerticalLines, numHorizontalLines);
 
-       if (Scene.getCamera().getZoom() < 8) {
-           for (int i = 0; i < maxLines; i++) {
-               int x = firstX + (Settings.GRID_WIDTH * i);
-               int y = firstY + (Settings.GRID_HEIGHT * i);
+        //TODO replace with zoom lvl
+        if (true) {
+            for (int i = 0; i < maxLines; i++) {
+                int x = firstX + (Settings.GRID_WIDTH * i);
+                int y = firstY + (Settings.GRID_HEIGHT * i);
 
-               if (i < numVerticalLines) {
-                   DebugDraw.addLine2D(new Vector2f(x,firstY), new Vector2f(x, firstY + height), GREY, 1, false);
-               }
+                if (i < numVerticalLines) {
+                    DebugDraw.addLine2D(new Vector2f(x,firstY), new Vector2f(x, firstY + height), GREY, 1, false);
+                }
 
-               if (i < numVerticalLines) {
-                   DebugDraw.addLine2D(new Vector2f(firstX,y), new Vector2f(firstX + width, y), GREY, 1, false);
-               }
-           }
-       }
+                if (i < numVerticalLines) {
+                    DebugDraw.addLine2D(new Vector2f(firstX,y), new Vector2f(firstX + width, y), GREY, 1, false);
+                }
+            }
+        }
     }
 }

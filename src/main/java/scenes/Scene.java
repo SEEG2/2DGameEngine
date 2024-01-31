@@ -9,6 +9,9 @@ import gmen.Camera;
 import gmen.GameObject;
 import gmen.GameObjectDeserializer;
 import imgui.ImGui;
+import org.joml.Vector2f;
+import org.lwjgl.opengl.ARBGeometryShader4;
+import physics.Physics2D;
 import renderer.Renderer;
 
 import java.io.FileWriter;
@@ -19,30 +22,51 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class Scene {
+public class Scene {
 
-    protected Renderer renderer = new Renderer();
-    protected Camera camera;
+    private Renderer renderer = new Renderer();
+    private Camera camera;
     private boolean isRunning = false;
-    protected List<GameObject> gameObjects = new ArrayList<>();
-    protected boolean levelIsLoaded = false;
+    private List<GameObject> gameObjects = new ArrayList<>();
+    private boolean levelIsLoaded = false;
     private static Camera currentCamera = null;
+    private SceneInitializer sceneInitializer;
+    private Physics2D physics2D;
 
-    public Scene() {
-
+    public Scene(SceneInitializer sceneInitializer) {
+        this.sceneInitializer = sceneInitializer;
     }
 
     //called on initialization
     public void init() {
-
+        this.camera = new Camera(new Vector2f());
+        this.sceneInitializer.loadResources(this);
+        this.sceneInitializer.init(this);
     }
 
     //called once per frame (after the first two frames past)
-    public abstract void update(float dt);
-    public abstract void render();
+    public void update(float dt) {
+        this.camera.adjustProjection();
+
+        for (int i = 0; i < gameObjects.size(); i++) {
+            GameObject gameObject = gameObjects.get(i);
+            gameObject.update(dt);
+
+            if (gameObject.isDead()) {
+                gameObjects.remove(i);
+                this.renderer.destroyGameObject(gameObject);
+                this.physics2D.destroyGameObject(gameObject);
+                i--;
+            }
+        }
+    }
+    public void render() {
+        this.renderer.render();
+    }
 
     public void start() {
-        for (GameObject go : gameObjects) {
+        for (int i = 0; i < gameObjects.size(); i++) {
+            GameObject go = gameObjects.get(i);
             go.start();
             this.renderer.add(go);
         }
@@ -76,7 +100,7 @@ public abstract class Scene {
     }
 
     public void imGUI() {
-
+        this.sceneInitializer.imGUI();
     }
 
     public void saveExit() {
@@ -153,5 +177,15 @@ public abstract class Scene {
 
     public static void setCamera(Camera camera) {
         currentCamera = camera;
+    }
+
+    public List<GameObject> getGameObjects() {
+        return this.gameObjects;
+    }
+
+    public void destroy() {
+        for (GameObject gameObject : gameObjects) {
+            gameObject.destroy();
+        }
     }
 }

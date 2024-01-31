@@ -15,6 +15,7 @@ public class GameObject {
     private static int ID_COUNTER = 0;
     private int uID = -1;
     private boolean isSerializable = true;
+    private boolean isDead = false;
 
     public GameObject(String name) {
         this.name = name;
@@ -85,6 +86,13 @@ public class GameObject {
         }
     }
 
+    public void destroy() {
+        this.isDead = true;
+        for (int i = 0; i < components.size(); i++) {
+            components.get(i).destroy();
+        }
+    }
+
     public int getzIndex() {
         return this.transform.zIndex;
     }
@@ -119,5 +127,9 @@ public class GameObject {
 
     public String getName() {
         return this.name;
+    }
+
+    public boolean isDead() {
+        return this.isDead;
     }
 }
