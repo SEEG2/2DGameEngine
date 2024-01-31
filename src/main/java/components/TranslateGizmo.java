@@ -14,6 +14,7 @@ public class TranslateGizmo extends Gizmo {
 
     public TranslateGizmo(Texture texture, PropertiesWindow propertiesWindow) {
         super(texture, propertiesWindow);
+        super.dontUse();
     }
 
     @Override

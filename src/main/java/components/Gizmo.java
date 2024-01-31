@@ -22,7 +22,7 @@ public class Gizmo extends Component {
     private transient int gizmoHeight = 60;
     protected transient boolean xAxisActive = false, yAxisActive = false;
     protected GameObject activeGameObject = null;
-    private boolean using;
+    private boolean using = false;
 
 
     public Gizmo(Texture texture, PropertiesWindow propertiesWindow) {
@@ -61,13 +61,16 @@ public class Gizmo extends Component {
 
     @Override
     public void editorUpdate(float dt) {
-        if (!using) {return;}
+        if (!using) {
+            return;
+        }
+
         this.activeGameObject = this.propertiesWindow.getActiveGameObject();
 
         if (this.activeGameObject != null) {
-            this.setActive();
+            this.use();
         } else {
-            this.setInactive();
+            this.dontUse();
             return;
         }
 
@@ -113,7 +116,7 @@ public class Gizmo extends Component {
     @Override
     public void update(float dt) {
         if (using) {
-            this.setInactive();
+            dontUse();
         }
     }
 
@@ -159,6 +162,7 @@ public class Gizmo extends Component {
 
     protected void use() {
         this.using = true;
+        this.setActive();
     }
 
     protected void dontUse() {

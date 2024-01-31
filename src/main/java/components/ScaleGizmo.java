@@ -13,6 +13,7 @@ public class ScaleGizmo extends Gizmo {
 
     public ScaleGizmo(Texture texture, PropertiesWindow propertiesWindow) {
         super(texture, propertiesWindow);
+        super.dontUse();
     }
 
     @Override
