@@ -1,5 +1,9 @@
 package gmen;
 
+import EventSystem.EventSystem;
+import EventSystem.Observer;
+import EventSystem.events.Event;
+import EventSystem.events.EventType;
 import imgui.ImGui;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.glfw.GLFWErrorCallback;
@@ -17,7 +21,7 @@ import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.system.MemoryUtil.NULL;
 
-public class Window {
+public class Window implements Observer {
     private int width, height;
     private String title;
     private static Window window = null;
@@ -31,6 +35,8 @@ public class Window {
         this.width = 1920;
         this.height = 1080;
         this.title = "Game Engine";
+
+        EventSystem.addObserver(this);
     }
 
     public static void changeScene(int newScene) {
@@ -197,5 +203,14 @@ public class Window {
 
     public static void setHeight(int height) {
         get().height = height;
+    }
+
+    @Override
+    public void onNotify(GameObject gameObject, Event event) {
+        if (event.eventType == EventType.GameEngineStartPlay) {
+
+        } else if (event.eventType == EventType.GameEngineStopPlay) {
+
+        }
     }
 }
