@@ -1,0 +1,637 @@
+[
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 4.31546,
+            "y": -27.81164
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 15
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.75,
+                "y": 1.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 16
+        }
+      },
+      {
+        "type": "Constants.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 1.5,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 21
+        }
+      },
+      {
+        "type": "Constants.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.009570313,
+            "y": 0.0061015626
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 22
+        }
+      }
+    ],
+    "uID": 0,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 0.44455248,
+            "y": 0.25
+          },
+          "scale": {
+            "x": 11.567879,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 17
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.25,
+                "y": 1.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 18
+        }
+      },
+      {
+        "type": "Constants.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 89.0,
+          "bodyType": "Static",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 19
+        }
+      },
+      {
+        "type": "Constants.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.100734375,
+            "y": 0.0075703124
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 20
+        }
+      }
+    ],
+    "uID": 1,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 1.5,
+            "y": 2.0
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 38
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.75,
+                "y": 1.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 39
+        }
+      }
+    ],
+    "uID": 7,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 1.6,
+            "y": 2.1
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 38
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.75,
+                "y": 1.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 39
+        }
+      }
+    ],
+    "uID": 9,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 1.7,
+            "y": 2.1999998
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 38
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.75,
+                "y": 1.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 39
+        }
+      }
+    ],
+    "uID": 11,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 1.8000001,
+            "y": 2.2999997
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 38
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.75,
+                "y": 1.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 39
+        }
+      }
+    ],
+    "uID": 13,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 1.9000001,
+            "y": 2.3999996
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 38
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.75,
+                "y": 1.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 39
+        }
+      }
+    ],
+    "uID": 15,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 2.0,
+            "y": 2.4999995
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 38
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.75,
+                "y": 1.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 39
+        }
+      }
+    ],
+    "uID": 17,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 3.837218,
+            "y": 1.5237428
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 38
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.75,
+                "y": 1.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 39
+        }
+      }
+    ],
+    "uID": 19,
+    "isSerializable": true,
+    "isDead": false
+  }
+]

@@ -4,6 +4,7 @@ import editor.PropertiesWindow;
 import gmen.*;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
+import org.lwjgl.glfw.GLFW;
 import org.lwjgl.system.CallbackI;
 import renderer.Texture;
 
@@ -69,6 +70,13 @@ public class Gizmo extends Component {
 
         if (this.activeGameObject != null) {
             this.use();
+            if (KeyListener.isKeyPressed(GLFW_KEY_LEFT_CONTROL) && KeyListener.keyBeginPress(GLFW_KEY_D)) {
+                GameObject newGameObject = this.activeGameObject.copy();
+                Window.getScene().addGameObjectToScene(newGameObject);
+                newGameObject.transform.position.add(0.1f, 0.1f);
+                this.propertiesWindow.setActiveGameObject(newGameObject);
+                return;
+            }
         } else {
             this.dontUse();
             return;

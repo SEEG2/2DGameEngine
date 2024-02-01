@@ -13,6 +13,8 @@ public class KeyListener {
 
     }
 
+    private boolean keyBeginPressed[] = new boolean[350];
+
     //returns an instance of this singleton / creates a new one it doesn't exist yet
     public static KeyListener get() {
         if (KeyListener.instance == null) {
@@ -26,8 +28,10 @@ public class KeyListener {
     public static void keyCallback(long window, int key, int scancode, int action, int mods) {
         if (action == GLFW_PRESS) {
             get().keyPressed[key] = true;
+            get().keyBeginPressed[key] = true;
         } else if (action == GLFW_RELEASE) {
             get().keyPressed[key] = false;
+            get().keyBeginPressed[key] = false;
         }
     }
 
@@ -38,5 +42,15 @@ public class KeyListener {
         } else {
             return false;
         }
+    }
+
+    public static boolean keyBeginPress(int key) {
+        boolean result = get().keyBeginPressed[key];
+
+        if (result) {
+            get().keyBeginPressed[key] = false;
+        }
+
+        return result;
     }
 }

@@ -1,8 +1,13 @@
 package gmen;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import components.Component;
+import components.ComponentDeserializer;
+import components.SpriteRenderer;
 import components.Transform;
 import imgui.ImGui;
+import util.AssetPool;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -113,6 +118,35 @@ public class GameObject {
         for (int i = 0; i < components.size(); i++) {
             components.get(i).editorUpdate(dt);
         }
+    }
+
+    public GameObject copy() {
+        //TODO better solution for this
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(Component.class, new ComponentDeserializer())
+                .registerTypeAdapter(GameObject.class, new GameObjectDeserializer())
+                .create();
+
+        String objAsJson = gson.toJson(this);
+
+        GameObject object = gson.fromJson(objAsJson, GameObject.class);
+        object.generateUID();
+
+        for (Component c: object.getAllComponents()) {
+            c.generateID();
+        }
+
+        SpriteRenderer spriteRenderer = object.getComponent(SpriteRenderer.class);
+
+        if (spriteRenderer != null && spriteRenderer.getTexture() != null) {
+            spriteRenderer.setTexture(AssetPool.getTexture(spriteRenderer.getTexture().getFilepath()));
+        }
+
+        return object;
+    }
+
+    public void generateUID() {
+        this.uID = ID_COUNTER++;
     }
 
     public List<Component> getAllComponents() {
