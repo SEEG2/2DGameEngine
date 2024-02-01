@@ -1,4 +1,4 @@
-package Constants.enums;
+package physics.enums;
 
 public enum BodyType {
     Static,

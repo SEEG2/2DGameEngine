@@ -1,4 +1,4 @@
-package Constants.components;
+package physics.components;
 
 
 import org.joml.Vector2f;

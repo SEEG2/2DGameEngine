@@ -1,6 +1,6 @@
-package Constants.components;
+package physics.components;
 
-import Constants.enums.BodyType;
+import physics.enums.BodyType;
 import components.Component;
 import org.jbox2d.dynamics.Body;
 import org.joml.Vector2f;

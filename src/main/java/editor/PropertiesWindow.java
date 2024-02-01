@@ -1,9 +1,8 @@
 package editor;
 
-import Constants.components.Box2DCollider;
-import Constants.components.CircleCollider;
-import Constants.components.Rigidbody2D;
-import components.Rigidbody;
+import physics.components.Box2DCollider;
+import physics.components.CircleCollider;
+import physics.components.Rigidbody2D;
 import gmen.GameObject;
 import gmen.MouseListener;
 import imgui.ImGui;

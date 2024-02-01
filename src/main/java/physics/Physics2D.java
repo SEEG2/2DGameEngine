@@ -1,8 +1,8 @@
 package physics;
 
-import Constants.components.Box2DCollider;
-import Constants.components.CircleCollider;
-import Constants.components.Rigidbody2D;
+import physics.components.Box2DCollider;
+import physics.components.CircleCollider;
+import physics.components.Rigidbody2D;
 import gmen.GameObject;
 import org.jbox2d.collision.shapes.PolygonShape;
 import org.jbox2d.common.Vec2;
