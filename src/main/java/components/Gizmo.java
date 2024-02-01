@@ -77,7 +77,6 @@ public class Gizmo extends Component {
                 this.propertiesWindow.setActiveGameObject(newGameObject);
                 return;
             } else if (KeyListener.keyBeginPress(GLFW_KEY_DELETE)) {
-                //TODO fix NullPointerException when deleting Objects
                 activeGameObject.destroy();
                 this.setInactive();
                 this.propertiesWindow.setActiveGameObject(null);

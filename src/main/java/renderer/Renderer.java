@@ -23,6 +23,7 @@ public class Renderer {
         SpriteRenderer spr = go.getComponent(SpriteRenderer.class);
         if (spr != null) {
             add(spr);
+            spr.setDirty();
         }
     }
 
@@ -51,7 +52,9 @@ public class Renderer {
     }
 
     public void render() {
-        for (RenderBatch batch : batches) {
+        currentShader.use();
+        for (int i = 0; i < batches.size(); i++) {
+            RenderBatch batch = batches.get(i);
             batch.render();
         }
     }
