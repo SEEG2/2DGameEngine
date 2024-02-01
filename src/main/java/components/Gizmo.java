@@ -18,8 +18,8 @@ public class Gizmo extends Component {
     private SpriteRenderer xAxisSpriteRenderer;
     private SpriteRenderer yAxisSpriteRenderer;
     private PropertiesWindow propertiesWindow;
-    private transient int gizmoWidth = 15;
-    private transient int gizmoHeight = 60;
+    private transient float gizmoWidth = (float) 1 / 10;
+    private transient float  gizmoHeight = (float) 4 / 10;
     protected transient boolean xAxisActive = false, yAxisActive = false;
     protected GameObject activeGameObject = null;
     private boolean using = false;
@@ -88,25 +88,26 @@ public class Gizmo extends Component {
             yAxisActive = false;
         }
 
-        this.xAxisObject.transform.position.set(this.activeGameObject.transform.position.x, this.activeGameObject.transform.position.y + (float) gizmoWidth/2);
+        this.xAxisObject.transform.position.set(this.activeGameObject.transform.position.x, this.activeGameObject.transform.position.y + gizmoWidth/2);
         this.yAxisObject.transform.position.set(this.activeGameObject.transform.position.x, this.activeGameObject.transform.position.y);
 
-        if (activeGameObject.transform.scale.x > 32*30 || activeGameObject.transform.scale.y > 32*30) {
-            this.xAxisObject.transform.scale.set(Math.max(activeGameObject.transform.scale.x, activeGameObject.transform.scale.y));
-            this.xAxisObject.transform.scale.x /= gizmoHeight;
-            this.xAxisObject.transform.scale.y /= gizmoWidth;
-
-
-            this.yAxisObject.transform.scale.set(Math.max(activeGameObject.transform.scale.x, activeGameObject.transform.scale.y));
-            this.yAxisObject.transform.scale.x /= gizmoHeight;
-            this.yAxisObject.transform.scale.y /= gizmoWidth;
-
-        } else {
-            this.xAxisObject.transform.scale.set(new Vector2f(gizmoWidth, gizmoHeight));
-            this.yAxisObject.transform.scale.set(new Vector2f(gizmoWidth, gizmoHeight));
-        }
-
-    }
+        //TODO: fix gizmo resizing
+//        if (activeGameObject.transform.scale.x > 20 || activeGameObject.transform.scale.y > 20) {
+//            this.xAxisObject.transform.scale.set(Math.max(activeGameObject.transform.scale.x, activeGameObject.transform.scale.y));
+//            this.xAxisObject.transform.scale.x *= gizmoHeight;
+//            this.xAxisObject.transform.scale.y *= gizmoWidth;
+//
+//
+//            this.yAxisObject.transform.scale.set(Math.max(activeGameObject.transform.scale.x, activeGameObject.transform.scale.y));
+//            this.yAxisObject.transform.scale.x *= gizmoHeight;
+//            this.yAxisObject.transform.scale.y *= gizmoWidth;
+//
+//        } else {
+//            this.xAxisObject.transform.scale.set(new Vector2f(gizmoWidth, gizmoHeight));
+//            this.yAxisObject.transform.scale.set(new Vector2f(gizmoWidth, gizmoHeight));
+//        }
+//
+   }
 
     @Override
     public void start() {

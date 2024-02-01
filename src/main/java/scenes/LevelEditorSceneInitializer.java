@@ -83,7 +83,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
             ImGui.pushID(i);
 
             if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
-                GameObject gameObject = Prefabs.generateSpriteObject(sprite, spriteWidth, spriteHeight);
+                GameObject gameObject = Prefabs.generateSpriteObject(sprite, 0.25f, 0.25f);
                 levelEditorComponents.getComponent(MouseControl.class).pickupObject(gameObject);
             }
 
