@@ -50,7 +50,7 @@ public class Physics2D {
             if ((circleCollider = gameObject.getComponent(CircleCollider.class)) != null) {
                 shape.setRadius(circleCollider.getRadius());
             } else if ((boxCollider = gameObject.getComponent(Box2DCollider.class)) != null) {
-                Vector2f halfSize = new Vector2f(boxCollider.getHalfSize().mul(0.5f));
+                Vector2f halfSize = new Vector2f(boxCollider.getHalfSize()).mul(0.5f);
                 Vector2f offset = boxCollider.getOffset();
                 Vector2f origin = new Vector2f(boxCollider.getOrigin());
 

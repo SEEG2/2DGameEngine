@@ -58,7 +58,7 @@
         }
       }
     ],
-    "uID": 20,
+    "uID": 958,
     "isSerializable": true,
     "isDead": false
   },
@@ -140,8 +140,8 @@
         "type": "physics.components.Box2DCollider",
         "properties": {
           "halfSize": {
-            "x": 0.15703125,
-            "y": 0.0078125
+            "x": 14.676,
+            "y": 0.25
           },
           "origin": {
             "x": 0.0,
@@ -155,7 +155,7 @@
         }
       }
     ],
-    "uID": 21,
+    "uID": 959,
     "isSerializable": true,
     "isDead": false
   },
@@ -167,783 +167,7 @@
         "properties": {
           "position": {
             "x": 1.5,
-            "y": -11.650582
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uID": 19
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 120.0,
-            "height": 120.0,
-            "texture": {
-              "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "width": 480,
-              "height": 120
-            },
-            "texCoords": [
-              {
-                "x": 0.25,
-                "y": 1.0
-              },
-              {
-                "x": 0.25,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "uID": 20
-        }
-      },
-      {
-        "type": "physics.components.Rigidbody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 10.0,
-          "bodyType": "Dynamic",
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uID": 23
-        }
-      },
-      {
-        "type": "physics.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.0078125,
-            "y": 0.0078125
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uID": 24
-        }
-      }
-    ],
-    "uID": 22,
-    "isSerializable": true,
-    "isDead": false
-  },
-  {
-    "name": "GENERATED_OBJECT",
-    "components": [
-      {
-        "type": "components.Transform",
-        "properties": {
-          "position": {
-            "x": 1.6,
-            "y": -11.550582
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uID": 19
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 120.0,
-            "height": 120.0,
-            "texture": {
-              "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "width": 480,
-              "height": 120
-            },
-            "texCoords": [
-              {
-                "x": 0.25,
-                "y": 1.0
-              },
-              {
-                "x": 0.25,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "uID": 20
-        }
-      },
-      {
-        "type": "physics.components.Rigidbody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 10.0,
-          "bodyType": "Dynamic",
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uID": 23
-        }
-      },
-      {
-        "type": "physics.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.00390625,
-            "y": 0.00390625
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uID": 24
-        }
-      }
-    ],
-    "uID": 23,
-    "isSerializable": true,
-    "isDead": false
-  },
-  {
-    "name": "GENERATED_OBJECT",
-    "components": [
-      {
-        "type": "components.Transform",
-        "properties": {
-          "position": {
-            "x": 1.7,
-            "y": -11.450582
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uID": 19
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 120.0,
-            "height": 120.0,
-            "texture": {
-              "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "width": 480,
-              "height": 120
-            },
-            "texCoords": [
-              {
-                "x": 0.25,
-                "y": 1.0
-              },
-              {
-                "x": 0.25,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "uID": 20
-        }
-      },
-      {
-        "type": "physics.components.Rigidbody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 10.0,
-          "bodyType": "Dynamic",
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uID": 23
-        }
-      },
-      {
-        "type": "physics.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.001953125,
-            "y": 0.001953125
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uID": 24
-        }
-      }
-    ],
-    "uID": 24,
-    "isSerializable": true,
-    "isDead": false
-  },
-  {
-    "name": "GENERATED_OBJECT",
-    "components": [
-      {
-        "type": "components.Transform",
-        "properties": {
-          "position": {
-            "x": 1.8000001,
-            "y": -11.350583
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uID": 19
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 120.0,
-            "height": 120.0,
-            "texture": {
-              "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "width": 480,
-              "height": 120
-            },
-            "texCoords": [
-              {
-                "x": 0.25,
-                "y": 1.0
-              },
-              {
-                "x": 0.25,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "uID": 20
-        }
-      },
-      {
-        "type": "physics.components.Rigidbody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 10.0,
-          "bodyType": "Dynamic",
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uID": 23
-        }
-      },
-      {
-        "type": "physics.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 9.765625E-4,
-            "y": 9.765625E-4
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uID": 24
-        }
-      }
-    ],
-    "uID": 25,
-    "isSerializable": true,
-    "isDead": false
-  },
-  {
-    "name": "GENERATED_OBJECT",
-    "components": [
-      {
-        "type": "components.Transform",
-        "properties": {
-          "position": {
-            "x": 1.9000001,
-            "y": -11.250583
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uID": 19
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 120.0,
-            "height": 120.0,
-            "texture": {
-              "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "width": 480,
-              "height": 120
-            },
-            "texCoords": [
-              {
-                "x": 0.25,
-                "y": 1.0
-              },
-              {
-                "x": 0.25,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "uID": 20
-        }
-      },
-      {
-        "type": "physics.components.Rigidbody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 10.0,
-          "bodyType": "Dynamic",
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uID": 23
-        }
-      },
-      {
-        "type": "physics.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 4.8828125E-4,
-            "y": 4.8828125E-4
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uID": 24
-        }
-      }
-    ],
-    "uID": 26,
-    "isSerializable": true,
-    "isDead": false
-  },
-  {
-    "name": "GENERATED_OBJECT",
-    "components": [
-      {
-        "type": "components.Transform",
-        "properties": {
-          "position": {
-            "x": 3.333405,
-            "y": -11.570468
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uID": 19
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 120.0,
-            "height": 120.0,
-            "texture": {
-              "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "width": 480,
-              "height": 120
-            },
-            "texCoords": [
-              {
-                "x": 0.25,
-                "y": 1.0
-              },
-              {
-                "x": 0.25,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "uID": 20
-        }
-      },
-      {
-        "type": "physics.components.Rigidbody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 10.0,
-          "bodyType": "Dynamic",
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uID": 23
-        }
-      },
-      {
-        "type": "physics.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 2.4414062E-4,
-            "y": 2.4414062E-4
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uID": 24
-        }
-      }
-    ],
-    "uID": 27,
-    "isSerializable": true,
-    "isDead": false
-  },
-  {
-    "name": "GENERATED_OBJECT",
-    "components": [
-      {
-        "type": "components.Transform",
-        "properties": {
-          "position": {
-            "x": 2.1,
-            "y": -11.050584
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uID": 19
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 120.0,
-            "height": 120.0,
-            "texture": {
-              "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "width": 480,
-              "height": 120
-            },
-            "texCoords": [
-              {
-                "x": 0.25,
-                "y": 1.0
-              },
-              {
-                "x": 0.25,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "uID": 20
-        }
-      },
-      {
-        "type": "physics.components.Rigidbody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 10.0,
-          "bodyType": "Dynamic",
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uID": 23
-        }
-      },
-      {
-        "type": "physics.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 1.2207031E-4,
-            "y": 1.2207031E-4
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uID": 24
-        }
-      }
-    ],
-    "uID": 28,
-    "isSerializable": true,
-    "isDead": false
-  },
-  {
-    "name": "GENERATED_OBJECT",
-    "components": [
-      {
-        "type": "components.Transform",
-        "properties": {
-          "position": {
-            "x": 2.1999998,
-            "y": -10.950583
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uID": 19
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 120.0,
-            "height": 120.0,
-            "texture": {
-              "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "width": 480,
-              "height": 120
-            },
-            "texCoords": [
-              {
-                "x": 0.25,
-                "y": 1.0
-              },
-              {
-                "x": 0.25,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "uID": 20
-        }
-      },
-      {
-        "type": "physics.components.Rigidbody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 10.0,
-          "bodyType": "Dynamic",
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uID": 23
-        }
-      },
-      {
-        "type": "physics.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 6.1035156E-5,
-            "y": 6.1035156E-5
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uID": 24
-        }
-      }
-    ],
-    "uID": 29,
-    "isSerializable": true,
-    "isDead": false
-  },
-  {
-    "name": "GENERATED_OBJECT",
-    "components": [
-      {
-        "type": "components.Transform",
-        "properties": {
-          "position": {
-            "x": 2.2999997,
-            "y": -10.850585
+            "y": -208.26442
           },
           "scale": {
             "x": 0.25,
@@ -1028,7 +252,7 @@
         }
       }
     ],
-    "uID": 30,
+    "uID": 960,
     "isSerializable": true,
     "isDead": false
   },
@@ -1039,8 +263,8 @@
         "type": "components.Transform",
         "properties": {
           "position": {
-            "x": 2.3999996,
-            "y": -10.750585
+            "x": 1.6,
+            "y": -208.16443
           },
           "scale": {
             "x": 0.25,
@@ -1125,7 +349,7 @@
         }
       }
     ],
-    "uID": 31,
+    "uID": 961,
     "isSerializable": true,
     "isDead": false
   },
@@ -1136,8 +360,8 @@
         "type": "components.Transform",
         "properties": {
           "position": {
-            "x": 2.4999995,
-            "y": -10.650584
+            "x": 1.7,
+            "y": -208.06444
           },
           "scale": {
             "x": 0.25,
@@ -1222,7 +446,7 @@
         }
       }
     ],
-    "uID": 32,
+    "uID": 962,
     "isSerializable": true,
     "isDead": false
   },
@@ -1233,8 +457,8 @@
         "type": "components.Transform",
         "properties": {
           "position": {
-            "x": 2.5999994,
-            "y": -10.550584
+            "x": 1.8000001,
+            "y": -207.96445
           },
           "scale": {
             "x": 0.25,
@@ -1319,7 +543,7 @@
         }
       }
     ],
-    "uID": 33,
+    "uID": 963,
     "isSerializable": true,
     "isDead": false
   },
@@ -1330,8 +554,8 @@
         "type": "components.Transform",
         "properties": {
           "position": {
-            "x": 2.6999993,
-            "y": -10.450585
+            "x": 1.9000001,
+            "y": -207.86444
           },
           "scale": {
             "x": 0.25,
@@ -1416,7 +640,1656 @@
         }
       }
     ],
-    "uID": 34,
+    "uID": 964,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 3.333405,
+            "y": -208.18431
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 19
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.25,
+                "y": 1.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 20
+        }
+      },
+      {
+        "type": "physics.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 10.0,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 23
+        }
+      },
+      {
+        "type": "physics.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 9.536743E-7,
+            "y": 9.536743E-7
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 24
+        }
+      }
+    ],
+    "uID": 965,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 2.1,
+            "y": -207.66446
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 19
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.25,
+                "y": 1.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 20
+        }
+      },
+      {
+        "type": "physics.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 10.0,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 23
+        }
+      },
+      {
+        "type": "physics.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 4.7683716E-7,
+            "y": 4.7683716E-7
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 24
+        }
+      }
+    ],
+    "uID": 966,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 2.1999998,
+            "y": -207.56447
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 19
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.25,
+                "y": 1.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 20
+        }
+      },
+      {
+        "type": "physics.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 10.0,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 23
+        }
+      },
+      {
+        "type": "physics.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 2.3841858E-7,
+            "y": 2.3841858E-7
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 24
+        }
+      }
+    ],
+    "uID": 967,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 2.2999997,
+            "y": -207.46446
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 19
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.25,
+                "y": 1.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 20
+        }
+      },
+      {
+        "type": "physics.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 10.0,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 23
+        }
+      },
+      {
+        "type": "physics.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 1.1920929E-7,
+            "y": 1.1920929E-7
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 24
+        }
+      }
+    ],
+    "uID": 968,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 2.3999996,
+            "y": -207.36447
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 19
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.25,
+                "y": 1.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 20
+        }
+      },
+      {
+        "type": "physics.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 10.0,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 23
+        }
+      },
+      {
+        "type": "physics.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 5.9604645E-8,
+            "y": 5.9604645E-8
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 24
+        }
+      }
+    ],
+    "uID": 969,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 2.4999995,
+            "y": -207.26447
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 19
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.25,
+                "y": 1.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 20
+        }
+      },
+      {
+        "type": "physics.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 10.0,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 23
+        }
+      },
+      {
+        "type": "physics.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 2.9802322E-8,
+            "y": 2.9802322E-8
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 24
+        }
+      }
+    ],
+    "uID": 970,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 2.5999994,
+            "y": -207.16444
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 19
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.25,
+                "y": 1.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 20
+        }
+      },
+      {
+        "type": "physics.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 10.0,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 23
+        }
+      },
+      {
+        "type": "physics.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 1.4901161E-8,
+            "y": 1.4901161E-8
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 24
+        }
+      }
+    ],
+    "uID": 971,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 2.6999993,
+            "y": -207.06444
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 19
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.25,
+                "y": 1.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 20
+        }
+      },
+      {
+        "type": "physics.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 10.0,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 23
+        }
+      },
+      {
+        "type": "physics.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 7.450581E-9,
+            "y": 7.450581E-9
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 24
+        }
+      }
+    ],
+    "uID": 972,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 3.1683998,
+            "y": 2.1780946
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 89.80804,
+          "zIndex": 0,
+          "uID": 40
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.5,
+                "y": 1.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 41
+        }
+      },
+      {
+        "type": "physics.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 42
+        }
+      },
+      {
+        "type": "physics.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 2.7,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 58
+        }
+      }
+    ],
+    "uID": 973,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 0.1935768,
+            "y": 0.5150006
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": -449.99756,
+          "zIndex": 0,
+          "uID": 40
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.5,
+                "y": 1.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 41
+        }
+      },
+      {
+        "type": "physics.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 42
+        }
+      },
+      {
+        "type": "physics.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 2.7,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 58
+        }
+      }
+    ],
+    "uID": 974,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 3.2055721,
+            "y": 2.548259
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": -808.48224,
+          "zIndex": 0,
+          "uID": 40
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.5,
+                "y": 1.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 41
+        }
+      },
+      {
+        "type": "physics.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 42
+        }
+      },
+      {
+        "type": "physics.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 2.7,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 58
+        }
+      }
+    ],
+    "uID": 975,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 3.530072,
+            "y": 1.3037412
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 40
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.5,
+                "y": 1.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 41
+        }
+      },
+      {
+        "type": "physics.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 42
+        }
+      },
+      {
+        "type": "physics.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 2.7,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 58
+        }
+      }
+    ],
+    "uID": 976,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 3.2295794,
+            "y": 0.6373582
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": -0.7669073,
+          "zIndex": 0,
+          "uID": 40
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.5,
+                "y": 1.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 41
+        }
+      },
+      {
+        "type": "physics.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 42
+        }
+      },
+      {
+        "type": "physics.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 2.7,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 58
+        }
+      }
+    ],
+    "uID": 977,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 3.1787148,
+            "y": 1.2969733
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 1.0868398,
+          "zIndex": 0,
+          "uID": 40
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.5,
+                "y": 1.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 41
+        }
+      },
+      {
+        "type": "physics.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 42
+        }
+      },
+      {
+        "type": "physics.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 2.7,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 58
+        }
+      }
+    ],
+    "uID": 978,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 3.1817844,
+            "y": 1.8348083
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": -269.65405,
+          "zIndex": 0,
+          "uID": 40
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.5,
+                "y": 1.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 41
+        }
+      },
+      {
+        "type": "physics.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 42
+        }
+      },
+      {
+        "type": "physics.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 2.7,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 58
+        }
+      }
+    ],
+    "uID": 979,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 3.561591,
+            "y": 1.7267151
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 90.07226,
+          "zIndex": 0,
+          "uID": 40
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.5,
+                "y": 1.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.25,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 41
+        }
+      },
+      {
+        "type": "physics.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 42
+        }
+      },
+      {
+        "type": "physics.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 2.7,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 58
+        }
+      }
+    ],
+    "uID": 980,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 3.0,
+            "y": 4.5
+          },
+          "scale": {
+            "x": 2.0,
+            "y": 2.0
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 74
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.75,
+                "y": 1.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 0.0
+              },
+              {
+                "x": 0.5,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 75
+        }
+      },
+      {
+        "type": "physics.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 300.0,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uID": 76
+        }
+      },
+      {
+        "type": "physics.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 2.0,
+            "y": 2.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uID": 77
+        }
+      }
+    ],
+    "uID": 981,
     "isSerializable": true,
     "isDead": false
   }
