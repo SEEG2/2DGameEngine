@@ -1,8 +1,7 @@
 package Constants.components;
 
-import components.Component;
+
 import org.joml.Vector2f;
-import org.lwjgl.system.CallbackI;
 import renderer.DebugDraw;
 
 import static Constants.Color.GREEN;
@@ -25,7 +24,6 @@ public class Box2DCollider extends Collider {
     @Override
     public void editorUpdate(float dt) {
         Vector2f center = new Vector2f(this.gameObject.transform.position).add(this.offset);
-
         DebugDraw.addBox2D(center, this.halfSize, this.gameObject.transform.rotation, GREEN, 1, false);
     }
 }
