@@ -77,8 +77,8 @@
         "type": "Constants.components.Box2DCollider",
         "properties": {
           "halfSize": {
-            "x": 0.009570313,
-            "y": 0.0061015626
+            "x": 0.0023925782,
+            "y": 0.0015253907
           },
           "origin": {
             "x": 0.0,
@@ -174,8 +174,8 @@
         "type": "Constants.components.Box2DCollider",
         "properties": {
           "halfSize": {
-            "x": 0.100734375,
-            "y": 0.0075703124
+            "x": 0.025183594,
+            "y": 0.0018925781
           },
           "origin": {
             "x": 0.0,
@@ -252,7 +252,7 @@
         }
       }
     ],
-    "uID": 7,
+    "uID": 2,
     "isSerializable": true,
     "isDead": false
   },
@@ -315,7 +315,7 @@
         }
       }
     ],
-    "uID": 9,
+    "uID": 3,
     "isSerializable": true,
     "isDead": false
   },
@@ -378,7 +378,7 @@
         }
       }
     ],
-    "uID": 11,
+    "uID": 4,
     "isSerializable": true,
     "isDead": false
   },
@@ -441,7 +441,7 @@
         }
       }
     ],
-    "uID": 13,
+    "uID": 5,
     "isSerializable": true,
     "isDead": false
   },
@@ -504,7 +504,7 @@
         }
       }
     ],
-    "uID": 15,
+    "uID": 6,
     "isSerializable": true,
     "isDead": false
   },
@@ -567,70 +567,7 @@
         }
       }
     ],
-    "uID": 17,
-    "isSerializable": true,
-    "isDead": false
-  },
-  {
-    "name": "GENERATED_OBJECT",
-    "components": [
-      {
-        "type": "components.Transform",
-        "properties": {
-          "position": {
-            "x": 3.837218,
-            "y": 1.5237428
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uID": 38
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 120.0,
-            "height": 120.0,
-            "texture": {
-              "filepath": "assets/images/default/spritesheets/spritesheet.png",
-              "width": 480,
-              "height": 120
-            },
-            "texCoords": [
-              {
-                "x": 0.75,
-                "y": 1.0
-              },
-              {
-                "x": 0.75,
-                "y": 0.0
-              },
-              {
-                "x": 0.5,
-                "y": 0.0
-              },
-              {
-                "x": 0.5,
-                "y": 1.0
-              }
-            ]
-          },
-          "uID": 39
-        }
-      }
-    ],
-    "uID": 19,
+    "uID": 7,
     "isSerializable": true,
     "isDead": false
   }

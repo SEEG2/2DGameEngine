@@ -43,16 +43,18 @@ public class RenderBatch implements Comparable<RenderBatch> {
     private float[] vertices;
     private int[] texSlots = {0,1,2,3,4,5,6,7};
 
-
     private List<Texture> textures;
     private int vaoID, vboID;
     private int maxBatchSize;
     private int zIndex;
 
-    public RenderBatch(int maxBatchSize, int zIndex) {
+    private Renderer renderer;
+
+    public RenderBatch(int maxBatchSize, int zIndex, Renderer renderer) {
         this.zIndex = zIndex;
         this.sprites = new SpriteRenderer[maxBatchSize];
         this.maxBatchSize = maxBatchSize;
+        this.renderer = renderer;
 
         //4 vertices quads
         vertices = new float[maxBatchSize * 4 * VERTEX_SIZE];
@@ -62,10 +64,11 @@ public class RenderBatch implements Comparable<RenderBatch> {
         this.textures = new ArrayList<>();
     }
 
-    public RenderBatch(int maxBatchSize) {
+    public RenderBatch(int maxBatchSize, Renderer renderer) {
         this.zIndex = 0;
         this.sprites = new SpriteRenderer[maxBatchSize];
         this.maxBatchSize = maxBatchSize;
+        this.renderer = renderer;
 
         //4 vertices quads
         vertices = new float[maxBatchSize * 4 * VERTEX_SIZE];
@@ -73,6 +76,7 @@ public class RenderBatch implements Comparable<RenderBatch> {
         this.numSprites = 0;
         this.hasRoom = true;
         this.textures = new ArrayList<>();
+
     }
 
     public void start() {
@@ -141,6 +145,12 @@ public class RenderBatch implements Comparable<RenderBatch> {
                 loadVertexProperties(i);
                 spr.setClean();
                 rebufferData = true;
+            }
+
+            if (spr.gameObject.transform.zIndex != this.zIndex) {
+                destroyIfExists(spr.gameObject);
+                renderer.add(spr.gameObject);
+                i--;
             }
         }
 
@@ -271,11 +281,12 @@ public class RenderBatch implements Comparable<RenderBatch> {
     }
 
     public boolean destroyIfExists(GameObject gameObject) {
+
         SpriteRenderer spriteRenderer = gameObject.getComponent(SpriteRenderer.class);
 
         for (int i = 0; i < numSprites; i++) {
             if (sprites[i] == spriteRenderer) {
-                for (int j = i; j < numSprites; i++) {
+                for (int j = i; j < numSprites - 1; i++) {
                     sprites[j] = sprites[j+1];
                     sprites[j].setDirty();
                 }

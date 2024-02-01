@@ -42,7 +42,7 @@ public class Renderer {
         }
 
         if(!added) {
-            RenderBatch newBatch = new RenderBatch(MAX_BATCH_SIZE, sprite.gameObject.getzIndex());
+            RenderBatch newBatch = new RenderBatch(MAX_BATCH_SIZE, sprite.gameObject.getzIndex(), this);
             newBatch.start();
             batches.add(newBatch);
             newBatch.addSprite(sprite);
@@ -61,6 +61,7 @@ public class Renderer {
     }
 
     public void destroyGameObject(GameObject gameObject) {
+
         if (gameObject.getComponent(SpriteRenderer.class) == null) return;
 
         for (RenderBatch batch : batches) {
