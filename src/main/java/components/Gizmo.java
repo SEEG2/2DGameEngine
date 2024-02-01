@@ -135,10 +135,10 @@ public class Gizmo extends Component {
     private boolean checkXHoverState() {
         Vector2f mousePos = new Vector2f(MouseListener.getOrthoX(), MouseListener.getOrthoY());
 
-        if (mousePos.x <= xAxisObject.transform.position.x + xAxisObject.transform.scale.y
-                && mousePos.x >= xAxisObject.transform.position.x
-                && mousePos.y >= xAxisObject.transform.position.y - xAxisObject.transform.scale.x
-                && mousePos.y <= xAxisObject.transform.position.y) {
+        if (mousePos.x <= xAxisObject.transform.position.x + xAxisObject.transform.scale.y / 2
+                && mousePos.x >= xAxisObject.transform.position.x - xAxisObject.transform.scale.y / 2
+                && mousePos.y >= xAxisObject.transform.position.y - xAxisObject.transform.scale.x / 2
+                && mousePos.y <= xAxisObject.transform.position.y + xAxisObject.transform.scale.x / 2) {
             this.xAxisSpriteRenderer.setColor(xAxisHoverColor);
             return true;
         }
@@ -146,13 +146,14 @@ public class Gizmo extends Component {
         xAxisSpriteRenderer.setColor(xAxisColor);
         return false;
     }
+
     private boolean checkYHoverState() {
         Vector2f mousePos = new Vector2f(MouseListener.getOrthoX(), MouseListener.getOrthoY());
 
-        if (mousePos.x <= yAxisObject.transform.position.x + yAxisObject.transform.scale.x
-                && mousePos.x >= yAxisObject.transform.position.x
-                && mousePos.y <= yAxisObject.transform.position.y + yAxisObject.transform.scale.y
-                && mousePos.y >= yAxisObject.transform.position.y) {
+        if (mousePos.x <= yAxisObject.transform.position.x + yAxisObject.transform.scale.x / 2
+                && mousePos.x >= yAxisObject.transform.position.x - yAxisObject.transform.scale.x / 2
+                && mousePos.y <= yAxisObject.transform.position.y + yAxisObject.transform.scale.y / 2
+                && mousePos.y >= yAxisObject.transform.position.y - yAxisObject.transform.scale.y / 2) {
             this.yAxisSpriteRenderer.setColor(yAxisHoverColor);
             return true;
         }
