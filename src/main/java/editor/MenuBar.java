@@ -7,7 +7,7 @@ import imgui.ImGui;
 
 public class MenuBar {
     public void imGUI() {
-        ImGui.beginMainMenuBar();
+        ImGui.beginMenuBar();
 
         if (ImGui.beginMenu("File")) {
 
@@ -22,6 +22,6 @@ public class MenuBar {
             ImGui.endMenu();
         }
 
-        ImGui.endMainMenuBar();
+        ImGui.endMenuBar();
     }
 }

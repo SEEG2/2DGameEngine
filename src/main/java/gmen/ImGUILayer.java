@@ -200,14 +200,14 @@ public class ImGUILayer {
         gameViewWindow.imGUI();
         propertiesWindow.update(dt, currentScene);
         propertiesWindow.imGUI();
-        menuBar.imGUI();
+
 
         endFrame();
     }
 
     private void setupDockspace() {
         int windowFlags = ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoDocking;
-        ImGui.setNextWindowPos(0.0f, 0.0f, ImGuiCond.Always);
+        ImGui.setNextWindowPos(0.0f, 0.0f);
         ImGui.setNextWindowSize(Window.getWidth(), Window.getHeight());
         ImGui.pushStyleVar(ImGuiStyleVar.WindowRounding, 0.0f);
         ImGui.pushStyleVar(ImGuiStyleVar.WindowBorderSize, 0.0f);
@@ -217,6 +217,8 @@ public class ImGUILayer {
         ImGui.popStyleVar(2);
 
         ImGui.dockSpace(ImGui.getID("DockSpace"));
+
+        menuBar.imGUI();
 
         ImGui.end();
     }
