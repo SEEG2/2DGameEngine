@@ -101,8 +101,8 @@ public class Gizmo extends Component {
             yAxisActive = false;
         }
 
-        this.xAxisObject.transform.position.set(this.activeGameObject.transform.position.x, this.activeGameObject.transform.position.y + gizmoWidth/2);
-        this.yAxisObject.transform.position.set(this.activeGameObject.transform.position.x, this.activeGameObject.transform.position.y);
+        this.xAxisObject.transform.position.set(this.activeGameObject.transform.position.x, this.activeGameObject.transform.position.y - gizmoWidth*2);
+        this.yAxisObject.transform.position.set(this.activeGameObject.transform.position.x - gizmoWidth*2, this.activeGameObject.transform.position.y);
 
         //TODO: fix gizmo resizing
 //        if (activeGameObject.transform.scale.x > 20 || activeGameObject.transform.scale.y > 20) {
