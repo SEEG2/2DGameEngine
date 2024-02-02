@@ -11,11 +11,15 @@ import imgui.callback.ImStrConsumer;
 import imgui.callback.ImStrSupplier;
 import imgui.flag.*;
 import imgui.gl3.ImGuiImplGl3;
+import imgui.glfw.ImGuiImplGlfw;
 import imgui.type.ImBoolean;
 import renderer.PickingTexture;
 import scenes.Scene;
 
 import static org.lwjgl.glfw.GLFW.*;
+import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL30.GL_FRAMEBUFFER;
+import static org.lwjgl.opengl.GL30.glBindFramebuffer;
 
 public class ImGUILayer {
 
@@ -26,6 +30,7 @@ public class ImGUILayer {
 
     // LWJGL3 renderer (SHOULD be initialized)
     private final ImGuiImplGl3 imGuiGl3 = new ImGuiImplGl3();
+    private final ImGuiImplGlfw imGuiGlfw = new ImGuiImplGlfw();
     private String glslVersion;
     private GameViewWindow gameViewWindow;
     private PropertiesWindow propertiesWindow;
@@ -50,37 +55,9 @@ public class ImGUILayer {
         final ImGuiIO io = ImGui.getIO();
 
         io.setIniFilename("imGUI.ini"); // We don't want to save .ini file
-        io.setConfigFlags(ImGuiConfigFlags.NavEnableKeyboard); // Navigation with keyboard
         io.setConfigFlags(ImGuiConfigFlags.DockingEnable);
-        io.setBackendFlags(ImGuiBackendFlags.HasMouseCursors); // Mouse cursors to display while resizing windows etc.
         io.setBackendPlatformName("imgui_java_impl_glfw");
 
-        // ------------------------------------------------------------
-        // Keyboard mapping. ImGui will use those indices to peek into the io.KeysDown[] array.
-        final int[] keyMap = new int[ImGuiKey.COUNT];
-        keyMap[ImGuiKey.Tab] = GLFW_KEY_TAB;
-        keyMap[ImGuiKey.LeftArrow] = GLFW_KEY_LEFT;
-        keyMap[ImGuiKey.RightArrow] = GLFW_KEY_RIGHT;
-        keyMap[ImGuiKey.UpArrow] = GLFW_KEY_UP;
-        keyMap[ImGuiKey.DownArrow] = GLFW_KEY_DOWN;
-        keyMap[ImGuiKey.PageUp] = GLFW_KEY_PAGE_UP;
-        keyMap[ImGuiKey.PageDown] = GLFW_KEY_PAGE_DOWN;
-        keyMap[ImGuiKey.Home] = GLFW_KEY_HOME;
-        keyMap[ImGuiKey.End] = GLFW_KEY_END;
-        keyMap[ImGuiKey.Insert] = GLFW_KEY_INSERT;
-        keyMap[ImGuiKey.Delete] = GLFW_KEY_DELETE;
-        keyMap[ImGuiKey.Backspace] = GLFW_KEY_BACKSPACE;
-        keyMap[ImGuiKey.Space] = GLFW_KEY_SPACE;
-        keyMap[ImGuiKey.Enter] = GLFW_KEY_ENTER;
-        keyMap[ImGuiKey.Escape] = GLFW_KEY_ESCAPE;
-        keyMap[ImGuiKey.KeyPadEnter] = GLFW_KEY_KP_ENTER;
-        keyMap[ImGuiKey.A] = GLFW_KEY_A;
-        keyMap[ImGuiKey.C] = GLFW_KEY_C;
-        keyMap[ImGuiKey.V] = GLFW_KEY_V;
-        keyMap[ImGuiKey.X] = GLFW_KEY_X;
-        keyMap[ImGuiKey.Y] = GLFW_KEY_Y;
-        keyMap[ImGuiKey.Z] = GLFW_KEY_Z;
-        io.setKeyMap(keyMap);
 
         // ------------------------------------------------------------
         // Mouse cursors mapping
@@ -192,38 +169,24 @@ public class ImGUILayer {
         // Method initializes LWJGL3 renderer.
         // This method SHOULD be called after you've initialized your ImGui configuration (fonts and so on).
         // ImGui context should be created as well.
+        imGuiGlfw.init(windowPtr, false);
         imGuiGl3.init("#version 330 core");
     }
 
 
 
     private void startFrame(final float deltaTime) {
-
-        float[] winWidth = {Window.getWidth()};
-        float[] winHeight = {Window.getHeight()};
-
-        double[] mousePosX = {0};
-        double[] mousePosY = {0};
-
-        glfwGetCursorPos(windowPtr, mousePosX, mousePosY);
-
-        // We SHOULD call those methods to update Dear ImGui state for the current frame
-        final ImGuiIO io = ImGui.getIO();
-
-        io.setDisplaySize(winWidth[0], winHeight[0]);
-        io.setDisplayFramebufferScale(1f, 1f);
-        io.setMousePos((float) mousePosX[0], (float) mousePosY[0]);
-        io.setDeltaTime(deltaTime);
-
-        // Update the mouse cursor
-        final int imguiCursor = ImGui.getMouseCursor();
-        glfwSetCursor(windowPtr, mouseCursors[imguiCursor]);
-        glfwSetInputMode(windowPtr, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+        imGuiGlfw.newFrame();
+        ImGui.newFrame();
     }
 
     private void endFrame() {
-        // After Dear ImGui prepared a draw data, we use it in the LWJGL3 renderer.
-        // At that moment ImGui will be rendered to the current OpenGL context.
+        glBindFramebuffer(GL_FRAMEBUFFER,0);
+        glViewport(0,0, Window.getWidth(), Window.getHeight());
+        glClearColor(0,0,0,1);
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        ImGui.render();
         imGuiGl3.renderDrawData(ImGui.getDrawData());
     }
 
@@ -232,15 +195,12 @@ public class ImGUILayer {
 
     public void update(float dt, Scene currentScene) {
         startFrame(dt);
-        ImGui.newFrame();
         setupDockspace();
         currentScene.imGUI();
         gameViewWindow.imGUI();
         propertiesWindow.update(dt, currentScene);
         propertiesWindow.imGUI();
         menuBar.imGUI();
-        ImGui.end();
-        ImGui.render();
 
         endFrame();
     }
@@ -257,6 +217,8 @@ public class ImGUILayer {
         ImGui.popStyleVar(2);
 
         ImGui.dockSpace(ImGui.getID("DockSpace"));
+
+        ImGui.end();
     }
 
     private void destroyImGui() {

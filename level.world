@@ -58,7 +58,7 @@
         }
       }
     ],
-    "uID": 958,
+    "uID": 0,
     "isSerializable": true,
     "isDead": false
   },
@@ -69,7 +69,7 @@
         "type": "components.Transform",
         "properties": {
           "position": {
-            "x": 0.0,
+            "x": 4.043374,
             "y": 0.25
           },
           "scale": {
@@ -155,7 +155,7 @@
         }
       }
     ],
-    "uID": 959,
+    "uID": 1,
     "isSerializable": true,
     "isDead": false
   },
@@ -167,7 +167,7 @@
         "properties": {
           "position": {
             "x": 1.5,
-            "y": -208.26442
+            "y": -630.6224
           },
           "scale": {
             "x": 0.25,
@@ -252,7 +252,7 @@
         }
       }
     ],
-    "uID": 960,
+    "uID": 2,
     "isSerializable": true,
     "isDead": false
   },
@@ -264,7 +264,7 @@
         "properties": {
           "position": {
             "x": 1.6,
-            "y": -208.16443
+            "y": -630.5224
           },
           "scale": {
             "x": 0.25,
@@ -349,7 +349,7 @@
         }
       }
     ],
-    "uID": 961,
+    "uID": 3,
     "isSerializable": true,
     "isDead": false
   },
@@ -361,7 +361,7 @@
         "properties": {
           "position": {
             "x": 1.7,
-            "y": -208.06444
+            "y": -630.4224
           },
           "scale": {
             "x": 0.25,
@@ -446,7 +446,7 @@
         }
       }
     ],
-    "uID": 962,
+    "uID": 4,
     "isSerializable": true,
     "isDead": false
   },
@@ -458,7 +458,7 @@
         "properties": {
           "position": {
             "x": 1.8000001,
-            "y": -207.96445
+            "y": -630.32245
           },
           "scale": {
             "x": 0.25,
@@ -543,7 +543,7 @@
         }
       }
     ],
-    "uID": 963,
+    "uID": 5,
     "isSerializable": true,
     "isDead": false
   },
@@ -555,7 +555,7 @@
         "properties": {
           "position": {
             "x": 1.9000001,
-            "y": -207.86444
+            "y": -630.2224
           },
           "scale": {
             "x": 0.25,
@@ -640,7 +640,7 @@
         }
       }
     ],
-    "uID": 964,
+    "uID": 6,
     "isSerializable": true,
     "isDead": false
   },
@@ -652,7 +652,7 @@
         "properties": {
           "position": {
             "x": 3.333405,
-            "y": -208.18431
+            "y": -630.5423
           },
           "scale": {
             "x": 0.25,
@@ -737,7 +737,7 @@
         }
       }
     ],
-    "uID": 965,
+    "uID": 7,
     "isSerializable": true,
     "isDead": false
   },
@@ -749,7 +749,7 @@
         "properties": {
           "position": {
             "x": 2.1,
-            "y": -207.66446
+            "y": -630.02246
           },
           "scale": {
             "x": 0.25,
@@ -834,7 +834,7 @@
         }
       }
     ],
-    "uID": 966,
+    "uID": 8,
     "isSerializable": true,
     "isDead": false
   },
@@ -846,7 +846,7 @@
         "properties": {
           "position": {
             "x": 2.1999998,
-            "y": -207.56447
+            "y": -629.9225
           },
           "scale": {
             "x": 0.25,
@@ -931,7 +931,7 @@
         }
       }
     ],
-    "uID": 967,
+    "uID": 9,
     "isSerializable": true,
     "isDead": false
   },
@@ -943,7 +943,7 @@
         "properties": {
           "position": {
             "x": 2.2999997,
-            "y": -207.46446
+            "y": -629.82245
           },
           "scale": {
             "x": 0.25,
@@ -1028,7 +1028,7 @@
         }
       }
     ],
-    "uID": 968,
+    "uID": 10,
     "isSerializable": true,
     "isDead": false
   },
@@ -1040,7 +1040,7 @@
         "properties": {
           "position": {
             "x": 2.3999996,
-            "y": -207.36447
+            "y": -629.7225
           },
           "scale": {
             "x": 0.25,
@@ -1125,7 +1125,7 @@
         }
       }
     ],
-    "uID": 969,
+    "uID": 11,
     "isSerializable": true,
     "isDead": false
   },
@@ -1137,7 +1137,7 @@
         "properties": {
           "position": {
             "x": 2.4999995,
-            "y": -207.26447
+            "y": -629.62244
           },
           "scale": {
             "x": 0.25,
@@ -1222,7 +1222,7 @@
         }
       }
     ],
-    "uID": 970,
+    "uID": 12,
     "isSerializable": true,
     "isDead": false
   },
@@ -1234,7 +1234,7 @@
         "properties": {
           "position": {
             "x": 2.5999994,
-            "y": -207.16444
+            "y": -629.5224
           },
           "scale": {
             "x": 0.25,
@@ -1319,7 +1319,7 @@
         }
       }
     ],
-    "uID": 971,
+    "uID": 13,
     "isSerializable": true,
     "isDead": false
   },
@@ -1331,7 +1331,7 @@
         "properties": {
           "position": {
             "x": 2.6999993,
-            "y": -207.06444
+            "y": -629.4224
           },
           "scale": {
             "x": 0.25,
@@ -1416,7 +1416,7 @@
         }
       }
     ],
-    "uID": 972,
+    "uID": 14,
     "isSerializable": true,
     "isDead": false
   },
@@ -1427,14 +1427,14 @@
         "type": "components.Transform",
         "properties": {
           "position": {
-            "x": 3.1683998,
-            "y": 2.1780946
+            "x": 2.5510192,
+            "y": 0.50872016
           },
           "scale": {
             "x": 0.25,
             "y": 0.25
           },
-          "rotation": 89.80804,
+          "rotation": 180.15488,
           "zIndex": 0,
           "uID": 40
         }
@@ -1506,14 +1506,14 @@
           "angularDamping": 0.8,
           "linearDamping": 0.9,
           "mass": 2.7,
-          "bodyType": "Dynamic",
+          "bodyType": "Kinematic",
           "fixedRotation": false,
           "continuousCollision": false,
           "uID": 58
         }
       }
     ],
-    "uID": 973,
+    "uID": 15,
     "isSerializable": true,
     "isDead": false
   },
@@ -1525,13 +1525,13 @@
         "properties": {
           "position": {
             "x": 0.1935768,
-            "y": 0.5150006
+            "y": 0.51500154
           },
           "scale": {
             "x": 0.25,
             "y": 0.25
           },
-          "rotation": -449.99756,
+          "rotation": -449.99796,
           "zIndex": 0,
           "uID": 40
         }
@@ -1610,7 +1610,7 @@
         }
       }
     ],
-    "uID": 974,
+    "uID": 16,
     "isSerializable": true,
     "isDead": false
   },
@@ -1621,14 +1621,14 @@
         "type": "components.Transform",
         "properties": {
           "position": {
-            "x": 3.2055721,
-            "y": 2.548259
+            "x": 2.226012,
+            "y": 0.50839794
           },
           "scale": {
             "x": 0.25,
             "y": 0.25
           },
-          "rotation": -808.48224,
+          "rotation": -809.9334,
           "zIndex": 0,
           "uID": 40
         }
@@ -1700,14 +1700,14 @@
           "angularDamping": 0.8,
           "linearDamping": 0.9,
           "mass": 2.7,
-          "bodyType": "Dynamic",
+          "bodyType": "Kinematic",
           "fixedRotation": false,
           "continuousCollision": false,
           "uID": 58
         }
       }
     ],
-    "uID": 975,
+    "uID": 17,
     "isSerializable": true,
     "isDead": false
   },
@@ -1718,14 +1718,14 @@
         "type": "components.Transform",
         "properties": {
           "position": {
-            "x": 3.530072,
-            "y": 1.3037412
+            "x": 3.9709496,
+            "y": 0.5096204
           },
           "scale": {
             "x": 0.25,
             "y": 0.25
           },
-          "rotation": 0.0,
+          "rotation": 0.09339478,
           "zIndex": 0,
           "uID": 40
         }
@@ -1797,14 +1797,14 @@
           "angularDamping": 0.8,
           "linearDamping": 0.9,
           "mass": 2.7,
-          "bodyType": "Dynamic",
+          "bodyType": "Kinematic",
           "fixedRotation": false,
           "continuousCollision": false,
           "uID": 58
         }
       }
     ],
-    "uID": 976,
+    "uID": 18,
     "isSerializable": true,
     "isDead": false
   },
@@ -1815,14 +1815,14 @@
         "type": "components.Transform",
         "properties": {
           "position": {
-            "x": 3.2295794,
-            "y": 0.6373582
+            "x": 3.3983634,
+            "y": 0.5095551
           },
           "scale": {
             "x": 0.25,
             "y": 0.25
           },
-          "rotation": -0.7669073,
+          "rotation": 0.14321277,
           "zIndex": 0,
           "uID": 40
         }
@@ -1894,14 +1894,14 @@
           "angularDamping": 0.8,
           "linearDamping": 0.9,
           "mass": 2.7,
-          "bodyType": "Dynamic",
+          "bodyType": "Kinematic",
           "fixedRotation": false,
           "continuousCollision": false,
           "uID": 58
         }
       }
     ],
-    "uID": 977,
+    "uID": 19,
     "isSerializable": true,
     "isDead": false
   },
@@ -1912,14 +1912,14 @@
         "type": "components.Transform",
         "properties": {
           "position": {
-            "x": 3.1787148,
-            "y": 1.2969733
+            "x": 3.1292078,
+            "y": 0.5092891
           },
           "scale": {
             "x": 0.25,
             "y": 0.25
           },
-          "rotation": 1.0868398,
+          "rotation": 90.14712,
           "zIndex": 0,
           "uID": 40
         }
@@ -1991,14 +1991,14 @@
           "angularDamping": 0.8,
           "linearDamping": 0.9,
           "mass": 2.7,
-          "bodyType": "Dynamic",
+          "bodyType": "Kinematic",
           "fixedRotation": false,
           "continuousCollision": false,
           "uID": 58
         }
       }
     ],
-    "uID": 978,
+    "uID": 20,
     "isSerializable": true,
     "isDead": false
   },
@@ -2009,14 +2009,14 @@
         "type": "components.Transform",
         "properties": {
           "position": {
-            "x": 3.1817844,
-            "y": 1.8348083
+            "x": 2.8311994,
+            "y": 0.5089955
           },
           "scale": {
             "x": 0.25,
             "y": 0.25
           },
-          "rotation": -269.65405,
+          "rotation": -179.8468,
           "zIndex": 0,
           "uID": 40
         }
@@ -2088,14 +2088,14 @@
           "angularDamping": 0.8,
           "linearDamping": 0.9,
           "mass": 2.7,
-          "bodyType": "Dynamic",
+          "bodyType": "Kinematic",
           "fixedRotation": false,
           "continuousCollision": false,
           "uID": 58
         }
       }
     ],
-    "uID": 979,
+    "uID": 21,
     "isSerializable": true,
     "isDead": false
   },
@@ -2106,14 +2106,14 @@
         "type": "components.Transform",
         "properties": {
           "position": {
-            "x": 3.561591,
-            "y": 1.7267151
+            "x": 3.6942759,
+            "y": 0.5098483
           },
           "scale": {
             "x": 0.25,
             "y": 0.25
           },
-          "rotation": 90.07226,
+          "rotation": 90.14113,
           "zIndex": 0,
           "uID": 40
         }
@@ -2185,14 +2185,14 @@
           "angularDamping": 0.8,
           "linearDamping": 0.9,
           "mass": 2.7,
-          "bodyType": "Dynamic",
+          "bodyType": "Kinematic",
           "fixedRotation": false,
           "continuousCollision": false,
           "uID": 58
         }
       }
     ],
-    "uID": 980,
+    "uID": 22,
     "isSerializable": true,
     "isDead": false
   },
@@ -2203,14 +2203,14 @@
         "type": "components.Transform",
         "properties": {
           "position": {
-            "x": 3.0,
-            "y": 4.5
+            "x": 0.0,
+            "y": 0.0
           },
           "scale": {
             "x": 2.0,
             "y": 2.0
           },
-          "rotation": 0.0,
+          "rotation": 0.05635595,
           "zIndex": 0,
           "uID": 74
         }
@@ -2263,7 +2263,7 @@
           },
           "angularDamping": 0.8,
           "linearDamping": 0.9,
-          "mass": 300.0,
+          "mass": 50.0,
           "bodyType": "Dynamic",
           "fixedRotation": false,
           "continuousCollision": false,
@@ -2289,7 +2289,196 @@
         }
       }
     ],
-    "uID": 981,
+    "uID": 23,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 1.0,
+            "y": 1.75
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 93
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1310.6353,
+            "y": 3.137255,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 1.0,
+                "y": 1.0
+              },
+              {
+                "x": 1.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.75,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 94
+        }
+      }
+    ],
+    "uID": 24,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 0.5,
+            "y": 2.5
+          },
+          "scale": {
+            "x": 3.0,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 110
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 1.0,
+                "y": 1.0
+              },
+              {
+                "x": 1.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.75,
+                "y": 0.0
+              },
+              {
+                "x": 0.75,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 111
+        }
+      }
+    ],
+    "uID": 25,
+    "isSerializable": true,
+    "isDead": false
+  },
+  {
+    "name": "GENERATED_OBJECT",
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 2.0,
+            "y": 2.25
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uID": 112
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 120.0,
+            "height": 120.0,
+            "texture": {
+              "filepath": "assets/images/default/spritesheets/spritesheet.png",
+              "width": 480,
+              "height": 120
+            },
+            "texCoords": [
+              {
+                "x": 0.25,
+                "y": 1.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uID": 113
+        }
+      }
+    ],
+    "uID": 26,
     "isSerializable": true,
     "isDead": false
   }
