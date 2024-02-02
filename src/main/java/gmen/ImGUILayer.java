@@ -3,6 +3,7 @@ package gmen;
 import editor.GameViewWindow;
 import editor.MenuBar;
 import editor.PropertiesWindow;
+import editor.SceneHierarchyWindow;
 import imgui.ImFontAtlas;
 import imgui.ImFontConfig;
 import imgui.ImGui;
@@ -35,12 +36,14 @@ public class ImGUILayer {
     private GameViewWindow gameViewWindow;
     private PropertiesWindow propertiesWindow;
     private MenuBar menuBar;
+    private SceneHierarchyWindow sceneHierarchyWindow;
 
     public ImGUILayer(long glfwWindow, PickingTexture pickingTexture) {
         this.windowPtr = glfwWindow;
         this.gameViewWindow = new GameViewWindow();
         this.propertiesWindow = new PropertiesWindow(pickingTexture);
         this.menuBar = new MenuBar();
+        this.sceneHierarchyWindow = new SceneHierarchyWindow();
     }
 
 
@@ -200,7 +203,7 @@ public class ImGUILayer {
         gameViewWindow.imGUI();
         propertiesWindow.update(dt, currentScene);
         propertiesWindow.imGUI();
-
+        sceneHierarchyWindow.ImGUI();
 
         endFrame();
     }
