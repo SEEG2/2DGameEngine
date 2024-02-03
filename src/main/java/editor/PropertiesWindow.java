@@ -1,5 +1,6 @@
 package editor;
 
+import components.EditorProperties;
 import physics.components.Box2DCollider;
 import physics.components.CircleCollider;
 import physics.components.Rigidbody2D;
@@ -34,7 +35,7 @@ public class PropertiesWindow {
             GameObject gameObject = currentScene.getGameObject(gameObjectId);
 
             if (!(gameObject == null)) {
-                if (gameObject.editorProperties.allowMouseSelection && gameObject.isSerializable() && !gameObject.editorProperties.isEditorObject) {
+                if (gameObject.getComponent(EditorProperties.class).allowMouseSelection && gameObject.isSerializable() && !gameObject.getComponent(EditorProperties.class).isEditorObject) {
                     activeGameObject = gameObject;
                 }
             } else {

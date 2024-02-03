@@ -1,5 +1,6 @@
 package gmen;
 
+import components.EditorProperties;
 import components.Sprite;
 import components.SpriteRenderer;
 import renderer.Texture;
@@ -56,7 +57,7 @@ public class Prefabs {
             gameObject.transform.scale.x = sizeX;
             gameObject.transform.scale.y = sizeY;
             gameObject.transform.zIndex = 255;
-            gameObject.editorProperties.isEditorObject = true;
+            gameObject.getComponent(EditorProperties.class).isEditorObject = true;
             gameObject.disableSerialization();
         } else {
             gameObject = Window.getScene().createGameObject("GENERATED_OBJECT");
