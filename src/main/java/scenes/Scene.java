@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import components.Component;
 import components.ComponentDeserializer;
+import components.Properties;
 import components.Transform;
 import gmen.Camera;
 import gmen.GameObject;
@@ -110,8 +111,8 @@ public class Scene {
 
     public GameObject createGameObject(String name) {
         GameObject go = new GameObject(name);
-        go.addComponent(new Transform());
-        go.transform = go.getComponent(Transform.class);
+        go.transform = (Transform) go.addComponent(new Transform());;
+        go.properties = (Properties) go.addComponent(new Properties());
         return go;
     }
 

@@ -34,7 +34,7 @@ public class PropertiesWindow {
             GameObject gameObject = currentScene.getGameObject(gameObjectId);
 
             if (!(gameObject == null)) {
-                if (!gameObject.name.startsWith("%") && gameObject.isSerializable()) {
+                if (gameObject.properties.allowMouseSelection && gameObject.isSerializable() && !gameObject.properties.getIsEditorObject()) {
                     activeGameObject = gameObject;
                 }
             } else {

@@ -2,10 +2,7 @@ package gmen;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import components.Component;
-import components.ComponentDeserializer;
-import components.SpriteRenderer;
-import components.Transform;
+import components.*;
 import imgui.ImGui;
 import util.AssetPool;
 
@@ -16,6 +13,7 @@ public class GameObject {
     public String name;
     private List<Component> components;
     public transient Transform transform;
+    public transient Properties properties;
     //do not set this to values > 255 (otherwise it will interfere with the editor
     private static int ID_COUNTER = 0;
     private int uID = -1;
@@ -26,6 +24,7 @@ public class GameObject {
         this.name = name;
         this.components = new ArrayList<>();
         this.transform = new Transform();
+        this.properties = new Properties();
 
         this.uID = ID_COUNTER++;
     }
@@ -34,6 +33,7 @@ public class GameObject {
         this.name = name;
         this.components = new ArrayList<>();
         this.transform = new Transform();
+        this.properties = new Properties();
         this.transform.zIndex = zIndex;
 
         this.uID = ID_COUNTER++;
