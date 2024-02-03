@@ -133,8 +133,6 @@ public class ImGUIExtension {
     }
 
     public static String inputText(String label, String text) {
-        String newText = text.replace("%", "");
-        boolean res = false;
         ImGui.pushID(label);
 
         ImGui.columns(2);
@@ -142,7 +140,7 @@ public class ImGUIExtension {
         ImGui.text(label);
         ImGui.nextColumn();
 
-        ImString outString = new ImString(newText, 256);
+        ImString outString = new ImString(text, 256);
         if (ImGui.inputText("##" + label, outString)) {
             ImGui.columns(1);
             ImGui.popID();
@@ -153,6 +151,6 @@ public class ImGUIExtension {
         ImGui.columns(1);
         ImGui.popID();
 
-        return newText;
+        return text;
     }
 }
