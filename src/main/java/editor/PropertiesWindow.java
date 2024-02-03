@@ -33,7 +33,7 @@ public class PropertiesWindow {
             int gameObjectId = pickingTexture.readPixel(x, y);
 
             if (!(currentScene.getGameObject(gameObjectId) == null)) {
-                if (!currentScene.getGameObject(gameObjectId).getName().startsWith("%")) {
+                if (!currentScene.getGameObject(gameObjectId).name.startsWith("%")) {
                     activeGameObject = currentScene.getGameObject(gameObjectId);
                 }
             } else {

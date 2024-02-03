@@ -22,11 +22,11 @@ public class SceneHierarchyWindow {
             }
 
             ImGui.pushID(index);
-            boolean treeNodeOpen = ImGui.treeNodeEx(obj.getName(),
+            boolean treeNodeOpen = ImGui.treeNodeEx(obj.name,
                     ImGuiTreeNodeFlags.DefaultOpen |
                        ImGuiTreeNodeFlags.FramePadding |
                        ImGuiTreeNodeFlags.OpenOnArrow |
-                       ImGuiTreeNodeFlags.SpanAvailWidth , obj.getName()
+                       ImGuiTreeNodeFlags.SpanAvailWidth , obj.name
             );
             ImGui.popID();
 

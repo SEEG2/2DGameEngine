@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameObject {
-    private String name;
+    public String name;
     private List<Component> components;
     public transient Transform transform;
     //do not set this to values > 255 (otherwise it will interfere with the editor
@@ -163,10 +163,6 @@ public class GameObject {
 
     public boolean isSerializable() {
         return this.isSerializable;
-    }
-
-    public String getName() {
-        return this.name;
     }
 
     public boolean isDead() {
