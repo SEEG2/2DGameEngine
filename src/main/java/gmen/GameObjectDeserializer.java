@@ -2,6 +2,7 @@ package gmen;
 
 import com.google.gson.*;
 import components.Component;
+import components.EditorProperties;
 import components.Transform;
 
 import java.lang.reflect.Type;
@@ -21,6 +22,7 @@ public class GameObjectDeserializer implements JsonDeserializer<GameObject> {
         }
 
         gameObject.transform = gameObject.getComponent(Transform.class);
+        gameObject.editorProperties = gameObject.getComponent(EditorProperties.class);
         return gameObject;
     }
 }

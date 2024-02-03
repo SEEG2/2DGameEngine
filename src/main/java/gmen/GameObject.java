@@ -13,6 +13,7 @@ public class GameObject {
     public String name;
     private List<Component> components;
     public transient Transform transform;
+    public transient EditorProperties editorProperties;
     //do not set this to values > 255 (otherwise it will interfere with the editor
     private static int ID_COUNTER = 0;
     private int uID = -1;

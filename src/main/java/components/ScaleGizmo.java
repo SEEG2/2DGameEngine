@@ -20,7 +20,7 @@ public class ScaleGizmo extends Gizmo {
             return;
         }
         super.use();
-        if (activeGameObject != null && activeGameObject.getComponent(EditorProperties.class).allowGizmoResize) {
+        if (activeGameObject != null && activeGameObject.editorProperties.allowGizmoResize) {
             if (xAxisActive && !yAxisActive) {
                 activeGameObject.transform.scale.x -= MouseListener.getWorldDx();
             } else if (yAxisActive && !xAxisActive) {

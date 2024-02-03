@@ -111,7 +111,7 @@ public class Scene {
     public GameObject createGameObject(String name) {
         GameObject go = new GameObject(name);
         go.transform = (Transform) go.addComponent(new Transform());;
-        go.addComponent(new EditorProperties());
+        go.editorProperties = (EditorProperties) go.addComponent(new EditorProperties());
         return go;
     }
 
