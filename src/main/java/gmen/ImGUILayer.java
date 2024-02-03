@@ -203,7 +203,7 @@ public class ImGUILayer {
         gameViewWindow.imGUI();
         propertiesWindow.update(dt, currentScene);
         propertiesWindow.imGUI();
-        sceneHierarchyWindow.ImGUI();
+        sceneHierarchyWindow.imGUI();
 
         endFrame();
     }

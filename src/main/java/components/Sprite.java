@@ -3,7 +3,7 @@ package components;
 import org.joml.Vector2f;
 import renderer.Texture;
 
-public class Sprite {
+public class Sprite extends Component{
 
     private float width, height;
     private Texture texture;
