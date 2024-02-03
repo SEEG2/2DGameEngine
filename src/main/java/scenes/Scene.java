@@ -4,13 +4,12 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import components.Component;
 import components.ComponentDeserializer;
-import components.Properties;
+import components.EditorProperties;
 import components.Transform;
 import gmen.Camera;
 import gmen.GameObject;
 import gmen.GameObjectDeserializer;
 import org.joml.Vector2f;
-import org.lwjgl.system.CallbackI;
 import physics.Physics2D;
 import renderer.Renderer;
 
@@ -112,7 +111,7 @@ public class Scene {
     public GameObject createGameObject(String name) {
         GameObject go = new GameObject(name);
         go.transform = (Transform) go.addComponent(new Transform());;
-        go.properties = (Properties) go.addComponent(new Properties());
+        go.editorProperties = (EditorProperties) go.addComponent(new EditorProperties());
         return go;
     }
 

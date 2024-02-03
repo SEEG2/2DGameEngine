@@ -2,8 +2,6 @@ package gmen;
 
 import components.Sprite;
 import components.SpriteRenderer;
-import components.Transform;
-import org.joml.Vector2f;
 import renderer.Texture;
 
 public class Prefabs {
@@ -58,7 +56,7 @@ public class Prefabs {
             gameObject.transform.scale.x = sizeX;
             gameObject.transform.scale.y = sizeY;
             gameObject.transform.zIndex = 255;
-            gameObject.properties.isEditorObject = true;
+            gameObject.editorProperties.isEditorObject = true;
             gameObject.disableSerialization();
         } else {
             gameObject = Window.getScene().createGameObject("GENERATED_OBJECT");

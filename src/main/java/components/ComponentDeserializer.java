@@ -10,7 +10,7 @@ public class ComponentDeserializer implements JsonSerializer<Component>, JsonDes
     public Component deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         JsonObject jsonObject = jsonElement.getAsJsonObject();
         String joType = jsonObject.get("type").getAsString();
-        JsonElement element = jsonObject.get("properties");
+        JsonElement element = jsonObject.get("editorProperties");
 
         try {
             return jsonDeserializationContext.deserialize(element, Class.forName(joType));
@@ -23,7 +23,7 @@ public class ComponentDeserializer implements JsonSerializer<Component>, JsonDes
     public JsonElement serialize(Component component, Type type, JsonSerializationContext jsonSerializationContext) {
         JsonObject result = new JsonObject();
         result.add("type", new JsonPrimitive(component.getClass().getCanonicalName()));
-        result.add("properties", jsonSerializationContext.serialize(component, component.getClass()));
+        result.add("editorProperties", jsonSerializationContext.serialize(component, component.getClass()));
         return result;
     }
 }

@@ -234,7 +234,7 @@ public class RenderBatch implements Comparable<RenderBatch> {
             transformMatrix.scale(sprite.gameObject.transform.scale.x, sprite.gameObject.transform.scale.y, 1);
         }
 
-        //Adding vertices with properties
+        //Adding vertices with editorProperties
 
         float xAdd = 0.5f;
         float yAdd = 0.5f;

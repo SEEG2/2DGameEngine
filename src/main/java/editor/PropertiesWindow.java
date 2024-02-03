@@ -34,7 +34,7 @@ public class PropertiesWindow {
             GameObject gameObject = currentScene.getGameObject(gameObjectId);
 
             if (!(gameObject == null)) {
-                if (gameObject.properties.allowMouseSelection && gameObject.isSerializable() && !gameObject.properties.isEditorObject) {
+                if (gameObject.editorProperties.allowMouseSelection && gameObject.isSerializable() && !gameObject.editorProperties.isEditorObject) {
                     activeGameObject = gameObject;
                 }
             } else {
@@ -47,7 +47,7 @@ public class PropertiesWindow {
 
     public void imGUI() {
         if (activeGameObject != null) {
-            ImGui.begin("Properties");
+            ImGui.begin("EditorProperties");
 
             if (ImGui.beginPopupContextWindow("Component Adder")) {
                 if (ImGui.menuItem("Add Rigidbody")) {

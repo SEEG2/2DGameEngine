@@ -13,7 +13,7 @@ public class GameObject {
     public String name;
     private List<Component> components;
     public transient Transform transform;
-    public transient Properties properties;
+    public transient EditorProperties editorProperties;
     //do not set this to values > 255 (otherwise it will interfere with the editor
     private static int ID_COUNTER = 0;
     private int uID = -1;
@@ -24,7 +24,7 @@ public class GameObject {
         this.name = name;
         this.components = new ArrayList<>();
         this.transform = new Transform();
-        this.properties = new Properties();
+        this.editorProperties = new EditorProperties();
 
         this.uID = ID_COUNTER++;
     }
@@ -33,7 +33,7 @@ public class GameObject {
         this.name = name;
         this.components = new ArrayList<>();
         this.transform = new Transform();
-        this.properties = new Properties();
+        this.editorProperties = new EditorProperties();
         this.transform.zIndex = zIndex;
 
         this.uID = ID_COUNTER++;
