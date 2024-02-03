@@ -31,10 +31,11 @@ public class PropertiesWindow {
             int y = (int) MouseListener.getScreenY();
 
             int gameObjectId = pickingTexture.readPixel(x, y);
+            GameObject gameObject = currentScene.getGameObject(gameObjectId);
 
-            if (!(currentScene.getGameObject(gameObjectId) == null)) {
-                if (!currentScene.getGameObject(gameObjectId).name.startsWith("%")) {
-                    activeGameObject = currentScene.getGameObject(gameObjectId);
+            if (!(gameObject == null)) {
+                if (!gameObject.name.startsWith("%") && gameObject.isSerializable()) {
+                    activeGameObject = gameObject;
                 }
             } else {
                 activeGameObject = null;

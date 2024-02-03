@@ -56,10 +56,11 @@ public class Prefabs {
         if (isEditorObject) {
             // the "%" prefix makes the selection tool ignore the object
             //useful for gizmos and other editor objects
-            gameObject = Window.getScene().createGameObject("%EDITOR_OBJECT");
+            gameObject = Window.getScene().createGameObject("EDITOR_OBJECT");
             gameObject.transform.scale.x = sizeX;
             gameObject.transform.scale.y = sizeY;
             gameObject.transform.zIndex = 255;
+            gameObject.disableSerialization();
         } else {
             gameObject = Window.getScene().createGameObject("GENERATED_OBJECT");
             gameObject.transform.scale.x = sizeX;
