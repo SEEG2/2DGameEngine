@@ -1,15 +1,8 @@
 package components;
 
 public class Properties extends Component {
-    private boolean isEditorObject = false;
+    public transient boolean isEditorObject = false;
     public boolean allowMouseSelection = true;
-
-
-    public boolean getIsEditorObject() {
-        return this.isEditorObject;
-    }
-
-    public void setIsEditorObject(boolean b) {
-        this.isEditorObject = b;
-    }
+    public boolean allowGizmoResize = true;
+    public boolean allowGizmoMoving = true;
 }

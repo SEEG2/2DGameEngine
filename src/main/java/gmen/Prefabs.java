@@ -58,7 +58,7 @@ public class Prefabs {
             gameObject.transform.scale.x = sizeX;
             gameObject.transform.scale.y = sizeY;
             gameObject.transform.zIndex = 255;
-            gameObject.properties.setIsEditorObject(true);
+            gameObject.properties.isEditorObject = true;
             gameObject.disableSerialization();
         } else {
             gameObject = Window.getScene().createGameObject("GENERATED_OBJECT");
