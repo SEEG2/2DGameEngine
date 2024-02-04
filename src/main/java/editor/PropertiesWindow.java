@@ -1,6 +1,7 @@
 package editor;
 
 import components.EditorProperties;
+import components.SpriteRenderer;
 import physics.components.Box2DCollider;
 import physics.components.CircleCollider;
 import physics.components.Rigidbody2D;
@@ -26,7 +27,6 @@ public class PropertiesWindow {
     public void update(float dt, Scene currentScene) {
 
         this.debounce -= dt;
-
         if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && MouseListener.isMouseInsideFrameBuffer() && debounce < 0 && !MouseListener.isDragging()) {
             int x =  (int) MouseListener.getScreenX();
             int y = (int) MouseListener.getScreenY();
