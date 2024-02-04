@@ -102,4 +102,8 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
 
         ImGui.end();
     }
+
+    public GameObject getLevelEditorComponents() {
+        return this.levelEditorComponents;
+    }
 }

@@ -53,7 +53,7 @@ public class MouseControl extends  Component {
             GameObject gameObject = Window.getScene().getGameObject(gameObjectId);
 
             if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && MouseListener.isMouseInsideFrameBuffer()) {
-                if (MouseListener.isDragging() && gameObject == null) {
+                if (MouseListener.isDragging() && (gameObject == null || Window.getLevelEditorSceneInitializer().getLevelEditorComponents().getComponent(EditorSettings.class).allowDragOverride)) {
                     place();
                     Window.getImGUILayer().getPropertiesWindow().setActiveGameObject(null);
                 } else if (!MouseListener.isDragging()) {

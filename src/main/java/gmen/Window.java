@@ -29,6 +29,7 @@ public class Window implements Observer {
     private ImGUILayer imGUILayer;
     private FrameBuffer frameBuffer;
     private PickingTexture pickingTexture;
+    private LevelEditorSceneInitializer levelEditorSceneInitializer;
 
     private boolean runtimePlaying = false;
 
@@ -122,8 +123,8 @@ public class Window implements Observer {
 
         this.imGUILayer = new ImGUILayer(glfwWindow, pickingTexture);
         this.imGUILayer.initImGui();
-
-        Window.changeScene(new LevelEditorSceneInitializer());
+        levelEditorSceneInitializer = new LevelEditorSceneInitializer();
+         Window.changeScene(levelEditorSceneInitializer);
     }
     public void loop() {
         float beginTime = (float) glfwGetTime();
@@ -217,14 +218,17 @@ public class Window implements Observer {
             case GameEngineStartPlay:
                 this.runtimePlaying = true;
                 currentScene.save();
-                Window.changeScene(new LevelEditorSceneInitializer());
+                levelEditorSceneInitializer = new LevelEditorSceneInitializer();
+                Window.changeScene(levelEditorSceneInitializer);
                 break;
             case GameEngineStopPlay:
                 this.runtimePlaying = false;
-                Window.changeScene(new LevelEditorSceneInitializer());
+                levelEditorSceneInitializer = new LevelEditorSceneInitializer();
+                Window.changeScene(levelEditorSceneInitializer);
                 break;
             case LoadLevel:
-                Window.changeScene(new LevelEditorSceneInitializer());
+                levelEditorSceneInitializer = new LevelEditorSceneInitializer();
+                Window.changeScene(levelEditorSceneInitializer);
                 break;
             case SaveLevel:
                 currentScene.save();
@@ -234,5 +238,9 @@ public class Window implements Observer {
 
     public static PickingTexture getPickingTexture() {
         return get().pickingTexture;
+    }
+
+    public static LevelEditorSceneInitializer getLevelEditorSceneInitializer() {
+        return get().levelEditorSceneInitializer;
     }
 }
