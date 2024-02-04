@@ -5,6 +5,8 @@ import gmen.MouseListener;
 import gmen.Window;
 import util.Settings;
 
+import java.util.Set;
+
 import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_LEFT;
 
 public class MouseControl extends  Component {
@@ -24,8 +26,8 @@ public class MouseControl extends  Component {
         if (holdingObject != null) {
             holdingObject.transform.position.x = MouseListener.getWorldX();
             holdingObject.transform.position.y = MouseListener.getWorldY();
-            holdingObject.transform.position.x = (int) (holdingObject.transform.position.x / Settings.GRID_WIDTH) * Settings.GRID_WIDTH;
-            holdingObject.transform.position.y = (int) (holdingObject.transform.position.y / Settings.GRID_HEIGHT) * Settings.GRID_HEIGHT;
+            holdingObject.transform.position.x = ((int) Math.floor(holdingObject.transform.position.x / Settings.GRID_WIDTH) * Settings.GRID_WIDTH) + Settings.GRID_WIDTH / 2;
+            holdingObject.transform.position.y = ((int) Math.floor(holdingObject.transform.position.y / Settings.GRID_HEIGHT) * Settings.GRID_HEIGHT) + Settings.GRID_HEIGHT / 2;
 
 
 
