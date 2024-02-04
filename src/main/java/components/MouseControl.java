@@ -55,6 +55,7 @@ public class MouseControl extends  Component {
             if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && MouseListener.isMouseInsideFrameBuffer()) {
                 if (MouseListener.isDragging() && gameObject == null) {
                     place();
+                    Window.getImGUILayer().getPropertiesWindow().setActiveGameObject(null);
                 } else if (!MouseListener.isDragging()) {
                     place();
                     debounce = debounceTime;
