@@ -22,8 +22,8 @@ public class MouseControl extends  Component {
     @Override
     public void editorUpdate(float dt) {
         if (holdingObject != null) {
-            holdingObject.transform.position.x = MouseListener.getOrthoX();
-            holdingObject.transform.position.y = MouseListener.getOrthoY();
+            holdingObject.transform.position.x = MouseListener.getWorldX();
+            holdingObject.transform.position.y = MouseListener.getWorldY();
             holdingObject.transform.position.x = (int) (holdingObject.transform.position.x / Settings.GRID_WIDTH) * Settings.GRID_WIDTH;
             holdingObject.transform.position.y = (int) (holdingObject.transform.position.y / Settings.GRID_HEIGHT) * Settings.GRID_HEIGHT;
 
