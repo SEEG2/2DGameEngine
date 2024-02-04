@@ -65,8 +65,7 @@ public class Shader {
         int success = glGetShaderi(vertexID, GL_COMPILE_STATUS);
         if (success == GL_FALSE) {
             int len = glGetShaderi(vertexID, GL_INFO_LOG_LENGTH);
-            System.out.println("Couldn't compile vertex shader.");
-            assert false : "";
+            assert false : "Couldn't compile vertex shader.";
         }
 
         //loading + compiling fragment shader
@@ -78,8 +77,7 @@ public class Shader {
         success = glGetShaderi(fragmentID, GL_COMPILE_STATUS);
         if (success == GL_FALSE) {
             int len = glGetShaderi(fragmentID, GL_INFO_LOG_LENGTH);
-            System.out.println("Couldn't compile fragment shader.");
-            assert false : "";
+            assert false : "Couldn't compile fragment shader.";
         }
 
         //linking shader
@@ -92,8 +90,7 @@ public class Shader {
         success = glGetProgrami(shaderProgramID, GL_LINK_STATUS);
         if (success == GL_FALSE) {
             int len = glGetProgrami(shaderProgramID, GL_INFO_LOG_LENGTH);
-            System.out.println("Couldn't link shaders.");
-            assert false : "";
+            assert false : "Couldn't link shaders.";
         }
     }
 

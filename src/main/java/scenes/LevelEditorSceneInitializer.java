@@ -54,9 +54,6 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
 
     @Override
     public void imGUI() {
-        System.out.println(MouseListener.getScreenX());
-        System.out.println(MouseListener.getScreenY());
-
         ImGui.begin("Level Editor");
         levelEditorComponents.imGUI();
         ImGui.end();
