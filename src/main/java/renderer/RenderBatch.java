@@ -286,7 +286,7 @@ public class RenderBatch implements Comparable<RenderBatch> {
 
         for (int i = 0; i < numSprites; i++) {
             if (sprites[i] == spriteRenderer) {
-                for (int j = i; j < numSprites - 1; i++) {
+                for (int j = i; j < numSprites - 1; j++) {
                     sprites[j] = sprites[j+1];
                     sprites[j].setDirty();
                 }
