@@ -22,12 +22,12 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
 
         levelEditorComponents = scene.createGameObject("Editor");
         levelEditorComponents.disableSerialization();
-        levelEditorComponents.addComponent(new Transform());
         levelEditorComponents.addComponent(new MouseControl());
         levelEditorComponents.addComponent(new GridLines());
         levelEditorComponents.addComponent(new EditorCamera(scene.camera()));
         levelEditorComponents.addComponent(new TranslateGizmo(AssetPool.getTexture("assets/images/default/images/gizmo.png"), Window.getImGUILayer().getPropertiesWindow()));
         levelEditorComponents.addComponent(new ScaleGizmo(AssetPool.getTexture("assets/images/default/images/gizmo_scale.png"), Window.getImGUILayer().getPropertiesWindow()));
+        levelEditorComponents.addComponent(new EditorSettings());
 
         scene.addGameObjectToScene(levelEditorComponents);
     }
