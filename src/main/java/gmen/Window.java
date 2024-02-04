@@ -231,4 +231,8 @@ public class Window implements Observer {
                 break;
         }
     }
+
+    public static PickingTexture getPickingTexture() {
+        return get().pickingTexture;
+    }
 }

@@ -4,6 +4,9 @@ import gmen.GameObject;
 import gmen.MouseListener;
 import gmen.Window;
 import org.joml.Vector4f;
+import org.lwjgl.system.CallbackI;
+import renderer.PickingTexture;
+import scenes.Scene;
 import util.Settings;
 
 import java.util.Set;
@@ -42,11 +45,19 @@ public class MouseControl extends  Component {
             holdingObject.transform.position.x = ((int) Math.floor(holdingObject.transform.position.x / Settings.GRID_WIDTH) * Settings.GRID_WIDTH) + Settings.GRID_WIDTH / 2;
             holdingObject.transform.position.y = ((int) Math.floor(holdingObject.transform.position.y / Settings.GRID_HEIGHT) * Settings.GRID_HEIGHT) + Settings.GRID_HEIGHT / 2;
 
+            int x =  (int) MouseListener.getScreenX();
+            int y = (int) MouseListener.getScreenY();
 
+            int gameObjectId = Window.getPickingTexture().readPixel(x, y);
+            GameObject gameObject = Window.getScene().getGameObject(gameObjectId);
 
             if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)) {
-                place();
-                debounce = debounceTime;
+                if (MouseListener.isDragging() && gameObject == null) {
+                    place();
+                } else if (!MouseListener.isDragging()) {
+                    place();
+                    debounce = debounceTime;
+                }
             }
 
             if(MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_RIGHT)) {
