@@ -60,10 +60,10 @@ public class MouseControl extends  Component {
                     debounce = debounceTime;
                 }
             }
-
             if(MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_RIGHT)) {
                 holdingObject.destroy();
                 holdingObject = null;
+                Window.getImGUILayer().getPropertiesWindow().setActiveGameObject(null);
             }
         }
     }
