@@ -24,6 +24,7 @@ public class GameObject {
         this.name = name;
         this.components = new ArrayList<>();
         this.transform = new Transform();
+        this.editorProperties = new EditorProperties();
 
         this.uID = ID_COUNTER++;
     }
@@ -32,6 +33,7 @@ public class GameObject {
         this.name = name;
         this.components = new ArrayList<>();
         this.transform = new Transform();
+        this.editorProperties = new EditorProperties();
         this.transform.zIndex = zIndex;
 
         this.uID = ID_COUNTER++;
