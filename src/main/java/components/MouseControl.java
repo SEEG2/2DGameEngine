@@ -1,6 +1,8 @@
 package components;
 
+import editor.PropertiesWindow;
 import gmen.GameObject;
+import gmen.ImGUILayer;
 import gmen.MouseListener;
 import gmen.Window;
 import org.joml.Vector4f;
@@ -11,8 +13,7 @@ import util.Settings;
 
 import java.util.Set;
 
-import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_LEFT;
-import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_RIGHT;
+import static org.lwjgl.glfw.GLFW.*;
 
 public class MouseControl extends  Component {
     GameObject holdingObject = null;
@@ -51,7 +52,7 @@ public class MouseControl extends  Component {
             int gameObjectId = Window.getPickingTexture().readPixel(x, y);
             GameObject gameObject = Window.getScene().getGameObject(gameObjectId);
 
-            if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)) {
+            if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && MouseListener.isMouseInsideFrameBuffer()) {
                 if (MouseListener.isDragging() && gameObject == null) {
                     place();
                 } else if (!MouseListener.isDragging()) {
