@@ -1,9 +1,9 @@
 package gmen;
 
-import components.EditorProperties;
-import components.Sprite;
-import components.SpriteRenderer;
+import components.*;
+import org.lwjgl.system.CallbackI;
 import renderer.Texture;
+import util.AssetPool;
 
 public class Prefabs {
     public static GameObject generateSpriteObject(Sprite sprite, float sizeX, float sizeY) {
@@ -68,6 +68,28 @@ public class Prefabs {
         SpriteRenderer renderer = new SpriteRenderer();
         renderer.setTexture(texture);
         gameObject.addComponent(renderer);
+
+        return gameObject;
+    }
+
+    public static GameObject generatePlayerObject() {
+        Spritesheet spritesheet = AssetPool.getSpritesheet("assets/images/default/spritesheets/spritesheet.png");
+
+        GameObject gameObject = generateSpriteObject(spritesheet.getSprite(0), 0.25f,0.25f);
+
+        AnimationState run = new AnimationState();
+        run.title = "Run";
+        float defaultFrameTime = 0.25f;
+        run.addFrame(spritesheet.getSprite(0), defaultFrameTime);
+        run.addFrame(spritesheet.getSprite(1), defaultFrameTime);
+        run.addFrame(spritesheet.getSprite(2), defaultFrameTime);
+        run.setLoop(true);
+
+        StateMachine stateMachine = new StateMachine();
+        stateMachine.addState(run);
+
+        stateMachine.setDefaultStateTitle(run.title);
+        gameObject.addComponent(stateMachine);
 
         return gameObject;
     }

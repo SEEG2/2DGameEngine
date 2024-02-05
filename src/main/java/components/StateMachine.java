@@ -41,12 +41,30 @@ public class StateMachine extends Component {
     private transient AnimationState currentState = null;
     private String defaultStateTitle = "";
 
+    public void refreshTexture() {
+        for (AnimationState state : states) {
+            state.refreshTextures();
+        }
+    }
+
     public void addStateTrigger(String from, String to, String onTrigger) {
         this.stateTransfers.put(new StateTrigger(from,onTrigger), to);
     }
 
     public void addState(AnimationState state) {
         this.states.add(state);
+    }
+
+    public void setDefaultStateTitle(String title) {
+        for (AnimationState state : states) {
+            if (state.title.equals(title)) {
+                defaultStateTitle = title;
+                if (currentState == null) {
+                    currentState = state;
+                    return;
+                }
+            }
+        }
     }
 
     public void trigger(String trigger) {
@@ -70,8 +88,6 @@ public class StateMachine extends Component {
                 return;
             }
         }
-        //REMOVE
-        System.out.println(trigger);
     }
 
     @Override
