@@ -28,8 +28,7 @@ public class GridLines extends Component {
 
         int maxLines = Math.max(numVerticalLines, numHorizontalLines);
 
-        //TODO replace with zoom lvl
-        if (true) {
+        if (Scene.getCamera().getZoom() < 10) {
             for (int i = 0; i < maxLines; i++) {
                 float x = firstX + (Settings.GRID_WIDTH * i);
                 float y = firstY + (Settings.GRID_HEIGHT * i);

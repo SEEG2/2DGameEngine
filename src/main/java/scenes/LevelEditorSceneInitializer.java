@@ -25,6 +25,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         levelEditorComponents.addComponent(new MouseControl());
         levelEditorComponents.addComponent(new GridLines());
         levelEditorComponents.addComponent(new EditorCamera(scene.camera()));
+        Scene.setCamera(levelEditorComponents.getComponent(EditorCamera.class).getCamera());
         levelEditorComponents.addComponent(new TranslateGizmo(AssetPool.getTexture("assets/images/default/images/gizmo.png"), Window.getImGUILayer().getPropertiesWindow()));
         levelEditorComponents.addComponent(new ScaleGizmo(AssetPool.getTexture("assets/images/default/images/gizmo_scale.png"), Window.getImGUILayer().getPropertiesWindow()));
         levelEditorComponents.addComponent(new EditorSettings());
