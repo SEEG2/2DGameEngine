@@ -34,7 +34,7 @@ public class MouseControl extends  Component {
         GameObject newGameObject = this.holdingObject.copy();
         newGameObject.getComponent(SpriteRenderer.class).setColor(new Vector4f(1,1,1,1));
         Window.getScene().addGameObjectToScene(newGameObject);
-        this.holdingObject.editorProperties.allowMouseSelection = true;
+        newGameObject.editorProperties.allowMouseSelection = true;
     }
 
     @Override
