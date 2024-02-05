@@ -32,6 +32,9 @@ public class MouseControl extends  Component {
 
     public void place() {
         GameObject newGameObject = this.holdingObject.copy();
+        if (newGameObject.getComponent(StateMachine.class) != null) {
+            newGameObject.getComponent(StateMachine.class).refreshTexture();
+        }
         newGameObject.getComponent(SpriteRenderer.class).setColor(new Vector4f(1,1,1,1));
         Window.getScene().addGameObjectToScene(newGameObject);
         newGameObject.editorProperties.allowMouseSelection = true;
