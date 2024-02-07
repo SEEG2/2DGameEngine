@@ -19,8 +19,8 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
     @Override
     public void init(Scene scene) {
         sprites = AssetPool.getSpritesheet("assets/images/default/spritesheets/spritesheet.png");
-
         levelEditorComponents = scene.createGameObject("Editor");
+        levelEditorComponents.addComponent(new HierarchyHoverMarker(AssetPool.getTexture("assets/images/default/images/selection.png")));
         levelEditorComponents.disableSerialization();
         levelEditorComponents.addComponent(new MouseControl());
         levelEditorComponents.addComponent(new GridLines());
@@ -29,7 +29,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         levelEditorComponents.addComponent(new TranslateGizmo(AssetPool.getTexture("assets/images/default/images/gizmo.png"), Window.getImGUILayer().getPropertiesWindow()));
         levelEditorComponents.addComponent(new ScaleGizmo(AssetPool.getTexture("assets/images/default/images/gizmo_scale.png"), Window.getImGUILayer().getPropertiesWindow()));
         levelEditorComponents.addComponent(new EditorSettings());
-        levelEditorComponents.addComponent(new HierarchyHoverMarker(AssetPool.getTexture("assets/images/default/images/gizmo.png")));
+
 
         scene.addGameObjectToScene(levelEditorComponents);
     }
@@ -42,6 +42,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         AssetPool.getTexture("assets/images/default/images/default.png");
         AssetPool.getTexture("assets/images/default/images/gizmo.png");
         AssetPool.getTexture("assets/images/default/images/gizmo_scale.png");
+        AssetPool.getTexture("assets/images/default/images/default.png");
 
         for (GameObject gameObject : scene.getGameObjects()) {
             if (gameObject.getComponent(SpriteRenderer.class) != null) {
