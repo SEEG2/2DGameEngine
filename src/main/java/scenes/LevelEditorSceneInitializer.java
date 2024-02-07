@@ -29,6 +29,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         levelEditorComponents.addComponent(new TranslateGizmo(AssetPool.getTexture("assets/images/default/images/gizmo.png"), Window.getImGUILayer().getPropertiesWindow()));
         levelEditorComponents.addComponent(new ScaleGizmo(AssetPool.getTexture("assets/images/default/images/gizmo_scale.png"), Window.getImGUILayer().getPropertiesWindow()));
         levelEditorComponents.addComponent(new EditorSettings());
+        levelEditorComponents.addComponent(new HierarchyHoverMarker(AssetPool.getTexture("assets/images/default/images/gizmo.png")));
 
         scene.addGameObjectToScene(levelEditorComponents);
     }

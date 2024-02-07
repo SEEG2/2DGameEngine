@@ -1,5 +1,6 @@
 package editor;
 
+import components.HierarchyHoverMarker;
 import components.Sprite;
 import components.SpriteRenderer;
 import components.Transform;
@@ -52,8 +53,14 @@ public class SceneHierarchyWindow {
         );
         ImGui.popID();
 
-        if (ImGui.isItemClicked()) {
-            Window.getImGUILayer().getPropertiesWindow().setActiveGameObject(obj);
+
+        if (ImGui.isItemHovered()) {
+            if (ImGui.isItemClicked()) {
+                Window.getImGUILayer().getPropertiesWindow().setActiveGameObject(obj);
+            }
+            Window.getLevelEditorSceneInitializer().getLevelEditorComponents().getComponent(HierarchyHoverMarker.class).bindObject(obj);
+        } else {
+            Window.getLevelEditorSceneInitializer().getLevelEditorComponents().getComponent(HierarchyHoverMarker.class).unbind();
         }
 
         if (ImGui.beginDragDropSource()) {
