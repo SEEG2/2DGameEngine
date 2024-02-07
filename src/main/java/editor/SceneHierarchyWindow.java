@@ -2,12 +2,16 @@ package editor;
 
 import components.Sprite;
 import components.SpriteRenderer;
+import components.Transform;
 import gmen.GameObject;
 import gmen.Window;
 import imgui.ImGui;
 import imgui.flag.ImGuiTreeNodeFlags;
+import org.joml.Vector4f;
 
 import java.util.List;
+
+import static Constants.Color.GREEN;
 
 public class SceneHierarchyWindow {
 
@@ -39,6 +43,7 @@ public class SceneHierarchyWindow {
 
     private boolean doTreeNode(int index, GameObject obj) {
         ImGui.pushID(index);
+
         boolean treeNodeOpen = ImGui.treeNodeEx(obj.name,
                 ImGuiTreeNodeFlags.DefaultOpen |
                         ImGuiTreeNodeFlags.FramePadding |
@@ -47,11 +52,15 @@ public class SceneHierarchyWindow {
         );
         ImGui.popID();
 
+        if (ImGui.isItemClicked()) {
+            Window.getImGUILayer().getPropertiesWindow().setActiveGameObject(obj);
+        }
+
         if (ImGui.beginDragDropSource()) {
             ImGui.setDragDropPayload(payLoadType, obj);
             ImGui.text(obj.name);
-            //TODO add more information about the object here when dragging
-            ImGui.image(obj.getComponent(SpriteRenderer.class).getTexture().getTexID(), obj.getComponent(SpriteRenderer.class).getTexture().getHeight(), obj.getComponent(SpriteRenderer.class).getTexture().getHeight());
+            ImGui.text("X: " + obj.transform.position.x);
+            ImGui.text("Y: " + obj.transform.position.y);
             ImGui.endDragDropSource();
         }
 
