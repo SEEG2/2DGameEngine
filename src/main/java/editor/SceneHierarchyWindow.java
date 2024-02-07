@@ -1,6 +1,7 @@
 package editor;
 
 import components.Sprite;
+import components.SpriteRenderer;
 import gmen.GameObject;
 import gmen.Window;
 import imgui.ImGui;
@@ -50,6 +51,7 @@ public class SceneHierarchyWindow {
             ImGui.setDragDropPayload(payLoadType, obj);
             ImGui.text(obj.name);
             //TODO add more information about the object here when dragging
+            ImGui.image(obj.getComponent(SpriteRenderer.class).getTexture().getTexID(), obj.getComponent(SpriteRenderer.class).getTexture().getHeight(), obj.getComponent(SpriteRenderer.class).getTexture().getHeight());
             ImGui.endDragDropSource();
         }
 

@@ -1,6 +1,5 @@
 package components;
 
-import components.Component;
 import gmen.Camera;
 import gmen.Window;
 import org.joml.Vector2f;
