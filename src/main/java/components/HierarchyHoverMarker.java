@@ -1,6 +1,7 @@
 package components;
 
 import gmen.GameObject;
+import gmen.MouseListener;
 import gmen.Prefabs;
 import gmen.Window;
 import org.joml.Vector2f;
@@ -8,6 +9,9 @@ import org.joml.Vector4f;
 import org.lwjgl.system.CallbackI;
 import renderer.Texture;
 import scenes.Scene;
+
+import static org.lwjgl.glfw.GLFW.GLFW_KEY_LEFT;
+import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_LEFT;
 
 public class HierarchyHoverMarker extends Component {
     GameObject object;
@@ -20,6 +24,10 @@ public class HierarchyHoverMarker extends Component {
 
     @Override
     public void editorUpdate(float dt) {
+        if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && MouseListener.isMouseInsideFrameBuffer()) {
+            this.unbind();
+        }
+
         if (activeObject == null) {
             return;
         }
