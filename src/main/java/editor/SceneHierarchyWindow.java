@@ -59,8 +59,6 @@ public class SceneHierarchyWindow {
                 Window.getImGUILayer().getPropertiesWindow().setActiveGameObject(obj);
             }
             Window.getLevelEditorSceneInitializer().getLevelEditorComponents().getComponent(HierarchyHoverMarker.class).bindObject(obj);
-        } else {
-            Window.getLevelEditorSceneInitializer().getLevelEditorComponents().getComponent(HierarchyHoverMarker.class).unbind();
         }
 
         if (ImGui.beginDragDropSource()) {
