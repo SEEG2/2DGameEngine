@@ -15,6 +15,7 @@ public class HierarchyHoverMarker extends Component {
     public HierarchyHoverMarker(Texture texture) {
         this.object = Prefabs.generateTextureObject(texture, 0.5f, 0.5f, true);
         Window.getScene().addGameObjectToScene(object);
+        this.unbind();
     }
 
     @Override
@@ -24,6 +25,13 @@ public class HierarchyHoverMarker extends Component {
         }
         
         object.transform.position = activeObject.transform.position;
+    }
+
+    @Override
+    public void update(float dt) {
+        if (!(activeObject == null)) {
+            unbind();
+        }
     }
 
     public void bindObject(GameObject gameObject) {
