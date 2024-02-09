@@ -100,23 +100,12 @@ public class Gizmo extends Component {
 
         this.xAxisObject.transform.position.set(this.activeGameObject.transform.position.x, this.activeGameObject.transform.position.y - gizmoWidth*2);
         this.yAxisObject.transform.position.set(this.activeGameObject.transform.position.x - gizmoWidth*2, this.activeGameObject.transform.position.y);
-
         //TODO: fix gizmo resizing
-//        if (activeGameObject.transform.scale.x > 20 || activeGameObject.transform.scale.y > 20) {
-//            this.xAxisObject.transform.scale.set(Math.max(activeGameObject.transform.scale.x, activeGameObject.transform.scale.y));
-//            this.xAxisObject.transform.scale.x *= gizmoHeight;
-//            this.xAxisObject.transform.scale.y *= gizmoWidth;
-//
-//
-//            this.yAxisObject.transform.scale.set(Math.max(activeGameObject.transform.scale.x, activeGameObject.transform.scale.y));
-//            this.yAxisObject.transform.scale.x *= gizmoHeight;
-//            this.yAxisObject.transform.scale.y *= gizmoWidth;
-//
-//        } else {
-//            this.xAxisObject.transform.scale.set(new Vector2f(gizmoWidth, gizmoHeight));
-//            this.yAxisObject.transform.scale.set(new Vector2f(gizmoWidth, gizmoHeight));
-//        }
-//
+        this.xAxisObject.transform.scale.x = Window.getScene().camera().getZoom()*gizmoWidth;
+        this.xAxisObject.transform.scale.y = Window.getScene().camera().getZoom()*gizmoHeight;
+
+        this.yAxisObject.transform.scale.x = Window.getScene().camera().getZoom()*gizmoWidth;
+        this.yAxisObject.transform.scale.y = Window.getScene().camera().getZoom()*gizmoHeight;
    }
 
     @Override
