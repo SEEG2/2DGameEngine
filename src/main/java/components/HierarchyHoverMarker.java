@@ -10,8 +10,7 @@ import org.lwjgl.system.CallbackI;
 import renderer.Texture;
 import scenes.Scene;
 
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_LEFT;
-import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_LEFT;
+import static org.lwjgl.glfw.GLFW.*;
 
 public class HierarchyHoverMarker extends Component {
     GameObject object;
@@ -33,6 +32,8 @@ public class HierarchyHoverMarker extends Component {
         }
         
         object.transform.position = activeObject.transform.position;
+        object.transform.scale = activeObject.transform.scale;
+        object.transform.rotation = activeObject.transform.rotation;
     }
 
     @Override
