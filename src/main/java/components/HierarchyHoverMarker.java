@@ -23,7 +23,7 @@ public class HierarchyHoverMarker extends Component {
 
     @Override
     public void editorUpdate(float dt) {
-        if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && MouseListener.isMouseInsideFrameBuffer()) {
+        if (MouseListener.isMouseInsideFrameBuffer()) {
             this.unbind();
         }
 
