@@ -100,7 +100,7 @@ public class Gizmo extends Component {
 
         this.xAxisObject.transform.position.set(this.activeGameObject.transform.position.x, this.activeGameObject.transform.position.y - gizmoWidth*2);
         this.yAxisObject.transform.position.set(this.activeGameObject.transform.position.x - gizmoWidth*2, this.activeGameObject.transform.position.y);
-        //TODO: fix gizmo resizing
+
         this.xAxisObject.transform.scale.x = Window.getScene().camera().getZoom()*gizmoWidth;
         this.xAxisObject.transform.scale.y = Window.getScene().camera().getZoom()*gizmoHeight;
 
