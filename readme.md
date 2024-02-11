@@ -1,6 +1,7 @@
 # 2DGameEngine
 
-## A basic game engine written in Java using the LWJGL libary (OpenGL) following the tutorial series of GamesWithGabe (https://www.youtube.com/watch?v=VyKE7vz65rY&list=PLtrSb4XxIVbp8AKuEAlwNXDxr99e3woGE&pp=iAQB).
+## A basic game engine written in Java using the LWJGL libary (OpenGL). 
+## Following the tutorial series of GamesWithGabe (https://www.youtube.com/watch?v=VyKE7vz65rY&list=PLtrSb4XxIVbp8AKuEAlwNXDxr99e3woGE&pp=iAQB).
 
 
 ### Libaries 
