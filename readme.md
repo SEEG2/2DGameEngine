@@ -6,6 +6,7 @@
 
 ### Libaries 
 - LWJGL (see LWJGL config for more details)
+- imgui-java (https://github.com/SpaiR/imgui-java)
 - gson by Google (https://github.com/google/gson)
 - jbox2d (https://github.com/jbox2d/jbox2d)
 
