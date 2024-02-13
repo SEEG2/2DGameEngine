@@ -6,6 +6,10 @@ import EventSystem.events.Event;
 import EventSystem.events.EventType;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.glfw.GLFWErrorCallback;
+import org.lwjgl.openal.AL;
+import org.lwjgl.openal.ALC;
+import org.lwjgl.openal.ALCCapabilities;
+import org.lwjgl.openal.ALCapabilities;
 import org.lwjgl.opengl.GL;
 import renderer.*;
 import scenes.LevelEditorSceneInitializer;
@@ -17,6 +21,7 @@ import java.nio.IntBuffer;
 
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
+import static org.lwjgl.openal.ALC10.*;
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.system.MemoryUtil.NULL;
 
@@ -30,6 +35,8 @@ public class Window implements Observer {
     private FrameBuffer frameBuffer;
     private PickingTexture pickingTexture;
     private LevelEditorSceneInitializer levelEditorSceneInitializer;
+    private long audioContext;
+    private long audioDevice;
 
     private boolean runtimePlaying = false;
 
@@ -68,6 +75,9 @@ public class Window implements Observer {
     public void run() {
         init();
         loop();
+
+        alcDestroyContext(audioContext);
+        alcCloseDevice(audioDevice);
 
         glfwFreeCallbacks(glfwWindow);
         glfwDestroyWindow(glfwWindow);
@@ -111,6 +121,20 @@ public class Window implements Observer {
         glfwSwapInterval(1);
 
         glfwShowWindow(glfwWindow);
+
+        String defaultDeviceName = alcGetString(0, ALC_DEFAULT_DEVICE_SPECIFIER);
+
+        audioDevice = alcOpenDevice(defaultDeviceName);
+
+        int[] attributes = {0};
+        audioContext = alcCreateContext(audioDevice, attributes);
+        alcMakeContextCurrent(audioContext);
+        ALCCapabilities alcCapabilities = ALC.createCapabilities(audioDevice);
+        ALCapabilities alCapabilities = AL.createCapabilities(alcCapabilities);
+
+        if (!alCapabilities.OpenAL10) {
+            assert  false: "OpenAL10 required!";
+        }
 
         GL.createCapabilities();
 
