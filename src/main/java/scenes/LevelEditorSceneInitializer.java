@@ -8,6 +8,9 @@ import imgui.ImVec2;
 import org.joml.Vector2f;
 import util.AssetPool;
 
+import java.io.File;
+import java.util.Collection;
+
 public class LevelEditorSceneInitializer extends SceneInitializer {
 
     private Spritesheet sprites;
@@ -43,6 +46,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         AssetPool.getTexture("assets/images/default/images/gizmo.png");
         AssetPool.getTexture("assets/images/default/images/gizmo_scale.png");
         AssetPool.getTexture("assets/images/default/images/default.png");
+        AssetPool.addSound("assets/sounds/default.ogg", false);
 
         for (GameObject gameObject : scene.getGameObjects()) {
             if (gameObject.getComponent(SpriteRenderer.class) != null) {
@@ -127,6 +131,27 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
 
                 ImGui.endTabItem();
             }
+            if (ImGui.beginTabItem("Sounds")) {
+                Collection<Sound> sounds = AssetPool.getAllSounds();
+
+                for (Sound sound : sounds) {
+                    File tmp = new File(sound.getFilepath());
+                    if (ImGui.button(tmp.getName())) {
+                        if (!sound.isPlaying()) {
+                            sound.play();
+                        } else {
+                            sound.stop();
+                        }
+                    }
+
+                    if (ImGui.getContentRegionAvailX() > 100) {
+                        ImGui.sameLine();
+                    }
+                }
+
+                ImGui.endTabItem();
+            }
+
             ImGui.endTabBar();
         }
         ImGui.end();
