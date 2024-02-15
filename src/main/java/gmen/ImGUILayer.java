@@ -162,7 +162,7 @@ public class ImGUILayer {
 
         // Fonts merge example
         fontConfig.setPixelSnapH(true);
-        fontAtlas.addFontFromFileTTF("assets/fonts/Roboto-Regular.ttf", 16, fontConfig);
+        fontAtlas.addFontFromFileTTF("assets/fonts/Roboto-Regular/Roboto-Regular.ttf", 16, fontConfig);
 
         fontConfig.destroy(); // After all fonts were added we don't need this config more
 
